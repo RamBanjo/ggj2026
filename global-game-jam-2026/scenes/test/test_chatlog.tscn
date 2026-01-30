@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d2ga1ne7tr6px"]
+
+[ext_resource type="Script" uid="uid://bw8j18wb3ag7v" path="res://scenes/test/test_chatlog.gd" id="1_f688q"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_m1q0k"]
+[ext_resource type="Resource" uid="uid://vwqsngyyleu7" path="res://res/chatmembers/test_member.tres" id="3_h5v7a"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_sg6tv"]
+
+[sub_resource type="Resource" id="Resource_60ch2"]
+script = ExtResource("2_m1q0k")
+speaker = ExtResource("3_h5v7a")
+text = "aaaa"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_fe36t"]
+script = ExtResource("2_m1q0k")
+speaker = ExtResource("3_h5v7a")
+text = "eeeee"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_w4f0h"]
+script = ExtResource("2_m1q0k")
+speaker = ExtResource("3_h5v7a")
+text = "owow"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_fn4m6"]
+script = ExtResource("4_sg6tv")
+internal_id = "ratio_test"
+chat_messages = Array[ExtResource("2_m1q0k")]([SubResource("Resource_60ch2"), SubResource("Resource_fe36t"), SubResource("Resource_w4f0h")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[node name="TestChatlog" type="PanelContainer" unique_id=363034346]
+custom_minimum_size = Vector2(160, 0)
+offset_right = 840.0
+offset_bottom = 355.0
+script = ExtResource("1_f688q")
+chatlog = SubResource("Resource_fn4m6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=811543097]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=955124318]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=878168223]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1009586824]
+layout_mode = 2
+text = "Close"

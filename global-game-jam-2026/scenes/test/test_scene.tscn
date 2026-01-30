@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://dr6ve6iiy7anb"]
+
+[ext_resource type="PackedScene" uid="uid://dxfkhjciy0fir" path="res://scenes/button/DailyCaseButton.tscn" id="1_wvq6k"]
+[ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="2_4b6mq"]
+
+[node name="TestScene" type="Node2D" unique_id=1047351864]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2126641909]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=446151501]
+offset_left = 8.0
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=653327119]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 488.0
+offset_bottom = 296.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1275937380]
+layout_mode = 2
+text = "Today's Tasks"
+metadata/_edit_lock_ = true
+
+[node name="DailyCaseButton" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1597373124 instance=ExtResource("1_wvq6k")]
+layout_mode = 2
+text = "Task: Test Case"
+metadata/_edit_lock_ = true
+
+[node name="CaseReviewPanel" type="Panel" parent="CanvasLayer/Panel" unique_id=1347954481]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 16.0
+offset_right = 1120.0
+offset_bottom = 608.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/CaseReviewPanel" unique_id=1828734285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CaseNameLabel" type="Label" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=2040994590]
+layout_mode = 2
+text = "CASE NAME"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=2140777538]
+layout_mode = 2
+text = "Reporter"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=356253770]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer" unique_id=340413014]
+layout_mode = 2
+texture = ExtResource("2_4b6mq")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer" unique_id=2032324835]
+layout_mode = 2
+text = "Godot Engine"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=1355408062]
+layout_mode = 2
+text = "Offender"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=1913762459]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer3" unique_id=1463506972]
+layout_mode = 2
+texture = ExtResource("2_4b6mq")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer3" unique_id=710726708]
+layout_mode = 2
+text = "Godot Engine"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=1473834114]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+text = "They called me bad words and said mean things about me :(
+This violates Rule 2 and Rule 6, Mods Please Do Something"
+fit_content = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=1063190763]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer2" unique_id=1549045234]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ignore "
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer2" unique_id=1019284432]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Warn Offender"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer2" unique_id=385460276]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Kick Offender"
+
+[node name="Button4" type="Button" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer2" unique_id=1617839028]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "False Report"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=205536415]
+layout_mode = 2
+text = "Attached Evidence"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer" unique_id=1134468861]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/CaseReviewPanel/VBoxContainer/HBoxContainer4" unique_id=1027493277]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Chatlog"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1669717461]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 304.0
+offset_right = 496.0
+offset_bottom = 432.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer2" unique_id=1872340021]
+layout_mode = 2
+text = "Moderation Actions"
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer2" unique_id=1640245180]
+layout_mode = 2
+text = "Scout Moderators"
+metadata/_edit_lock_ = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/VBoxContainer2" unique_id=1665016670]
+layout_mode = 2
+text = "Modify Server Rules"
+metadata/_edit_lock_ = true
+
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/VBoxContainer2" unique_id=1462624611]
+layout_mode = 2
+text = "Implement Security Features"
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1184798198]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 496.0
+offset_bottom = 613.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer3" unique_id=1682408081]
+layout_mode = 2
+text = "Current Server Rules"
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/VBoxContainer3" unique_id=889343011]
+layout_mode = 2
+bbcode_enabled = true
+text = "[ol]
+Please be nice to other people!
+Don't say bad words.
+Don't post illegal content.
+Please report anything bad in the server to mods.
+Mods are not exempt from rules and must follow rules.
+Don't say mean things about other people
+[/ol]"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1509508824]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 488.0
+offset_bottom = 56.0
+text = "DAY 1, ACTIONS LEFT 3/3"

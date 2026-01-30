@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://vwqsngyyleu7"]
+
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_1tokv"]
+[ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="1_advci"]
+
+[resource]
+script = ExtResource("1_1tokv")
+internal_id = "test_member"
+display_name = "Test Member"
+profile_picture = ExtResource("1_advci")
+profile_desc = "I am a fake test member!"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"
