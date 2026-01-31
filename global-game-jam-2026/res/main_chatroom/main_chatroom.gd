@@ -1,20 +1,36 @@
 extends Resource
 class_name MainChatroom
 
-static var member_count : int
-static var server_atmosphere : int
+static var member_count : int:
+	set(value):
+		member_count = value
+		if member_count <= 1:
+			member_count = 1
+	get:
+		return member_count
+		
+static var server_atmosphere : int:
+	set(value):
+		server_atmosphere = value
+		if server_atmosphere <= MIN_SERVER_ATMOSPHERE:
+			server_atmosphere = MIN_SERVER_ATMOSPHERE
+		if server_atmosphere >= MAX_SERVER_ATMOSPHERE:
+			server_atmosphere = MAX_SERVER_ATMOSPHERE
+	get:
+		return server_atmosphere
+		
 static var ingame_day : int
 static var remaining_actions_today: int
 static var current_max_actions: int
 
-const MEMBER_LOSE_THRESHOLD = 0
+const MEMBER_LOSE_THRESHOLD = 10
 const MIN_SERVER_ATMOSPHERE = 0
 const MAX_SERVER_ATMOSPHERE = 100
 
 const MEMBER_WIN_CONDITION = 500
 const ATMOSPHERE_WIN_CONDITION = 80
-
 const ATMOSPHERE_LOSE_CONDITION = 0
+const TIME_LIMIT = 15
 
 const DEFAULT_DAILY_ACTIONS = 3
 const DEFAULT_MEMBER_COUNT = 10
@@ -60,6 +76,12 @@ static func server_is_dead():
 	
 static func server_is_winning():
 	if member_count >= MEMBER_WIN_CONDITION and server_atmosphere >= ATMOSPHERE_WIN_CONDITION:
+		return true
+		
+	return false
+	
+static func server_is_boring():
+	if ingame_day >= TIME_LIMIT:
 		return true
 		
 	return false

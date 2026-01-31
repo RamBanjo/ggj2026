@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://c6lcuswacub57"]
+
+[ext_resource type="Script" uid="uid://bysonorfuy3ee" path="res://scenes/test/test_game_scene.gd" id="1_b3uwx"]
+
+[node name="TestGameScene" type="Node2D" unique_id=49493853]
+script = ExtResource("1_b3uwx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2014500855]
+
+[node name="AtmPlus" type="Button" parent="CanvasLayer" unique_id=659078420]
+offset_left = 16.0
+offset_top = 136.0
+offset_right = 328.0
+offset_bottom = 200.0
+text = "(DEBUG) Atmosphere +10"
+
+[node name="AtmMinus" type="Button" parent="CanvasLayer" unique_id=1876871229]
+offset_left = 16.0
+offset_top = 216.0
+offset_right = 328.0
+offset_bottom = 280.0
+text = "(DEBUG) Atmosphere -10"
+
+[node name="MemberPlus" type="Button" parent="CanvasLayer" unique_id=954602294]
+offset_left = 16.0
+offset_top = 296.0
+offset_right = 328.0
+offset_bottom = 360.0
+text = "(DEBUG) Member +100"
+
+[node name="MemberMinus" type="Button" parent="CanvasLayer" unique_id=1627554658]
+offset_left = 16.0
+offset_top = 376.0
+offset_right = 328.0
+offset_bottom = 440.0
+text = "(DEBUG) Member -100"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1368303234]
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 320.0
+offset_bottom = 99.0
+text = "Day {day}
+Atmosphere {cur_atm}/{max_atm}
+Member {cur_mem}/{goal_mem}"
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer" unique_id=1652034090]
+offset_left = 384.0
+offset_top = 48.0
+offset_right = 704.0
+offset_bottom = 71.0
+
+[node name="EndDayButton" type="Button" parent="CanvasLayer" unique_id=919146938]
+offset_left = 384.0
+offset_top = 136.0
+offset_right = 696.0
+offset_bottom = 200.0
+text = "(DEBUG) End Day"
+
+[connection signal="pressed" from="CanvasLayer/AtmPlus" to="." method="_on_atm_plus_pressed"]
+[connection signal="pressed" from="CanvasLayer/AtmMinus" to="." method="_on_atm_minus_pressed"]
+[connection signal="pressed" from="CanvasLayer/MemberPlus" to="." method="_on_member_plus_pressed"]
+[connection signal="pressed" from="CanvasLayer/MemberMinus" to="." method="_on_member_minus_pressed"]
+[connection signal="pressed" from="CanvasLayer/EndDayButton" to="." method="_on_end_day_button_pressed"]

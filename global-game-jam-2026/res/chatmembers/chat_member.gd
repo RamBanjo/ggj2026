@@ -5,3 +5,4 @@ class_name ChatMember
 @export var display_name: String
 @export var profile_picture: Texture2D
 @export_multiline var profile_desc : String
+@export_multiline var default_report_msg : String
