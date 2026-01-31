@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://kfiocvwkjr13"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_yt1hu"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="2_n2w4k"]
+
+[resource]
+script = ExtResource("1_yt1hu")
+internal_id = "welcome"
+speaker = ExtResource("2_n2w4k")
+text = "Congrats on being chosen to join the mod team! Your task is very simple, all you have to do is to read reports people made to the mod team and decide what to do with them.
+
+The internet is really a weird place, isn't it? Some of these things are things you'd never even think to say to other people, but when you're behind an account, people get a lot bolder..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

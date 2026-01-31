@@ -18,3 +18,7 @@ class_name ModeratorCase
 
 ##The character being reported. For random cases, a random chat member will be generated.
 @export var report_target : ChatMember
+
+#Booleans that exist to categorize quests.
+@export var is_false_report : bool
+@export var is_spammer : bool

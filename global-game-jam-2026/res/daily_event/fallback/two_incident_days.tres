@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://hstbbyxu1ptm"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_g181a"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_f6oub"]
+[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="3_f6oub"]
+
+[resource]
+script = ExtResource("1_g181a")
+today_events = Array[ExtResource("2_f6oub")]([ExtResource("3_f6oub"), ExtResource("3_f6oub")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

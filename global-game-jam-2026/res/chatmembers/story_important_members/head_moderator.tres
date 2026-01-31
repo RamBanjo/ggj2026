@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://ydb86yo3ps6j"]
+
+[ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="1_62on8"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_vpusr"]
+
+[resource]
+script = ExtResource("1_vpusr")
+internal_id = "head_mod"
+display_name = "MisterCatBread"
+profile_picture = ExtResource("1_62on8")
+profile_desc = "Head moderator of the fanserver. Let me know if you need anything, man!"
+default_report_msg = "I usually handle reports on my own, but... Can you take a look at this for a second?"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

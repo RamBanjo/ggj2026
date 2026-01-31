@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModEvent" format=3 uid="uid://64m1vskvbcmk"]
+
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="1_t0ux6"]
+
+[resource]
+script = ExtResource("1_t0ux6")
+internal_id = "spawn_random_case"
+metadata/_custom_type_script = "uid://7bux4kauw2hy"

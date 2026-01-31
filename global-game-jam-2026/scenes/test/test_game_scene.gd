@@ -4,9 +4,17 @@ extends Node2D
 
 const LABEL_BASE_TEXT = "Day {day}\nAtmosphere {cur_atm}/{max_atm}\nMember {cur_mem}/{goal_mem}"
 
+##For pre-scheduled days, use this dictionary. key: the day number. value: the file name of the event.
+@export var daily_event_scheduler : Dictionary
+
+##For days that don't exist on the scheduler, random cases will spawn.
+@export var fallback_days : Array[DailyEvent]
+
 func _ready() -> void:
 	MainChatroom.initialize_new_game()
 	update_label()
+	
+	load_daily_event("test_day")
 
 
 func update_label():
@@ -62,3 +70,16 @@ func end_day():
 func _on_end_day_button_pressed() -> void:
 	end_day()
 	update_label()
+
+func load_daily_event(day_id: String) -> DailyEvent:
+	var today_events : DailyEvent
+	var path : String = "res://res/daily_event/fixed/{day_id}.tres".format({"day_id": day_id})
+	
+	if ResourceLoader.exists(path):
+		print("load_success!!")
+		today_events = load(path)
+	else:
+		print("load failed, we will get a random preset day instead")
+		today_events = fallback_days[randi() % len(fallback_days)]
+	
+	return today_events
