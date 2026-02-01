@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://d0t7gtaf0pvlq"]
+
+[ext_resource type="Texture2D" uid="uid://jci6fn7rupmc" path="res://sprites/pfp/animeface.png" id="1_4hk3n"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_q7lx4"]
+
+[resource]
+script = ExtResource("1_q7lx4")
+internal_id = "member_c"
+display_name = "c0b4lt"
+profile_picture = ExtResource("1_4hk3n")
+profile_desc = "add me on stem plz"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

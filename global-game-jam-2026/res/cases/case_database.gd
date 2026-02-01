@@ -4,30 +4,30 @@ class_name CaseDatabase
 static var fixed_cases : Dictionary
 static var random_cases : Array[ModeratorCase]
 
-const FIXED_CASE_DIR = "res://res/cases/fixed"
-const RANDOM_CASE_DIR = "res://res/cases/random"
+const FIXED_CASE_PATH = "res://res/cases/fixed"
+const RANDOM_CASE_PATH = "res://res/cases/random"
 
 static func initialize_cases():
-	var fixed_case_dir = DirAccess.open(FIXED_CASE_DIR)
+	var fixed_case_dir = DirAccess.open(FIXED_CASE_PATH)
 	if fixed_case_dir != null:
 		fixed_case_dir.list_dir_begin()
 		var file_name = fixed_case_dir.get_next()
 		
 		while file_name != "":
-			var full_path = FIXED_CASE_DIR + "/" + file_name
+			var full_path = FIXED_CASE_PATH + "/" + file_name
 			var new_case : ModeratorCase = load(full_path)
 			fixed_cases[new_case.case_id] = new_case
 			file_name = fixed_case_dir.get_next()
 			
 	print("loaded fixed cases: ", len(fixed_cases))
 			
-	var random_case_dir = DirAccess.open(RANDOM_CASE_DIR)
+	var random_case_dir = DirAccess.open(RANDOM_CASE_PATH)
 	if random_case_dir != null:
 		random_case_dir.list_dir_begin()
 		var file_name = random_case_dir.get_next()
 		
 		while file_name != "":
-			var full_path = RANDOM_CASE_DIR + "/" + file_name
+			var full_path = RANDOM_CASE_PATH + "/" + file_name
 			var new_case : ModeratorCase = load(full_path)
 			random_cases.append(new_case)
 			file_name = random_case_dir.get_next()

@@ -5,12 +5,12 @@ class_name TestLog
 
 @export var chatlog : Chatlog
 
-const msg_pack : PackedScene = preload("res://scenes/test/test_chatmessage.tscn")
+const msg_pack : PackedScene = preload("res://scenes/game_menu/test_chatmessage.tscn")
 
 func _ready() -> void:
 	for msg in chatlog.chat_messages:
 		
-		var new_msg : TestMsg = msg_pack.instantiate()
+		var new_msg : MsgPanel = msg_pack.instantiate()
 		new_msg.my_message = msg
 		
 		chat_message_vbox.add_child(new_msg)

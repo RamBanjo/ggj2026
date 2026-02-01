@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cdwkirfy12air"]
+
+[ext_resource type="Texture2D" uid="uid://bnht7af0rohlp" path="res://sprites/bg/game_tab_inactive_1.png" id="1_8663i"]
+[ext_resource type="Theme" uid="uid://dm1otqu5sbfnb" path="res://themes/main_theme.tres" id="1_dfhg4"]
+[ext_resource type="Script" uid="uid://bflmacbpw7gs7" path="res://scenes/button/game_tab.gd" id="2_7612v"]
+[ext_resource type="Theme" uid="uid://b8dfbufqkl4ld" path="res://themes/gametab_theme.tres" id="2_w3fps"]
+[ext_resource type="Texture2D" uid="uid://dvab583dlfcv5" path="res://sprites/bg/game_tab_1.png" id="3_87ull"]
+[ext_resource type="Texture2D" uid="uid://2e7qwioal1lr" path="res://sprites/bg/game_tab_2.png" id="4_dfhg4"]
+[ext_resource type="Texture2D" uid="uid://dya8n311c3e17" path="res://sprites/bg/game_tab_3.png" id="5_dqyl6"]
+[ext_resource type="Texture2D" uid="uid://dnkmfyskav0a1" path="res://sprites/bg/game_tab_4.png" id="6_uwvry"]
+[ext_resource type="Texture2D" uid="uid://bbiei8bmkau2n" path="res://sprites/bg/game_tab_5.png" id="7_sd0uj"]
+[ext_resource type="Texture2D" uid="uid://dfe0w5nhwk8bd" path="res://sprites/bg/game_tab_inactive_2.png" id="8_eb44d"]
+[ext_resource type="Texture2D" uid="uid://gj8p0dlvqnh4" path="res://sprites/bg/game_tab_inactive_3.png" id="9_btjr0"]
+[ext_resource type="Texture2D" uid="uid://bjsvaacrh17ca" path="res://sprites/bg/game_tab_inactive_4.png" id="10_1rao7"]
+[ext_resource type="Texture2D" uid="uid://d4apnqiao0s6r" path="res://sprites/bg/game_tab_inactive_5.png" id="11_wfbon"]
+
+[node name="TextureRect" type="TextureRect" unique_id=207667791]
+theme = ExtResource("1_dfhg4")
+texture = ExtResource("1_8663i")
+script = ExtResource("2_7612v")
+game_tab_active = Array[Texture2D]([ExtResource("3_87ull"), ExtResource("4_dfhg4"), ExtResource("5_dqyl6"), ExtResource("6_uwvry"), ExtResource("7_sd0uj")])
+game_tab_inactive = Array[Texture2D]([ExtResource("1_8663i"), ExtResource("8_eb44d"), ExtResource("9_btjr0"), ExtResource("10_1rao7"), ExtResource("11_wfbon")])
+
+[node name="Button" type="Button" parent="." unique_id=478939713]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_w3fps")
+toggle_mode = true
+
+[node name="Icon" type="TextureRect" parent="." unique_id=429885279]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="." unique_id=1246498931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 52
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

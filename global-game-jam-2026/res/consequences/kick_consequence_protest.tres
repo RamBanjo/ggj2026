@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://bobujau76cwod"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_uti6f"]
+
+[resource]
+script = ExtResource("1_uti6f")
+consequence_type = 1
+value = "-10"
+desc = "Many members leave the server in protest after an innocent server member was unfairly kicked!"
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

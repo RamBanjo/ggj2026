@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://ci0utm0236ii5"]
+
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_1kw8u"]
+
+[resource]
+script = ExtResource("1_1kw8u")
+internal_id = "sysms"
+profile_desc = "do_not_show"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

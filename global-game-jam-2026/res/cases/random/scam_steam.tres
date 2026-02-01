@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://pl6enr3bel63"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_kdlfp"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_w1hc2"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_a5cqo"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="2_vsevg"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_isow0"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_j1v7y"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="5_uqw16"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="7_21ysq"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="8_dn1c7"]
+[ext_resource type="Resource" uid="uid://crxna8j0tdcim" path="res://res/consequences/ignore_member_penalty.tres" id="9_qpltm"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consequence_atmosphere_good.tres" id="10_jteoj"]
+[ext_resource type="Resource" uid="uid://gcfuaxideycn" path="res://res/consequences/kick_consequence_banned.tres" id="11_5hg1l"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="13_4y7tj"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_kdlfp")
+speaker = ExtResource("2_a5cqo")
+text = "@everyone steam gift  50% at [LINK_REDACTED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_21ysq"]
+script = ExtResource("1_kdlfp")
+speaker = ExtResource("3_isow0")
+text = "Ugh, another bot."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_dn1c7"]
+script = ExtResource("1_kdlfp")
+speaker = ExtResource("4_j1v7y")
+text = "@mod bonk it"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("5_uqw16")
+chat_messages = Array[ExtResource("1_kdlfp")]([SubResource("Resource_73pw0"), SubResource("Resource_21ysq"), SubResource("Resource_dn1c7")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("2_vsevg")
+case_id = "scam_steam"
+case_display_name = "Steam Scam???"
+case_description = "This person is trying to scam with steam cards. I don't think this is legit."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = Array[ExtResource("1_w1hc2")]([ExtResource("8_dn1c7"), ExtResource("9_qpltm")])
+warning_consequences = Array[ExtResource("1_w1hc2")]([ExtResource("13_4y7tj")])
+kick_consequences = Array[ExtResource("1_w1hc2")]([ExtResource("10_jteoj"), ExtResource("11_5hg1l")])
+false_report_consequences = Array[ExtResource("1_w1hc2")]([ExtResource("7_21ysq")])
+is_spammer = true
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

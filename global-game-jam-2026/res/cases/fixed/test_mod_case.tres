@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://rgtf8jyl3j56"]
+
+[ext_resource type="Resource" uid="uid://dybuvpec5ebjt" path="res://res/chatmembers/random_members/chatmember_a.tres" id="1_ahie2"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="1_fu8so"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_nrwwt"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_rim6m"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="3_44wwn"]
+[ext_resource type="Resource" uid="uid://cbmjqcqqmovas" path="res://res/chatmembers/random_members/chatmember_b.tres" id="3_wgwm0"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_ahie2"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="6_q4lj6"]
+[ext_resource type="Resource" uid="uid://crxna8j0tdcim" path="res://res/consequences/ignore_member_penalty.tres" id="7_ahie2"]
+[ext_resource type="Resource" uid="uid://gcfuaxideycn" path="res://res/consequences/kick_consequence_banned.tres" id="9_enp5w"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consequence_atmosphere_good.tres" id="9_wgwm0"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="11_e7uxf"]
+
+[sub_resource type="Resource" id="Resource_hfeox"]
+script = ExtResource("2_rim6m")
+speaker = ExtResource("1_ahie2")
+text = "hi"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_2b5lm"]
+script = ExtResource("2_rim6m")
+speaker = ExtResource("3_wgwm0")
+text = "Don't hi me, oh my god, you're so annoying, stop being so annoying"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_ktuk7"]
+script = ExtResource("2_rim6m")
+speaker = ExtResource("1_ahie2")
+text = "I haven't even done anything yet"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_kw1bl"]
+script = ExtResource("1_fu8so")
+chat_messages = Array[ExtResource("2_rim6m")]([SubResource("Resource_hfeox"), SubResource("Resource_2b5lm"), SubResource("Resource_ktuk7")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("3_44wwn")
+case_id = "test_mod_case"
+case_display_name = "Insulted for some reason?"
+case_owner = ExtResource("1_ahie2")
+case_description = "This person has insulted me for no reason. Please do something about it."
+chatlog = SubResource("Resource_kw1bl")
+report_target = ExtResource("3_wgwm0")
+ignore_consequences = Array[ExtResource("2_nrwwt")]([ExtResource("6_q4lj6"), ExtResource("7_ahie2")])
+warning_consequences = Array[ExtResource("2_nrwwt")]([ExtResource("11_e7uxf")])
+kick_consequences = Array[ExtResource("2_nrwwt")]([ExtResource("9_wgwm0"), ExtResource("9_enp5w")])
+false_report_consequences = Array[ExtResource("2_nrwwt")]([ExtResource("6_ahie2")])
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

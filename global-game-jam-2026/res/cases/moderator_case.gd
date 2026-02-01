@@ -11,14 +11,31 @@ class_name ModeratorCase
 @export var case_owner : ChatMember
 
 ##The description of the case. For random cases, the case owner will use the default report message.
-@export var case_description: String
+@export_multiline var case_description: String
 
 ##Chatlogs attached to the case.
-@export var chatlog : Array[Chatlog]
+@export var chatlog : Chatlog
 
 ##The character being reported. For random cases, a random chat member will be generated.
 @export var report_target : ChatMember
 
+##Consequence for ignoring this. 
+@export var ignore_consequences : Array[ModConsequence]
+
+##Consequence for giving out warning.
+@export var warning_consequences: Array[ModConsequence]
+
+##Consequence for kicking.
+@export var kick_consequences: Array[ModConsequence]
+
+##Consequence for false_reporting.
+@export var false_report_consequences: Array[ModConsequence]
+
 #Booleans that exist to categorize quests.
 @export var is_false_report : bool
 @export var is_spammer : bool
+
+#A random witness will be assigned if not blank. For each unique number an array of witness will be created.
+@export var require_witness_count : int
+
+@export var require_witness_pattern : PackedInt32Array

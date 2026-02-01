@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://b85k7tq8c6dkk"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_6i6fi"]
+
+[resource]
+script = ExtResource("1_6i6fi")
+consequence_type = 2
+value = "-5"
+desc = "The server member has no idea what you're talking about, and takes offense that you think they've done something bad. Looks like this is a false report."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

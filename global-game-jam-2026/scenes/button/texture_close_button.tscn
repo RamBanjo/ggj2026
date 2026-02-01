@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1s0yrla6qat7"]
+
+[ext_resource type="Texture2D" uid="uid://c8cknq50e3n1s" path="res://sprites/bg/tab_idle.png" id="1_x1cxq"]
+[ext_resource type="Texture2D" uid="uid://cq1aoc4i47i6r" path="res://sprites/bg/tab_x_click.png" id="2_1jh0d"]
+[ext_resource type="Texture2D" uid="uid://bvum7yeir1f8h" path="res://sprites/bg/tab_x_hover.png" id="3_plrgs"]
+
+[node name="TextureButton" type="TextureButton" unique_id=1263313386]
+custom_minimum_size = Vector2(64, 64)
+size_flags_horizontal = 10
+texture_normal = ExtResource("1_x1cxq")
+texture_pressed = ExtResource("2_1jh0d")
+texture_hover = ExtResource("3_plrgs")
+ignore_texture_size = true
+stretch_mode = 0

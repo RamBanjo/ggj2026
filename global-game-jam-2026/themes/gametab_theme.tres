@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://b8dfbufqkl4ld"]
+
+[ext_resource type="Texture2D" uid="uid://d0fbb7osmbdlr" path="res://sprites/bg/upper_tab_hover.png" id="1_8rsv2"]
+[ext_resource type="Texture2D" uid="uid://00nbmiwa1qmu" path="res://sprites/bg/upper_tab_click.png" id="2_nteo1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a65vx"]
+texture = ExtResource("1_8rsv2")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mv80d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0jyq"]
+texture = ExtResource("2_nteo1")
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_a65vx")
+Button/styles/normal = SubResource("StyleBoxEmpty_mv80d")
+Button/styles/pressed = SubResource("StyleBoxTexture_y0jyq")

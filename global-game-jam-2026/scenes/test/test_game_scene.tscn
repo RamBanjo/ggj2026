@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bysonorfuy3ee" path="res://scenes/test/test_game_scene.gd" id="1_b3uwx"]
 [ext_resource type="PackedScene" uid="uid://jcymydi626aj" path="res://scenes/test/message_viewer.tscn" id="2_nqq8e"]
+[ext_resource type="PackedScene" uid="uid://dxfkhjciy0fir" path="res://scenes/button/DailyCaseButton.tscn" id="2_vt4b8"]
 
 [node name="TestGameScene" type="Node2D" unique_id=49493853]
 script = ExtResource("1_b3uwx")
+event_button_scene = ExtResource("2_vt4b8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2014500855]
 
@@ -61,33 +63,26 @@ text = "(DEBUG) End Day"
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer" unique_id=1950419355]
 offset_left = 352.0
 offset_top = 136.0
-offset_right = 536.0
+offset_right = 768.0
 offset_bottom = 624.0
+horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer" unique_id=1915492461]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1947963603]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-text = "Incident Report"
-
-[node name="Button2" type="Button" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1089901208]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-text = "Message"
-
-[node name="Button3" type="Button" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=754005]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-text = "Another Message"
 
 [node name="MessageViewer" parent="CanvasLayer" unique_id=1750174540 instance=ExtResource("2_nqq8e")]
 offset_left = 16.0
 offset_top = -308.0
 offset_right = 560.0
 offset_bottom = 300.0
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1792453355]
+offset_left = 368.0
+offset_top = 80.0
+offset_right = 544.0
+offset_bottom = 103.0
+text = "Inbox"
 
 [connection signal="pressed" from="CanvasLayer/AtmPlus" to="." method="_on_atm_plus_pressed"]
 [connection signal="pressed" from="CanvasLayer/AtmMinus" to="." method="_on_atm_minus_pressed"]

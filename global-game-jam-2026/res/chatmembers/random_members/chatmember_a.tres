@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://dybuvpec5ebjt"]
+
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_1n0cj"]
+[ext_resource type="Texture2D" uid="uid://bvvt2jcfdyo7x" path="res://sprites/pfp/eye.png" id="1_ldo8r"]
+
+[resource]
+script = ExtResource("1_1n0cj")
+internal_id = "member_a"
+display_name = "AAAAArdvark"
+profile_picture = ExtResource("1_ldo8r")
+profile_desc = "I love aardvarks, ants, antelopes, and animals that start with A <3"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

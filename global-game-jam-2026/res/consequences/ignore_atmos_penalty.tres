@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://coyi720ht4uld"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_nvsj5"]
+
+[resource]
+script = ExtResource("1_nvsj5")
+consequence_type = 2
+value = "-5"
+desc = "Moderator reports being ignored are causing members to feel uneasy. (-5 Atmosphere, -10 Members)"
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

@@ -16,8 +16,13 @@ func _ready() -> void:
 		name_label.text = member.display_name
 		picture.texture = member.profile_picture
 
-func update_member(new_mem : ChatMember, newtitle : String = "Member"):
-	title_label.text = newtitle
+func update_member(new_mem : ChatMember, newtitle : String = ""):
+	
+	title_label.hide()
+	
+	if newtitle != "":
+		title_label.show()	
+		title_label.text = newtitle
 	
 	member = new_mem 
 	update_member_name_and_display()

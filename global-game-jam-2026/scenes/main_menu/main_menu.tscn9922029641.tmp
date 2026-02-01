@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://covh4g0gauw1k"]
+
+[ext_resource type="Script" uid="uid://gyq5dk0xlr2i" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="PackedScene" uid="uid://bx52vqr6wxcan" path="res://scenes/game_menu/game_scene.tscn" id="2_0ebjn"]
+[ext_resource type="Theme" uid="uid://dm1otqu5sbfnb" path="res://themes/main_theme.tres" id="3_ob46e"]
+[ext_resource type="Texture2D" uid="uid://dcf82hsklc5yv" path="res://sprites/main menu/background.png" id="4_uqeha"]
+[ext_resource type="Texture2D" uid="uid://hsv7gdq3vxvx" path="res://sprites/main menu/Name.png" id="5_3ovsr"]
+[ext_resource type="AudioStream" uid="uid://db8rk0ul4ykgn" path="res://audio/Good.wav" id="5_wem23"]
+
+[node name="MainMenu" type="Node2D" unique_id=695015618]
+script = ExtResource("1_fsom3")
+main_game_scene = ExtResource("2_0ebjn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=843017086]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=186559421]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -448.0
+offset_top = -440.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_ob46e")
+theme_override_constants/separation = 24
+
+[node name="PlayGameButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1643271556]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play Game"
+metadata/_edit_lock_ = true
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1446333291]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Options"
+metadata/_edit_lock_ = true
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1787808045]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Credits"
+metadata/_edit_lock_ = true
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1635687496]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+metadata/_edit_lock_ = true
+
+[node name="CreditsPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1164178892 groups=["side_panel"]]
+visible = false
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1400.0
+offset_bottom = 1064.0
+theme = ExtResource("3_ob46e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CreditsPanel" unique_id=1243658625]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=961407823]
+layout_mode = 2
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=1043490004]
+layout_mode = 2
+text = "Team CatBread"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=1646503212]
+layout_mode = 2
+text = "Made for Global Game Jam 2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=34682478]
+layout_mode = 2
+text = "Programming
+RamChops Games"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=331669736]
+layout_mode = 2
+text = "Writing
+RamChops Games
+Speto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=1843395838]
+layout_mode = 2
+text = "Sound and Music
+Yimaon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=498015840]
+layout_mode = 2
+text = "Sprites and UI/UX
+p3achii
+Speto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CreditsPanel/VBoxContainer" unique_id=1195085442]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer" unique_id=757228428]
+layout_mode = 2
+text = "Check out our pages!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer" unique_id=44099914]
+layout_mode = 2
+
+[node name="ItchLink0" type="Button" parent="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=263656923]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RamChops Games
+(linktr.ee)"
+
+[node name="ItchLink1" type="Button" parent="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1219516774]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yimaon
+(YouTube)"
+
+[node name="ItchLink2" type="Button" parent="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=901681411]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "p3achii
+(bsky)"
+
+[node name="ItchLink3" type="Button" parent="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1795806695]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speto
+(YouTube)"
+
+[node name="PanelCloseButton" type="Button" parent="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer" unique_id=1562277205]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Close"
+
+[node name="OptionsPanel" type="PanelContainer" parent="CanvasLayer" unique_id=701827727 groups=["side_panel"]]
+visible = false
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1400.0
+offset_bottom = 1056.0
+theme = ExtResource("3_ob46e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPanel" unique_id=47709021]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/OptionsPanel/VBoxContainer" unique_id=1701914412]
+layout_mode = 2
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/OptionsPanel/VBoxContainer" unique_id=1949178589]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="CanvasLayer/OptionsPanel/VBoxContainer/HBoxContainer" unique_id=1384191157]
+layout_mode = 2
+text = "BGM"
+
+[node name="BGMVolBar" type="HSlider" parent="CanvasLayer/OptionsPanel/VBoxContainer/HBoxContainer" unique_id=422496229]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+
+[node name="PanelCloseButton" type="Button" parent="CanvasLayer/OptionsPanel/VBoxContainer" unique_id=1370041512]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Close"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=155727356]
+z_index = -2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("4_uqeha")
+
+[node name="GameTitle" type="TextureRect" parent="CanvasLayer" unique_id=1051854281]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_3ovsr")
+
+[node name="Good" type="AudioStreamPlayer" parent="." unique_id=1317528187]
+stream = ExtResource("5_wem23")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayGameButton" to="." method="_on_play_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer/ItchLink0" to="." method="_on_itch_link_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer/ItchLink1" to="." method="_on_itch_link_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer/ItchLink2" to="." method="_on_itch_link_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/HBoxContainer/ItchLink3" to="." method="_on_itch_link_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsPanel/VBoxContainer/VBoxContainer/PanelCloseButton" to="." method="_on_panel_close_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer/OptionsPanel/VBoxContainer/HBoxContainer/BGMVolBar" to="." method="_on_bgm_vol_bar_value_changed"]
+[connection signal="pressed" from="CanvasLayer/OptionsPanel/VBoxContainer/PanelCloseButton" to="." method="_on_panel_close_button_pressed"]

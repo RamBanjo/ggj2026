@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cf8y031cgi8s4"]
+
+[ext_resource type="Script" uid="uid://vc8eohhgrur1" path="res://scenes/test/test_game_bg.gd" id="1_cqmad"]
+[ext_resource type="Texture2D" uid="uid://cw5svhjyaxkep" path="res://sprites/bg/game_bg_1.png" id="1_d4ay1"]
+[ext_resource type="PackedScene" uid="uid://cdwkirfy12air" path="res://scenes/button/GameTab.tscn" id="2_7m882"]
+[ext_resource type="Texture2D" uid="uid://cp8yy6fmkiiu1" path="res://sprites/bg/game_bg_2.png" id="3_qhklc"]
+[ext_resource type="Texture2D" uid="uid://btw4hx1l5x7pa" path="res://sprites/bg/game_bg_3.png" id="4_u4ugo"]
+[ext_resource type="Texture2D" uid="uid://c2brh1k35xk52" path="res://sprites/bg/game_bg_4.png" id="5_jvoy1"]
+[ext_resource type="Texture2D" uid="uid://3hmfg6dt8rdn" path="res://sprites/bg/game_bg_5.png" id="6_8xgy6"]
+
+[node name="TestGameBg" type="Node2D" unique_id=2043862830 node_paths=PackedStringArray("buttonslist")]
+script = ExtResource("1_cqmad")
+buttonslist = [NodePath("CanvasLayer/HBoxContainer/TextureRect"), NodePath("CanvasLayer/HBoxContainer/TextureRect2"), NodePath("CanvasLayer/HBoxContainer/TextureRect3"), NodePath("CanvasLayer/HBoxContainer/TextureRect4")]
+bg_list = Array[Texture2D]([ExtResource("1_d4ay1"), ExtResource("3_qhklc"), ExtResource("4_u4ugo"), ExtResource("5_jvoy1"), ExtResource("6_8xgy6")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1543489952]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1208437359]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_u4ugo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1678680077]
+offset_right = 1920.0
+offset_bottom = 144.0
+
+[node name="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=207667791 instance=ExtResource("2_7m882")]
+layout_mode = 2
+size_flags_horizontal = 3
+label_text = "Read Reports"
+
+[node name="TextureRect2" parent="CanvasLayer/HBoxContainer" unique_id=964127226 instance=ExtResource("2_7m882")]
+layout_mode = 2
+size_flags_horizontal = 3
+chosen_color = 1
+label_text = "Server Rules"
+
+[node name="TextureRect3" parent="CanvasLayer/HBoxContainer" unique_id=1598835860 instance=ExtResource("2_7m882")]
+layout_mode = 2
+size_flags_horizontal = 3
+chosen_color = 2
+label_text = "Server Status"
+
+[node name="TextureRect4" parent="CanvasLayer/HBoxContainer" unique_id=189288929 instance=ExtResource("2_7m882")]
+layout_mode = 2
+size_flags_horizontal = 3
+chosen_color = 3
+label_text = "Rest"

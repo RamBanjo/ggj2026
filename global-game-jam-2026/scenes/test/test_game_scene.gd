@@ -10,12 +10,15 @@ const LABEL_BASE_TEXT = "Day {day}\nAtmosphere {cur_atm}/{max_atm}\nMember {cur_
 ##For days that don't exist on the scheduler, random cases will spawn.
 @export var fallback_days : Array[DailyEvent]
 
-func _ready() -> void:
-	MainChatroom.initialize_new_game()
-	update_label()
-	
-	load_daily_event("test_day")
+@export var event_button_scene : PackedScene
 
+@onready var today_event_button_container : VBoxContainer = $CanvasLayer/ScrollContainer/VBoxContainer
+
+@onready var message_viewer : MessageViewer = $CanvasLayer/MessageViewer
+
+func _ready() -> void:
+	update_label()
+	load_daily_event("test_day")
 
 func update_label():
 	label.text = LABEL_BASE_TEXT.format({
@@ -71,7 +74,7 @@ func _on_end_day_button_pressed() -> void:
 	end_day()
 	update_label()
 
-func load_daily_event(day_id: String) -> DailyEvent:
+func load_daily_event(day_id: String):
 	var today_events : DailyEvent
 	var path : String = "res://res/daily_event/fixed/{day_id}.tres".format({"day_id": day_id})
 	
@@ -82,4 +85,54 @@ func load_daily_event(day_id: String) -> DailyEvent:
 		print("load failed, we will get a random preset day instead")
 		today_events = fallback_days[randi() % len(fallback_days)]
 	
-	return today_events
+	for event in today_events.today_events:
+		match event.event_type:
+			ModEvent.ModEventType.SPAWN_RANDOM_CASE:
+				instantiate_button_for_case(CaseDatabase.get_random_case())
+			ModEvent.ModEventType.SPAWN_FIXED_CASE:
+				instantiate_button_for_case(CaseDatabase.fixed_cases.get(event.call_id))
+			ModEvent.ModEventType.SPAWN_FALSE_REPORT:
+				instantiate_button_for_case(CaseDatabase.get_random_false())
+			ModEvent.ModEventType.SPAWN_VALID_CASE:
+				instantiate_button_for_case(CaseDatabase.get_random_legit())
+			ModEvent.ModEventType.SPAWN_SPAMMER:
+				instantiate_button_for_case(CaseDatabase.get_random_spammer())
+			ModEvent.ModEventType.SPAMPOCALYPSE:
+				instantiate_button_for_case(CaseDatabase.get_random_spammer())
+				instantiate_button_for_case(CaseDatabase.get_random_spammer())
+				instantiate_button_for_case(CaseDatabase.get_random_spammer())
+				instantiate_button_for_case(CaseDatabase.get_random_spammer())
+				instantiate_button_for_case(CaseDatabase.get_random_spammer())
+			ModEvent.ModEventType.NON_CASE_MESSAGE:
+				instantiate_button_for_msg(FixedMessageDatabase.message_list.get(event.call_id))
+
+func _on_report_button_pressed(object, type: String, button: ModCaseButton):
+	if type == "msg":
+		message_viewer.load_message(object as ChatMessage)
+		return
+		
+	if type == "case":
+		message_viewer.load_mod_report(object as ModeratorCase)
+		return
+	
+
+func instantiate_button_for_case(newcase: ModeratorCase):
+	var newbutton : ModCaseButton = event_button_scene.instantiate()
+	newbutton.report = newcase
+	today_event_button_container.add_child(newbutton)
+	newbutton.request_show_event.connect(_on_report_button_pressed.bind())
+
+func instantiate_button_for_msg(newmessage: ChatMessage):
+	var newbutton : ModCaseButton = event_button_scene.instantiate()
+	newbutton.message = newmessage
+	today_event_button_container.add_child(newbutton)
+	newbutton.request_show_event.connect(_on_report_button_pressed.bind())
+		
+func clear_daily_buttons():
+	for button in today_event_button_container.get_children():
+		if button is ModCaseButton:
+			if button.report != null:
+				for consq : ModConsequence in button.report.ignore_consequences:
+					consq.activate_consequence()
+					
+		button.queue_free()

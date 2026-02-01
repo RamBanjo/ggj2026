@@ -2,9 +2,27 @@
 
 [ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_46gam"]
 [ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_lrh55"]
-[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="3_lrh55"]
+
+[sub_resource type="Resource" id="Resource_46gam"]
+script = ExtResource("2_lrh55")
+internal_id = "welcome"
+call_id = "welcome"
+event_type = 3
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_lrh55"]
+script = ExtResource("2_lrh55")
+call_id = "maybe_later"
+event_type = 8
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_r4o75"]
+script = ExtResource("2_lrh55")
+call_id = "test_mod_case"
+event_type = 1
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [resource]
 script = ExtResource("1_46gam")
-today_events = Array[ExtResource("2_lrh55")]([ExtResource("3_lrh55"), ExtResource("3_lrh55"), ExtResource("3_lrh55")])
+today_events = Array[ExtResource("2_lrh55")]([SubResource("Resource_46gam"), SubResource("Resource_lrh55"), SubResource("Resource_r4o75")])
 metadata/_custom_type_script = "uid://ckf8xftro8530"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://bdgqmthac3mo2"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_sbqt8"]
+
+[resource]
+script = ExtResource("1_sbqt8")
+consequence_type = 2
+value = "-5"
+desc = "The offender isn't very sorry about this and is very intent on continuing to cause trouble. (-5 Atmosphere)"
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://cegbblrun8k08"]
+
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_v30hi"]
+
+[resource]
+script = ExtResource("1_v30hi")
+internal_id = "witness"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

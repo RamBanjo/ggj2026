@@ -7,7 +7,10 @@
 script = ExtResource("1_yt1hu")
 internal_id = "welcome"
 speaker = ExtResource("2_n2w4k")
+title = "Welcome to the Mod Team!"
 text = "Congrats on being chosen to join the mod team! Your task is very simple, all you have to do is to read reports people made to the mod team and decide what to do with them.
 
-The internet is really a weird place, isn't it? Some of these things are things you'd never even think to say to other people, but when you're behind an account, people get a lot bolder..."
+The internet is really a weird place, isn't it? Some of these things are things you'd never even think to say to other people, but when you're behind an account, people get a lot bolder...
+
+(Get 80% or higher Atmosphere and 500 or more members to win!)"
 metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

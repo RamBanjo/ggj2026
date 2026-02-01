@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://bw2gync3h110y"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_uhj3e"]
+
+[resource]
+script = ExtResource("1_uhj3e")
+consequence_type = 2
+value = "-10"
+desc = "The reporter is upset that yout think they are lying. The atmosphere worsens! (-10 Atmosphere)"
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

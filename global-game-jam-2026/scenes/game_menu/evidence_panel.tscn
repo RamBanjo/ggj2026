@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://6ejftweogj25"]
+
+[ext_resource type="Theme" uid="uid://dm1otqu5sbfnb" path="res://themes/main_theme.tres" id="1_qcd7m"]
+[ext_resource type="Script" uid="uid://v6lt06iwsbjm" path="res://scenes/game_menu/evidence_panel.gd" id="2_lttdp"]
+[ext_resource type="PackedScene" uid="uid://1s0yrla6qat7" path="res://scenes/button/texture_close_button.tscn" id="3_j0s0w"]
+
+[node name="EvidencePanel" type="PanelContainer" unique_id=426644194]
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 1352.0
+offset_bottom = 1064.0
+theme = ExtResource("1_qcd7m")
+script = ExtResource("2_lttdp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1431067748]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=555587974]
+layout_mode = 2
+
+[node name="MsgName" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2053634209]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Evidence for XYZ Case"
+
+[node name="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=1263313386 instance=ExtResource("3_j0s0w")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1352909764]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=480713562]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

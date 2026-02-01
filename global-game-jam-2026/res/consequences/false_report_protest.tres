@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://jevsjw1ks5m2"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_r8ff1"]
+
+[resource]
+script = ExtResource("1_r8ff1")
+consequence_type = 1
+value = "-10"
+desc = "Members are feeling unsafe due to a moderator accusing a victim of falsifying reports. They're leaving the server!"
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

@@ -1,0 +1,361 @@
+[gd_scene format=3 uid="uid://bx52vqr6wxcan"]
+
+[ext_resource type="PackedScene" uid="uid://cf8y031cgi8s4" path="res://scenes/test/test_game_bg.tscn" id="1_817fn"]
+[ext_resource type="Script" uid="uid://pu3w3852h7k1" path="res://scenes/game_menu/game_scene.gd" id="1_ppdqi"]
+[ext_resource type="PackedScene" uid="uid://jcymydi626aj" path="res://scenes/test/message_viewer.tscn" id="2_75yho"]
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="2_ngofp"]
+[ext_resource type="PackedScene" uid="uid://dxfkhjciy0fir" path="res://scenes/button/DailyCaseButton.tscn" id="2_ougo8"]
+[ext_resource type="Texture2D" uid="uid://daymld6mrqhk4" path="res://sprites/end/GoodEnding.png" id="3_3l7g5"]
+[ext_resource type="Resource" uid="uid://hstbbyxu1ptm" path="res://res/daily_event/fallback/two_incident_days.tres" id="3_if733"]
+[ext_resource type="Theme" uid="uid://dm1otqu5sbfnb" path="res://themes/main_theme.tres" id="3_nv67f"]
+[ext_resource type="Texture2D" uid="uid://ceifofhwhivai" path="res://sprites/bg/tab_setting_idle.png" id="4_50qm4"]
+[ext_resource type="Resource" uid="uid://cdqaqp0wyec0o" path="res://res/daily_event/fallback/three_incident_days.tres" id="4_e5qyd"]
+[ext_resource type="Texture2D" uid="uid://c2wk2c2602vv2" path="res://sprites/end/NormalEnding.png" id="4_xr17b"]
+[ext_resource type="Texture2D" uid="uid://bmtvvlvsnthhp" path="res://sprites/end/BadEnding.png" id="5_lnnie"]
+[ext_resource type="Texture2D" uid="uid://dcedrjkugxxeh" path="res://sprites/bg/tab_setting_click.png" id="5_ppdqi"]
+[ext_resource type="PackedScene" uid="uid://6ejftweogj25" path="res://scenes/game_menu/evidence_panel.tscn" id="6_ei1oh"]
+[ext_resource type="Texture2D" uid="uid://bnv7rvpmdb3ug" path="res://sprites/bg/tab_setting_hover.png" id="6_ougo8"]
+[ext_resource type="PackedScene" uid="uid://1s0yrla6qat7" path="res://scenes/button/texture_close_button.tscn" id="9_tau56"]
+[ext_resource type="PackedScene" uid="uid://b5rhwodrijy1n" path="res://scenes/game_menu/notifier_panel.tscn" id="10_edfq3"]
+[ext_resource type="AudioStream" uid="uid://d1qoqt46q7qks" path="res://audio/Dark.wav" id="12_c7117"]
+[ext_resource type="AudioStream" uid="uid://db8rk0ul4ykgn" path="res://audio/Good.wav" id="13_6576e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7117"]
+
+[node name="GameScene" type="Node2D" unique_id=138664679 node_paths=PackedStringArray("canvas_order")]
+script = ExtResource("1_ppdqi")
+daily_event_scheduler = {
+1: "test_day"
+}
+fallback_days = Array[ExtResource("2_ngofp")]([ExtResource("3_if733"), ExtResource("4_e5qyd")])
+event_button_scene = ExtResource("2_ougo8")
+canvas_order = [NodePath("ReadReportsCanvas"), NodePath("ReadRulesCanvas"), NodePath("ReadStatusCanvas"), NodePath("RestCanvas")]
+good_end_bg = ExtResource("3_3l7g5")
+normal_end_bg = ExtResource("4_xr17b")
+bad_end_bg = ExtResource("5_lnnie")
+
+[node name="TestGameBg" parent="." unique_id=2043862830 instance=ExtResource("1_817fn")]
+z_as_relative = false
+metadata/_edit_lock_ = true
+
+[node name="ReadReportsCanvas" type="CanvasLayer" parent="." unique_id=365378860]
+
+[node name="MessageViewer" parent="ReadReportsCanvas" unique_id=1750174540 instance=ExtResource("2_75yho")]
+visible = false
+offset_left = -944.0
+offset_top = -380.0
+offset_right = 392.0
+offset_bottom = 524.0
+theme = ExtResource("3_nv67f")
+
+[node name="EvidencePanel" parent="ReadReportsCanvas" unique_id=426644194 instance=ExtResource("6_ei1oh")]
+visible = false
+
+[node name="Label" type="Label" parent="ReadReportsCanvas" unique_id=57170477]
+offset_left = 1384.0
+offset_top = 160.0
+offset_right = 1904.0
+offset_bottom = 205.0
+theme = ExtResource("3_nv67f")
+text = "Today's Cases"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ReadReportsCanvas" unique_id=915223560]
+offset_left = 1376.0
+offset_top = 216.0
+offset_right = 1912.0
+offset_bottom = 872.0
+theme = ExtResource("3_nv67f")
+
+[node name="PanelContainer" type="PanelContainer" parent="ReadReportsCanvas/ScrollContainer" unique_id=950178662]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="TodayEventContainer" type="VBoxContainer" parent="ReadReportsCanvas/ScrollContainer/PanelContainer" unique_id=1214954223]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="ReadRulesCanvas" type="CanvasLayer" parent="." unique_id=314634955]
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ReadRulesCanvas" unique_id=63134681]
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 1352.0
+offset_bottom = 1064.0
+theme = ExtResource("3_nv67f")
+
+[node name="PanelContainer" type="PanelContainer" parent="ReadRulesCanvas/ScrollContainer" unique_id=480529593]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ReadRulesCanvas/ScrollContainer/PanelContainer" unique_id=1059420513]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=32]Server Rules
+
+1.) Please be nice to each other!
+The world can use a lot more kindness :)	
+
+2.) Please don't post illegal content.
+Illegal content such as pirated content, scam websites, or CSAM are strictly prohibited. 
+
+3) Please be respectful of other people.
+Please remember that there is a human person behind the account you are talking to. Don't harass, threaten, or bully other people, even if you disagree with them.
+
+4.) Don't post personal information.
+This is a public server, so anything you post here may be a risk to your personal safety. Don't post personal information of other people either.
+
+5.) No NSFW.
+This is an all-ages server, so any content not appropriate for all ages are removed. This includes graphic sexual content or gore.
+[/font_size]"
+
+[node name="ReadStatusCanvas" type="CanvasLayer" parent="." unique_id=1137443004]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="ReadStatusCanvas" unique_id=195574543]
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 1352.0
+offset_bottom = 1064.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_nv67f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ReadStatusCanvas/PanelContainer" unique_id=1328176520]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReadStatusCanvas/PanelContainer/VBoxContainer" unique_id=1773817707]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 50
+
+[node name="AtmosphereLabel" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1744170249]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Atmosphere"
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1187315813]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+step = 1.0
+value = 50.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ReadStatusCanvas/PanelContainer/VBoxContainer" unique_id=746637444]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1979656965]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Member Count"
+vertical_alignment = 1
+
+[node name="MemberCount" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=650220376]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ReadStatusCanvas/PanelContainer/VBoxContainer" unique_id=1937766677]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1671411830]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Member Goal"
+vertical_alignment = 1
+
+[node name="MemberGoal" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1033010523]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestCanvas" type="CanvasLayer" parent="." unique_id=460551102]
+visible = false
+
+[node name="RestNotif" parent="RestCanvas" unique_id=1305171771 instance=ExtResource("10_edfq3")]
+anchors_preset = -1
+anchor_left = 0.492
+anchor_top = 0.51100004
+anchor_right = 0.492
+anchor_bottom = 0.51100004
+offset_left = -880.64
+offset_top = -167.88007
+offset_right = 359.36
+offset_bottom = 280.11993
+closable = false
+title = "Rest"
+body_text = "Rest for the day and regain all your action points?"
+button_text = "Good Night!"
+
+[node name="DayCounter" type="CanvasLayer" parent="." unique_id=1969140202]
+
+[node name="PanelContainer" type="PanelContainer" parent="DayCounter" unique_id=1295514145]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -545.0
+offset_top = -196.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_nv67f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DayCounter/PanelContainer" unique_id=1101442682]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DayCounter/PanelContainer/HBoxContainer" unique_id=1988654824]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_edit_lock_ = true
+
+[node name="TodayLabel" type="Label" parent="DayCounter/PanelContainer/HBoxContainer/VBoxContainer" unique_id=184612294]
+layout_mode = 2
+size_flags_vertical = 6
+text = "DAY {day}
+Actions {act}/{actmax}"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DayCounter/PanelContainer/HBoxContainer" unique_id=1394219294]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_edit_lock_ = true
+
+[node name="OptionButton" type="TextureButton" parent="DayCounter/PanelContainer/HBoxContainer/VBoxContainer2" unique_id=207275539]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_50qm4")
+texture_pressed = ExtResource("5_ppdqi")
+texture_hover = ExtResource("6_ougo8")
+metadata/_edit_lock_ = true
+
+[node name="NotificationCanvas" type="CanvasLayer" parent="." unique_id=1181190466]
+visible = false
+
+[node name="BackgroundBlocker" type="Panel" parent="NotificationCanvas" unique_id=340901955]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConsequencePanel" parent="NotificationCanvas/BackgroundBlocker" unique_id=1910956695 instance=ExtResource("10_edfq3")]
+visible = false
+layout_mode = 1
+
+[node name="GameOverPanel" parent="NotificationCanvas/BackgroundBlocker" unique_id=1840001520 instance=ExtResource("10_edfq3")]
+visible = false
+layout_mode = 1
+closable = false
+
+[node name="EndingScene" type="TextureRect" parent="NotificationCanvas/BackgroundBlocker" unique_id=1680787523]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_xr17b")
+
+[node name="OptionsCanvas" type="CanvasLayer" parent="." unique_id=2099014923]
+visible = false
+
+[node name="BackgroundBlocker" type="Panel" parent="OptionsCanvas" unique_id=1241515126]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="OptionsCanvas/BackgroundBlocker" unique_id=1936231157]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1904.0
+offset_bottom = 1064.0
+theme = ExtResource("3_nv67f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer" unique_id=1137712069]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=951286323]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=70493021]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Options"
+
+[node name="OptionCloseButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1263313386 instance=ExtResource("9_tau56")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1678769756]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer" unique_id=271772851]
+layout_mode = 2
+text = "BGM"
+
+[node name="BGMVolSlider" type="HSlider" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1852318926]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+
+[node name="ReturnToMenuButton" type="Button" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1043724486]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Quit to Main Menu
+(You will lose all progress!)"
+
+[node name="Dark" type="AudioStreamPlayer" parent="." unique_id=17311543]
+stream = ExtResource("12_c7117")
+autoplay = true
+
+[node name="Good" type="AudioStreamPlayer" parent="." unique_id=1738682589]
+stream = ExtResource("13_6576e")
+autoplay = true
+
+[node name="MCSpriteLayer" type="CanvasLayer" parent="." unique_id=423344778]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MCSpriteLayer" unique_id=1265169855]
+sprite_frames = SubResource("SpriteFrames_c7117")
+
+[connection signal="request_change_panel" from="TestGameBg" to="." method="_on_test_game_bg_request_change_panel"]
+[connection signal="event_option_chosen" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_event_option_chosen"]
+[connection signal="false_report" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_false_report"]
+[connection signal="ignore" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_ignore"]
+[connection signal="kick_offender" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_kick_offender"]
+[connection signal="request_evidence" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_request_evidence"]
+[connection signal="request_hide_me" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_request_hide_me"]
+[connection signal="warn_offender" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_warn_offender"]
+[connection signal="hide_evidence_panel" from="ReadReportsCanvas/EvidencePanel" to="." method="_on_evidence_panel_hide_evidence_panel"]
+[connection signal="trigger_close" from="RestCanvas/RestNotif" to="." method="_on_rest_notif_trigger_close"]
+[connection signal="pressed" from="DayCounter/PanelContainer/HBoxContainer/VBoxContainer2/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/ConsequencePanel" to="." method="_on_consequence_panel_trigger_close"]
+[connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/GameOverPanel" to="." method="_on_game_over_panel_trigger_close"]
+[connection signal="pressed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/OptionCloseButton" to="." method="_on_option_close_button_pressed"]
+[connection signal="value_changed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolSlider" to="." method="_on_bgm_vol_slider_value_changed"]
+[connection signal="pressed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]

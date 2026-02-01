@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://dxfkhjciy0fir"]
 
+[ext_resource type="Script" uid="uid://b1pldu5ipmoas" path="res://scenes/button/daily_case_button.gd" id="1_5161l"]
+
 [node name="DailyCaseButton" type="Button" unique_id=1597373124]
+custom_minimum_size = Vector2(0, 128)
 offset_right = 448.0
 offset_bottom = 64.0
+size_flags_horizontal = 3
 text = "Today's Case: TestCase"
+autowrap_mode = 2
+script = ExtResource("1_5161l")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

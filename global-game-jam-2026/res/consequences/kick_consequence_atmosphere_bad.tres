@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://dy5rjwd1qbmps"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_2fk43"]
+
+[resource]
+script = ExtResource("1_2fk43")
+consequence_type = 2
+value = "-10"
+desc = "A moderator has just kicked an innocent server member. The atmosphere worsens!"
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
