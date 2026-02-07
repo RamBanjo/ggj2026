@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://cw4rvle8snxf0"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_wvbhl"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_2sjub"]
+
+[resource]
+script = ExtResource("2_2sjub")
+internal_id = "member_o"
+display_name = "oofbl0xian"
+profile_picture = ExtResource("1_wvbhl")
+profile_desc = "click my profile for free bobux and fortnut cards"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

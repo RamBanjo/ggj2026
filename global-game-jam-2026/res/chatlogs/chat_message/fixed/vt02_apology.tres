@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://dfxotvuv5c6lt"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_hhcwp"]
+[ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="2_hhcwp"]
+
+[resource]
+script = ExtResource("1_hhcwp")
+internal_id = "vt02_apology"
+speaker = ExtResource("2_hhcwp")
+title = "i messed up"
+text = "ill get straight to the point. no fake crying, no ukelele. i messed up.
+
+when belle got insulted, my instincts kicked in and i just had to push back. i had to, to protect her honor. i guess my temper got ahead of me plus i was shitfaced drunk, but that's no excuse.
+
+at the very least that ph flowing guy is decent. we have a lot more in common than we thought."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

@@ -8,6 +8,6 @@ script = ExtResource("1_vpusr")
 internal_id = "head_mod"
 display_name = "MisterCatBread [MOD]"
 profile_picture = ExtResource("1_62on8")
-profile_desc = "Head moderator of the fanserver. Let me know if you need anything, man!"
+profile_desc = "Head moderator of the server. Let me know if you need anything, man!"
 default_report_msg = "I usually handle reports on my own, but... Can you take a look at this for a second?"
 metadata/_custom_type_script = "uid://ddexf3embsiw5"

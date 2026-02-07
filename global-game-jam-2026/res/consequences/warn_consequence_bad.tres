@@ -1,10 +1,18 @@
 [gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://bdgqmthac3mo2"]
 
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_142h4"]
 [ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_sbqt8"]
+
+[sub_resource type="Resource" id="Resource_tt7ns"]
+script = ExtResource("1_142h4")
+consequence_type = 2
+value = "-5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [resource]
 script = ExtResource("1_sbqt8")
-consequence_type = 2
-value = "-5"
+notif_title = "Unrelenting"
 desc = "The offender isn't very sorry about this and is very intent on continuing to cause trouble. (-5 Atmosphere)"
+consq_effects = Array[ExtResource("1_142h4")]([SubResource("Resource_tt7ns")])
+is_negative = true
 metadata/_custom_type_script = "uid://sus7no6fg7t7"

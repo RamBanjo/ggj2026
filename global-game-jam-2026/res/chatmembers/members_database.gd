@@ -19,23 +19,35 @@ static func initialize_random_members():
 			
 	print("load random members: ", len(members_list))
 
+static var seen_members_today : Array = []
+static func reset_seen_members():
+	seen_members_today = []
+	
+
 static func get_random_member(exclusion: Array = []) -> ChatMember:
+	
+	var exclusion_plus_seen_today = []
+	exclusion_plus_seen_today.append_array(seen_members_today)
+	exclusion_plus_seen_today.append_array(exclusion)
+	
 	var choose_list = members_list.filter(func(x):
-		return x not in exclusion
+		return x not in exclusion_plus_seen_today
 		)
 	
-	return choose_list[randi() % len(choose_list)] as ChatMember
+	var chosen = choose_list[randi() % len(choose_list)] as ChatMember
+	seen_members_today.append(chosen)
+	return chosen
 	
 static func get_random_unique_members(n: int, exclusion : Array[ChatMember] = []):
 	var return_list = []
 	
-	var current_exclusion : Array = []
-	current_exclusion.append_array(exclusion)
+	#var current_exclusion : Array = []
+	#current_exclusion.append_array(exclusion)
 	
 	for i in n:
-		var new_mem = get_random_member(current_exclusion)
+		var new_mem = get_random_member(exclusion)
 		return_list.append(new_mem)
-		current_exclusion.append(new_mem)
+		#current_exclusion.append(new_mem)
 		
 	return return_list
 	

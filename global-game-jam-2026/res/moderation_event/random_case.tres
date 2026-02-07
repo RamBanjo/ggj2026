@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ModEvent" format=3 uid="uid://64m1vskvbcmk"]
 
 [ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="1_t0ux6"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_w5qmj"]
 
 [resource]
 script = ExtResource("1_t0ux6")

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://8pqbuv8s5vnl"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_3uiuv"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_k0v2p"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_iedat"]
+[ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="4_7fms6"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_3numm"]
+
+[sub_resource type="Resource" id="Resource_8djpg"]
+script = ExtResource("2_k0v2p")
+consequence_type = 1
+value = "1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_3uiuv"]
+script = ExtResource("2_k0v2p")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_k0v2p"]
+script = ExtResource("2_k0v2p")
+consequence_type = 3
+value = "friend_added"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_g6jna"]
+script = ExtResource("1_3uiuv")
+notif_title = "A Small Break"
+desc = "You go out and meet your friend. It's good to step away from the screen for a while. You tell your friend about the Disarray server you're running, and she agrees to check it out when she's free. (+10 Atmosphere, +1 Member)"
+consq_effects = Array[ExtResource("2_k0v2p")]([SubResource("Resource_8djpg"), SubResource("Resource_3uiuv"), SubResource("Resource_k0v2p")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_5pmeq"]
+script = ExtResource("1_3uiuv")
+notif_title = "Refusal"
+desc = "You tell your friend you're busy, and that you'll hang out with them later."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_iedat"]
+script = ExtResource("5_3numm")
+condtype = 7
+value = "friend_added"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("3_iedat")
+internal_id = "friend_hangout"
+title = "Let's Hang Out"
+sender = ExtResource("4_7fms6")
+desc = "Hey, it's been a while since we hanged out together. How about we get something to eat? Maybe go catch a movie or go kill some time at the arcade together?"
+options = PackedStringArray("I\'ll Be There (-2)", "I\'m Too Busy")
+option_cost = Array[int]([2, 0])
+spawn_conditions = Array[ExtResource("5_3numm")]([SubResource("Resource_iedat")])
+consequences = Array[ExtResource("1_3uiuv")]([SubResource("Resource_g6jna"), SubResource("Resource_5pmeq")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

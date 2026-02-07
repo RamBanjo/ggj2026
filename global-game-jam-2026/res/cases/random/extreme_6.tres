@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://chp0skdvgntow"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_ljag5"]
+[ext_resource type="Resource" uid="uid://vrkagbh4nsiv" path="res://res/chatmembers/story_important_members/translator.tres" id="1_uk65v"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_uk65v"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_uoran"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="5_b3mhw"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="6_gam61"]
+[ext_resource type="Resource" uid="uid://jevsjw1ks5m2" path="res://res/consequences/false_report_protest.tres" id="7_ljag5"]
+[ext_resource type="Resource" uid="uid://cultp8f2v5gwr" path="res://res/consequences/ignore_extreme.tres" id="8_s2pmm"]
+[ext_resource type="Resource" uid="uid://ha3jxutkppix" path="res://res/consequences/kick_ext.tres" id="9_uxmph"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="10_6yf0f"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="11_nlg8r"]
+
+[sub_resource type="Resource" id="Resource_5meb7"]
+script = ExtResource("1_ljag5")
+speaker = ExtResource("4_uoran")
+text = "hi everyone! its been a while since i came here"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_rjbcp"]
+script = ExtResource("1_ljag5")
+speaker = ExtResource("2_uk65v")
+text = "hi every-ACK"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_ljag5"]
+script = ExtResource("1_ljag5")
+speaker = ExtResource("4_uoran")
+text = "uh sorry what"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_uk65v"]
+script = ExtResource("1_ljag5")
+speaker = ExtResource("2_uk65v")
+text = "go join the 41% you child groomer
+the world will be better off without you
+ywnbaw"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_n751q"]
+script = ExtResource("1_ljag5")
+speaker = ExtResource("1_uk65v")
+text = "oh, you are a confused baby! you saw the \"trans\" in my profile and thought i was trans. maybe you'll gain some reading comprehension in the future. keep trying!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_uoran"]
+script = ExtResource("1_ljag5")
+speaker = ExtResource("2_uk65v")
+text = "[SLUR REDACTED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_30gsw"]
+script = ExtResource("5_b3mhw")
+chat_messages = Array[ExtResource("1_ljag5")]([SubResource("Resource_5meb7"), SubResource("Resource_rjbcp"), SubResource("Resource_ljag5"), SubResource("Resource_uk65v"), SubResource("Resource_n751q"), SubResource("Resource_uoran")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("10_6yf0f")
+case_id = "ext_6"
+case_display_name = "extreme transphobia"
+case_owner = ExtResource("1_uk65v")
+case_description = "This kind of behavior is not okay. Please do something. I'm not even trans bit this feels wrong."
+chatlog = SubResource("Resource_30gsw")
+ignore_consequences = ExtResource("8_s2pmm")
+warning_consequences = ExtResource("11_nlg8r")
+kick_consequences = ExtResource("9_uxmph")
+false_report_consequences = ExtResource("7_ljag5")
+is_extreme = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

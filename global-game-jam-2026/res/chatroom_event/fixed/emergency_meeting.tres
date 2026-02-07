@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://dk37k2mvrvj3"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_n7s2i"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_tumf4"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_u1eo4"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_eex7w"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="3_tumf4"]
+[ext_resource type="Resource" uid="uid://c8frgc2fm7klb" path="res://res/consequences/consq_eff/trigger_kick_evil_flag.tres" id="3_u1eo4"]
+
+[sub_resource type="Resource" id="Resource_u1eo4"]
+script = ExtResource("2_u1eo4")
+consequence_type = 1
+value = "-150"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_frfwd"]
+script = ExtResource("2_u1eo4")
+consequence_type = 2
+value = "20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_07s3k"]
+script = ExtResource("2_u1eo4")
+consequence_type = 5
+value = "-10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_eex7w"]
+script = ExtResource("1_n7s2i")
+notif_title = "Clean the Slate"
+desc = "You went through the members list with the head mod and that alone got you to remove several accounts saying hateful things and putting hateful messages in their profile. The nightmare should now be over. (-150 Members, -10 Member Income, +20 Atmosphere)"
+consq_effects = Array[ExtResource("2_u1eo4")]([SubResource("Resource_u1eo4"), SubResource("Resource_frfwd"), SubResource("Resource_07s3k"), ExtResource("3_u1eo4")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_7qjui"]
+script = ExtResource("1_n7s2i")
+notif_title = "Malignant Growth"
+desc = "For whatever reason, you chose to keep those members around even after they've caused you lots of trouble. I hope you know what you are doing."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_tumf4"]
+script = ExtResource("3_eex7w")
+condtype = 6
+value = "rei_cyst"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("2_tumf4")
+internal_id = "emergency_meeting"
+title = "Emergency Meeting"
+sender = ExtResource("3_tumf4")
+desc = "I don't know where all of these...nasties came from, but they've been causing a lot of mod issues lately. You don't happen to know where they came from, do you?
+
+Anyways, I think dire times call for dire measures. These trolls have to go. We'll have to kick a lot of people, but at least we'll have a clean house again."
+options = PackedStringArray("Ban Them All (-3)", "Refuse")
+option_cost = Array[int]([3, 0])
+spawn_conditions = Array[ExtResource("3_eex7w")]([SubResource("Resource_tumf4")])
+consequences = Array[ExtResource("1_n7s2i")]([SubResource("Resource_eex7w"), SubResource("Resource_7qjui")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

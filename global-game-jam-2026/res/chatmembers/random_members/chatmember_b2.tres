@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://c3rw8hjp2faeg"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_03cqh"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_7qtw1"]
+
+[resource]
+script = ExtResource("2_7qtw1")
+internal_id = "member_b2"
+display_name = "BIG_IRON"
+profile_picture = ExtResource("1_03cqh")
+profile_desc = "have you seen a man called texas red if you have please let me know"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

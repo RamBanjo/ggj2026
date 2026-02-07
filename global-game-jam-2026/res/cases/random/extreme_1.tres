@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://8f04h1foor0e"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_plpeo"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_vwokw"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="2_fkfaf"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_gjmw1"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="3_dl8v6"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_gjmw1"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_dl8v6"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="7_loie3"]
+[ext_resource type="Resource" uid="uid://cultp8f2v5gwr" path="res://res/consequences/ignore_extreme.tres" id="8_is52v"]
+[ext_resource type="Resource" uid="uid://ha3jxutkppix" path="res://res/consequences/kick_ext.tres" id="9_6xjq8"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="11_gmvxy"]
+
+[sub_resource type="Resource" id="Resource_5meb7"]
+script = ExtResource("1_vwokw")
+speaker = ExtResource("2_gjmw1")
+text = "look man, you can't let them control the narrative, they aren't the oppressed one, we are"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_dl8v6"]
+script = ExtResource("1_vwokw")
+speaker = ExtResource("3_gjmw1")
+text = "who's the \"they\" and who's the \"we\""
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_gjmw1"]
+script = ExtResource("1_vwokw")
+speaker = ExtResource("2_gjmw1")
+text = "those [SLUR REDACTED]s are running this country to the ground, they're going to replace us, the west has fallen"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_4r245"]
+script = ExtResource("1_vwokw")
+speaker = ExtResource("4_dl8v6")
+text = "wow! what a piece of shit"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_loie3"]
+script = ExtResource("1_vwokw")
+speaker = ExtResource("2_gjmw1")
+text = "yeah, you get it now, right?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_is52v"]
+script = ExtResource("1_vwokw")
+speaker = ExtResource("4_dl8v6")
+text = "i'm talking about you, asshole"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_30gsw"]
+script = ExtResource("3_dl8v6")
+chat_messages = Array[ExtResource("1_vwokw")]([SubResource("Resource_5meb7"), SubResource("Resource_dl8v6"), SubResource("Resource_gjmw1"), SubResource("Resource_4r245"), SubResource("Resource_loie3"), SubResource("Resource_is52v")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("2_fkfaf")
+case_id = "ext_1"
+case_display_name = "Blatant Racism"
+case_description = "Someone's out here doing a racism... This server used to be so wholesome. What happened?"
+chatlog = SubResource("Resource_30gsw")
+ignore_consequences = ExtResource("8_is52v")
+warning_consequences = ExtResource("11_gmvxy")
+kick_consequences = ExtResource("9_6xjq8")
+false_report_consequences = ExtResource("7_loie3")
+is_extreme = true
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

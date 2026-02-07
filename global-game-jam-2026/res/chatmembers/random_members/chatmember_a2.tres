@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://wxdwt2kegpw8"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_nm0km"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_bxtlw"]
+
+[resource]
+script = ExtResource("2_bxtlw")
+internal_id = "member_a2"
+display_name = "a0ife"
+profile_picture = ExtResource("1_nm0km")
+profile_desc = "reading is for nerds, and i am a nerd, apparently"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

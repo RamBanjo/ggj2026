@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://dybuvpec5ebjt"]
 
 [ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_1n0cj"]
-[ext_resource type="Texture2D" uid="uid://bvvt2jcfdyo7x" path="res://sprites/pfp/eye.png" id="1_ldo8r"]
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_ldo8r"]
 
 [resource]
 script = ExtResource("1_1n0cj")

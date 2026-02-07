@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://y0ysujar6d4j"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_7waq0"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_1jl2m"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_hk46m"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_c7lny"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_rnh3l"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_hk46m"]
+[ext_resource type="Resource" uid="uid://cultp8f2v5gwr" path="res://res/consequences/ignore_extreme.tres" id="8_4oewy"]
+[ext_resource type="Resource" uid="uid://ha3jxutkppix" path="res://res/consequences/kick_ext.tres" id="9_uwiy1"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="10_qbx21"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="11_6jq0p"]
+
+[sub_resource type="Resource" id="Resource_5meb7"]
+script = ExtResource("2_7waq0")
+speaker = ExtResource("3_1jl2m")
+text = "why the hell do they want more civil rights. they don't have to be slaves anymore, what more do they want???"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_2xun8"]
+script = ExtResource("2_7waq0")
+speaker = ExtResource("3_hk46m")
+text = "not this shit again..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_hk46m"]
+script = ExtResource("2_7waq0")
+speaker = ExtResource("3_1jl2m")
+text = "and look where those damn protests got us. that's how we get dei. i'm sure as hell not getting on the plane if the pilot is black."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_7waq0"]
+script = ExtResource("2_7waq0")
+speaker = ExtResource("3_1jl2m")
+text = "dei hiring needs to stop."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_1jl2m"]
+script = ExtResource("2_7waq0")
+speaker = ExtResource("3_hk46m")
+text = "why the hell do you think an airline would hire a pilot who don't know jack shit about flying, no matter your skin color you have to pass certain tests to be a pilot in the first place"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_c7lny"]
+script = ExtResource("2_7waq0")
+speaker = ExtResource("3_1jl2m")
+text = "because the shadow government wants to shove dei and woke into everything that's why, wake up you sheeple"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_30gsw"]
+script = ExtResource("4_c7lny")
+chat_messages = Array[ExtResource("2_7waq0")]([SubResource("Resource_5meb7"), SubResource("Resource_2xun8"), SubResource("Resource_hk46m"), SubResource("Resource_7waq0"), SubResource("Resource_1jl2m"), SubResource("Resource_c7lny")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("10_qbx21")
+case_id = "ext_7"
+case_display_name = "how did we get so racist"
+case_description = "I thought this was a chill server? Who let these racists in?"
+chatlog = SubResource("Resource_30gsw")
+ignore_consequences = ExtResource("8_4oewy")
+warning_consequences = ExtResource("11_6jq0p")
+kick_consequences = ExtResource("9_uwiy1")
+false_report_consequences = ExtResource("6_hk46m")
+is_extreme = true
+require_witness_count = 1
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

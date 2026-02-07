@@ -108,11 +108,11 @@ func load_daily_event(day_id: String):
 
 func _on_report_button_pressed(object, type: String, button: ModCaseButton):
 	if type == "msg":
-		message_viewer.load_message(object as ChatMessage)
+		message_viewer.load_message(object as ChatMessage, button.assigned_msg_owner)
 		return
 		
 	if type == "case":
-		message_viewer.load_mod_report(object as ModeratorCase)
+		message_viewer.load_mod_report(object as ModeratorCase, button.assigned_msg_owner, button.assigned_report_target)
 		return
 	
 

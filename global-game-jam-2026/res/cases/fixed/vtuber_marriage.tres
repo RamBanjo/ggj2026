@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://dhycjq0cwojcs"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_4if3j"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="1_adsho"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="2_adsho"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_y25ax"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="3_1mdnf"]
+[ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="3_i5jcl"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="4_kvs7r"]
+[ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="7_wlu0b"]
+[ext_resource type="Resource" uid="uid://s60l5pgp4inh" path="res://res/conditionals/vtfan02_not_kicked.tres" id="8_marmd"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="8_tsksw"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="9_marmd"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="10_ywbwi"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="12_o4816"]
+
+[sub_resource type="Resource" id="Resource_i5jcl"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("1_adsho")
+text = "can't believe bella bellcurve is graduating then getting married. she's been in this game for a while after all, so it's bound to happen."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_y25ax"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("1_adsho")
+text = "honestly glad for her. hope she has a happy life"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_m3fsq"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("3_i5jcl")
+text = "...this is how i find out, i see..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpdbi"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("4_kvs7r")
+text = "YOU! IM GOING TO KILL YOU
+YOURE JUST RUBBING IT IN OUR FACES"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_g1nes"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("4_kvs7r")
+text = "I HOPE YOUR OSHI DOESNT EVEN GET TO GRADUATE
+I HOPE NANAIRO TERMINATES HER ASS"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_wlu0b"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("1_adsho")
+text = "...im sorry if it came out that way, but i have no intention to mock any of you at all. im just relaying the news. i understand if this is a hard time for you right now, but it doesn't mean you can take it out on other people."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tsksw"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("4_kvs7r")
+text = "GET OFF YOUR HIGH HORSE AND DEBATE ME"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_marmd"]
+script = ExtResource("2_y25ax")
+speaker = ExtResource("1_adsho")
+text = "no, i don't think i will."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_kvs7r"]
+script = ExtResource("3_1mdnf")
+chat_messages = Array[ExtResource("2_y25ax")]([SubResource("Resource_i5jcl"), SubResource("Resource_y25ax"), SubResource("Resource_m3fsq"), SubResource("Resource_qpdbi"), SubResource("Resource_g1nes"), SubResource("Resource_wlu0b"), SubResource("Resource_tsksw"), SubResource("Resource_marmd")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("2_adsho")
+case_id = "vtuber_marriage"
+case_display_name = "irony"
+case_owner = ExtResource("1_adsho")
+case_description = "it's a bit ironic isn't it, the one jokingly threaten to kill another person the other day is now reporting someone else for threatening to kill them."
+chatlog = SubResource("Resource_kvs7r")
+ignore_consequences = ExtResource("9_marmd")
+warning_consequences = ExtResource("12_o4816")
+kick_consequences = ExtResource("10_ywbwi")
+false_report_consequences = ExtResource("8_tsksw")
+conditionals = Array[ExtResource("1_4if3j")]([ExtResource("7_wlu0b"), ExtResource("8_marmd")])
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

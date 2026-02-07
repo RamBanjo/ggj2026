@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConsequenceEffect" format=3 uid="uid://xob4l0dhfv2q"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_e5eve"]
+
+[resource]
+script = ExtResource("1_e5eve")
+consequence_type = 3
+value = "spicy_kick"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"

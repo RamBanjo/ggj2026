@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://da8kjokvvxa7i"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_ucr53"]
+[ext_resource type="Resource" uid="uid://upac5sw8k5ak" path="res://res/consequences/consq_eff/friend_out.tres" id="2_2fnk6"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="3_olbhw"]
+
+[sub_resource type="Resource" id="Resource_1enwd"]
+script = ExtResource("1_ucr53")
+consequence_type = 2
+value = "-10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_xkyoa"]
+script = ExtResource("1_ucr53")
+consequence_type = 1
+value = "-20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_i3rs6"]
+script = ExtResource("1_ucr53")
+consequence_type = 5
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("3_olbhw")
+notif_title = "Trust Fall"
+desc = "The chatlog is right there, yet you would rather trust a stranger over your friend. She's understandably upset, and thus, she leaves the server. (-10 Atmosphere, -20 Members, -1 Member Income)"
+consq_effects = Array[ExtResource("1_ucr53")]([SubResource("Resource_1enwd"), SubResource("Resource_xkyoa"), ExtResource("2_2fnk6"), SubResource("Resource_i3rs6")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://x7t7oh28v61d"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_typnt"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_vvmyn"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="4_rxb0x"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="5_fdive"]
+[ext_resource type="Resource" uid="uid://jevsjw1ks5m2" path="res://res/consequences/false_report_protest.tres" id="5_rxb0x"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="7_al3fe"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="8_8snux"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="8_pf20d"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_4mv3n"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_typnt")
+speaker = ExtResource("2_vvmyn")
+text = "GO TO HELL WHERE YOU BELONG 
+GONE GONE YOU VILE CREATURE
+KYS KYS KYS KYS
+"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_8snux"]
+script = ExtResource("1_typnt")
+speaker = ExtResource("2_vvmyn")
+text = "DO THE WORLD A FAVOR AND END YOUR PATHETIC LIFE YOU WORTHLESS PARASITE"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("5_fdive")
+chat_messages = Array[ExtResource("1_typnt")]([SubResource("Resource_73pw0"), SubResource("Resource_8snux")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_4mv3n")
+case_id = "death_threats"
+case_display_name = "Death Threats in DMs"
+case_description = "Hi
+I'd like to report
+This"
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_al3fe")
+warning_consequences = ExtResource("8_8snux")
+kick_consequences = ExtResource("8_pf20d")
+false_report_consequences = ExtResource("5_rxb0x")
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

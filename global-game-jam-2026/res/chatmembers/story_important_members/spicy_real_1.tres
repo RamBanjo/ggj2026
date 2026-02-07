@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://eyalxy2t2j5y"]
+
+[ext_resource type="Texture2D" uid="uid://c6ov8elaskm11" path="res://sprites/pfp/cloud.png" id="1_2q8wq"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_7i18b"]
+
+[resource]
+script = ExtResource("2_7i18b")
+internal_id = "real_spicy_1"
+display_name = "padkrapao_muukrob"
+profile_picture = ExtResource("1_2q8wq")
+profile_desc = "Permanent resident of FLAVORTOWN (Thailand Branch).
+If it's not spicy I'm not eating.
+
+(just got my keyboard fixed!)"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

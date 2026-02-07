@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://4p5kjrcsn1gm"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_hsvo4"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_uouwd"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="2_3md60"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_8csqb"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_n47dh"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_8csqb"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_a3egj"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="7_a3egj"]
+[ext_resource type="Resource" uid="uid://m87kvvqe45vu" path="res://res/consequences/false_report_technical.tres" id="7_smt52"]
+[ext_resource type="Resource" uid="uid://cs1d8blvnjww7" path="res://res/consequences/kick_consq_awkward.tres" id="8_distk"]
+[ext_resource type="Resource" uid="uid://6pwont0jr313" path="res://res/consequences/warn_consequence_good.tres" id="9_distk"]
+
+[sub_resource type="Resource" id="Resource_distk"]
+script = ExtResource("1_uouwd")
+speaker = ExtResource("2_8csqb")
+text = "did you hear about that streamer being banned from wicht? wholeheartedly think he deserves it"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_smt52"]
+script = ExtResource("1_uouwd")
+speaker = ExtResource("3_n47dh")
+text = "oh for real? what happened?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_uouwd"]
+script = ExtResource("1_uouwd")
+speaker = ExtResource("2_8csqb")
+text = "apparently he started a harassment campaign against a vtuber."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_8csqb"]
+script = ExtResource("1_uouwd")
+speaker = ExtResource("3_n47dh")
+text = "thats wild"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_n47dh"]
+script = ExtResource("1_uouwd")
+speaker = ExtResource("2_8csqb")
+text = "the meltdown on twerper is even more wild, you can see him blaming everyone but himself"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_a3egj"]
+script = ExtResource("1_uouwd")
+speaker = ExtResource("4_8csqb")
+text = "uh i don't think this is the right place for this chat?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_owavo"]
+script = ExtResource("1_uouwd")
+speaker = ExtResource("2_8csqb")
+text = "then click away so you don't have to read it"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_stl51"]
+script = ExtResource("4_a3egj")
+chat_messages = Array[ExtResource("1_uouwd")]([SubResource("Resource_distk"), SubResource("Resource_smt52"), SubResource("Resource_uouwd"), SubResource("Resource_8csqb"), SubResource("Resource_n47dh"), SubResource("Resource_a3egj"), SubResource("Resource_owavo")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("2_3md60")
+case_id = "outside_drama"
+case_display_name = "Outside Drama"
+case_description = "This person is bringing outside drama into our server... I don't think that's right."
+chatlog = SubResource("Resource_stl51")
+ignore_consequences = ExtResource("7_a3egj")
+warning_consequences = ExtResource("9_distk")
+kick_consequences = ExtResource("8_distk")
+false_report_consequences = ExtResource("7_smt52")
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0, 0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

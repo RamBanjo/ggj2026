@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://dudfnkaf70r4r"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_f3ay2"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_gqimx"]
+
+[resource]
+script = ExtResource("2_gqimx")
+internal_id = "member_r2"
+display_name = "ReallyAngryMan"
+profile_picture = ExtResource("1_f3ay2")
+profile_desc = "JURY NULLIFICATION! Now I don't have to serve Jury Duty ever again"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

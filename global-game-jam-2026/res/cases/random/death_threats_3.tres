@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://cgjl48n4flp7"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_cp10g"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="2_tdm8u"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_vgw7q"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="3_tdm8u"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="4_tiwjr"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="5_fb8hj"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="6_ttihy"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="8_ncy2l"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="8_tdm8u"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="9_8l2ka"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="9_tiwjr"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_cp10g")
+speaker = ExtResource("2_tdm8u")
+text = "ggs, that was fun"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_nq4hx"]
+script = ExtResource("1_cp10g")
+speaker = ExtResource("2_vgw7q")
+text = "YOU CHEATED! You cheated not only the game, but yourself. How else would you win?!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_vgw7q"]
+script = ExtResource("1_cp10g")
+speaker = ExtResource("2_tdm8u")
+text = "mad because bad, git gud"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tdm8u"]
+script = ExtResource("1_cp10g")
+speaker = ExtResource("2_vgw7q")
+text = "I AM GOING TO KILL YOUR ENTIRE FAMILY, YOU FUCKING HACKER"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tiwjr"]
+script = ExtResource("1_cp10g")
+speaker = ExtResource("2_tdm8u")
+text = "leave them out of this, asshole"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("3_tdm8u")
+chat_messages = Array[ExtResource("1_cp10g")]([SubResource("Resource_73pw0"), SubResource("Resource_nq4hx"), SubResource("Resource_vgw7q"), SubResource("Resource_tdm8u"), SubResource("Resource_tiwjr")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_fsd8s"]
+script = ExtResource("8_tdm8u")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_0xc8g"]
+script = ExtResource("8_tdm8u")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_fb8hj"]
+script = ExtResource("9_tiwjr")
+notif_title = "Before It Gets Worse"
+desc = "This member has caused enough problems to be kicked from the server, and everyone agrees! The atmosphere improves.
+
+You also warn the reporter about the unsportsmanlike behavior as well. They accept it with grace. ( +10 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("8_tdm8u")]([SubResource("Resource_fsd8s"), SubResource("Resource_0xc8g")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("8_ncy2l")
+case_id = "death_threats_3"
+case_display_name = "Accused of Cheating"
+case_description = "I don't even use cheats, this guy is just tilted that he lost. He didn't have to threaten to kill my entire family over that, though."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("6_ttihy")
+warning_consequences = ExtResource("9_8l2ka")
+kick_consequences = SubResource("Resource_fb8hj")
+false_report_consequences = ExtResource("5_fb8hj")
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

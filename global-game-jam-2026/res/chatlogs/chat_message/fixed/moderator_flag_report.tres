@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://bet203x1gxslu"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_a14do"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="2_qfgts"]
+
+[resource]
+script = ExtResource("1_a14do")
+internal_id = "moderator_flag"
+speaker = ExtResource("2_qfgts")
+title = "PROTIP: Flagging Reports"
+text = "In case you don't already know, let me tell you about flagging reports.
+
+Flagging reports calls the reporter into question. If you're sure that you need to address the person making in some way, from clearing their misunderstandings to punishing them for making a false report, Flag Report is the way to address it.
+
+If you flag the report of an actual, legitimate case, though, the reporter will be upset that you doubt they're speaking the truth. The worse the accusation is, the harsher the penalty will be."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

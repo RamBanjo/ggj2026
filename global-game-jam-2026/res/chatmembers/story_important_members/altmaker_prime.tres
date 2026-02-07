@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://dk55touchunoj"]
+
+[ext_resource type="Texture2D" uid="uid://cn3y03uovrm56" path="res://sprites/pfp/pig0.png" id="1_0pmhn"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_dub81"]
+
+[resource]
+script = ExtResource("1_dub81")
+internal_id = "altmaker_0"
+display_name = "dothogger"
+profile_picture = ExtResource("1_0pmhn")
+profile_desc = "hot dog expert here. whatever you're doing, you're eating your hotdog wrong."
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

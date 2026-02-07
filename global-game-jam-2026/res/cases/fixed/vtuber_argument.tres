@@ -1,0 +1,124 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://70no80hbr0wp"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_okhmm"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_p04x7"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="2_pqst7"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="2_r6grj"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="2_swged"]
+[ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="3_r6grj"]
+[ext_resource type="Resource" uid="uid://dnr0vkjrxayev" path="res://res/consequences/false_report_misunderstanding.tres" id="6_7fodo"]
+[ext_resource type="Resource" uid="uid://canl5igybc628" path="res://res/consequences/ignore_light_penalty.tres" id="7_dtccq"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="8_dtccq"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="9_3nwc5"]
+[ext_resource type="Resource" uid="uid://6pwont0jr313" path="res://res/consequences/warn_consequence_good.tres" id="10_34sr1"]
+
+[sub_resource type="Resource" id="Resource_mokr2"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("3_r6grj")
+text = "a bella fanart i commissioned just came in. look at her. she's perfect. an angel.
+[IMAGE REDACTED. The image shows a picture of the VTuber Bella Bellcurve, with glasses on.]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_gxll7"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("2_r6grj")
+text = "those glasses on bella is nothing more than a debuff. she looks much cuter with her glasses off"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_4lka2"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("3_r6grj")
+text = "them's fighting words. bella is always cute, glasses or not"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_b3nod"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("3_r6grj")
+text = "and you're the one to talk. you're simping for a french woman"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_7fodo"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("2_r6grj")
+text = "what does anna being french having to do with any of this??? i'll kill you"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_dtccq"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("3_r6grj")
+text = "colonialism"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_3nwc5"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("2_r6grj")
+text = "oh, is that what we're doing now? isn't your precious \"miss bella\" a brit? you know? the empire which the sun never sets?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_34sr1"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("3_r6grj")
+text = "how about we agree to not tie the crimes committed by our oshi's homeland in the past to the vtuber who just so happens to be born there in the present"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_en6eu"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("2_r6grj")
+text = "deal"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_nqmfj"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("2_r6grj")
+text = "your questionable taste for vtubers aside, you seem like a decent person. maybe we can be friends"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_bnqvm"]
+script = ExtResource("1_okhmm")
+speaker = ExtResource("3_r6grj")
+text = "having a fellow vtuber fan to talk to would be nice, even if you have trash taste"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_r6grj"]
+script = ExtResource("2_swged")
+chat_messages = Array[ExtResource("1_okhmm")]([SubResource("Resource_mokr2"), SubResource("Resource_gxll7"), SubResource("Resource_4lka2"), SubResource("Resource_b3nod"), SubResource("Resource_7fodo"), SubResource("Resource_dtccq"), SubResource("Resource_3nwc5"), SubResource("Resource_34sr1"), SubResource("Resource_en6eu"), SubResource("Resource_nqmfj"), SubResource("Resource_bnqvm")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_sscyt"]
+script = ExtResource("8_dtccq")
+consequence_type = 1
+value = "-20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bfadc"]
+script = ExtResource("8_dtccq")
+consequence_type = 2
+value = "-10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_7gvj5"]
+script = ExtResource("8_dtccq")
+consequence_type = 3
+value = "vtfan01_kick"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_husgd"]
+script = ExtResource("9_3nwc5")
+notif_title = "Why?!"
+desc = "The argument already calmed down and they've already made up, yet you decide to kick the member. Understandably, people are upset about your ruling. (-10 Atmosphere, -20 Member)"
+consq_effects = Array[ExtResource("8_dtccq")]([SubResource("Resource_sscyt"), SubResource("Resource_bfadc"), SubResource("Resource_7gvj5")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_pqst7")
+case_id = "vtuber_argument"
+case_display_name = "This is why the Fandom Sucks"
+case_description = "Look man, I got nothing against VTubers, but the fans can get a bit heated. Please do something before they kill each other IRL."
+chatlog = SubResource("Resource_r6grj")
+report_target = ExtResource("2_r6grj")
+ignore_consequences = ExtResource("7_dtccq")
+warning_consequences = ExtResource("10_34sr1")
+kick_consequences = SubResource("Resource_husgd")
+false_report_consequences = ExtResource("6_7fodo")
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

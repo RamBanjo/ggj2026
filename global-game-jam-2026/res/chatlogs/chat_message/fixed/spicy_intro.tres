@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://buhfc23ej0euj"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_h5p4j"]
+[ext_resource type="Resource" uid="uid://cbxmj5yj100uv" path="res://res/chatmembers/story_important_members/spicy_real_intro.tres" id="2_mpslx"]
+
+[resource]
+script = ExtResource("1_h5p4j")
+internal_id = "spicy_intro"
+speaker = ExtResource("2_mpslx")
+title = "Hello!"
+text = "I'm so sorry about the movie thing yesterday. I hope I didn't upset too many people..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

@@ -6,23 +6,33 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rjgu6"]
 texture = ExtResource("1_rjgu6")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(0, 285, 1920, 556)
 modulate_color = Color(1, 1, 1, 0.5411765)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gw6x"]
 texture = ExtResource("1_rjgu6")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 modulate_color = Color(1, 0.24000001, 0.24000001, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydht1"]
 texture = ExtResource("2_vu6l5")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(0, 285, 1920, 556)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vu6l5"]
 texture = ExtResource("1_rjgu6")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(0, 285, 1920, 556)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g21io"]
 texture = ExtResource("3_ydht1")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(0, 285, 1920, 556)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxwtt"]

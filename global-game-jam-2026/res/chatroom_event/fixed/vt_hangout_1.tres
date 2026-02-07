@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://b0yetl13lf7pa"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_n8oke"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="2_qtv3o"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="3_mvnc1"]
+[ext_resource type="Script" uid="uid://bhsexpqo18x0r" path="res://res/consequences/conditional_consequence/conditional_consequence.gd" id="4_5ejgf"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="5_kx4ta"]
+[ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="6_euvid"]
+[ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="7_0b3op"]
+[ext_resource type="Resource" uid="uid://s60l5pgp4inh" path="res://res/conditionals/vtfan02_not_kicked.tres" id="8_1on1q"]
+
+[sub_resource type="Resource" id="Resource_keig7"]
+script = ExtResource("2_qtv3o")
+condtype = 6
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_4k7fo"]
+script = ExtResource("3_mvnc1")
+consequence_type = 3
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_dpvvg"]
+script = ExtResource("3_mvnc1")
+consequence_type = 3
+value = "vtuber_bond_2"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_4ti5c"]
+script = ExtResource("4_5ejgf")
+conditional_list = Array[ExtResource("2_qtv3o")]([SubResource("Resource_keig7")])
+fail_title = "Bonding Over Mahjong"
+fail_desc = "(TSUMO~)
+
+You have no idea how to play mahjong and just discarded randomly. You feel like you've grown closer to them, though!"
+fail_positive = true
+consequence_if_fail = Array[ExtResource("3_mvnc1")]([SubResource("Resource_4k7fo")])
+notif_title = "Bonding Further Over Mahjong"
+desc = "(TSUMO~)
+
+You have no idea how to play mahjong and just discarded randomly.  You feel like you've become very close to each other, though!"
+consq_effects = Array[ExtResource("3_mvnc1")]([SubResource("Resource_dpvvg")])
+is_positive = true
+metadata/_custom_type_script = "uid://bhsexpqo18x0r"
+
+[resource]
+script = ExtResource("5_kx4ta")
+internal_id = "vt_hangout_1"
+title = "need 4th player"
+sender = ExtResource("6_euvid")
+desc = "hey, you're here just in time. that anna arbalest nerd (pH_fl0wing) is about to start a mahjong table and we're missing one person. you want in?"
+options = PackedStringArray("Play Mahjong (-1)", "Sorry, Too Busy")
+option_cost = Array[int]([1, 0])
+spawn_conditions = Array[ExtResource("2_qtv3o")]([ExtResource("7_0b3op"), ExtResource("8_1on1q")])
+consequences = Array[ExtResource("1_n8oke")]([SubResource("Resource_4ti5c")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

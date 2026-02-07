@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://chw6hcrnutupx"]
+
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="1_gph8j"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_jdo4s"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_c3ub1"]
+[ext_resource type="Resource" uid="uid://ci0utm0236ii5" path="res://res/chatmembers/story_important_members/system_ms.tres" id="3_jdo4s"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="4_3qrao"]
+[ext_resource type="Resource" uid="uid://cbxmj5yj100uv" path="res://res/chatmembers/story_important_members/spicy_real_intro.tres" id="5_gph8j"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="7_a1vpy"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="8_olpuy"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="9_ovq7h"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="10_vfc5v"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="11_pi3f8"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="12_06qv1"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="13_gpeje"]
+[ext_resource type="Resource" uid="uid://cyvxvfnk5iu4m" path="res://res/chatmembers/story_important_members/altmaker_1.tres" id="13_jdo4s"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="14_227fj"]
+
+[sub_resource type="Resource" id="Resource_a1vpy"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("3_jdo4s")
+text = "not_dothogger has joined the server."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_j0xnf"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("4_3qrao")
+text = "hi guys"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_25udl"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("3_c3ub1")
+text = "that profile picture..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_gph8j"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("3_c3ub1")
+text = "are you that guy who got banned over hot dogs"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_jdo4s"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("4_3qrao")
+text = "what no! i have no idea who you're talking about"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_c3ub1"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("5_gph8j")
+text = "I mean, you use the same profile picture, and your name is kinda like theirs..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_3qrao"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("4_3qrao")
+text = "you've got it all wrong
+dothogger is my cousin
+i'm not_dothogger"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_h8t34"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("4_3qrao")
+text = "you have to be an imbedcile to think otherwise"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_r0k5k"]
+script = ExtResource("2_jdo4s")
+speaker = ExtResource("4_3qrao")
+text = "*imbecile"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tubrj"]
+script = ExtResource("7_a1vpy")
+chat_messages = Array[ExtResource("2_jdo4s")]([SubResource("Resource_a1vpy"), SubResource("Resource_j0xnf"), SubResource("Resource_25udl"), SubResource("Resource_gph8j"), SubResource("Resource_jdo4s"), SubResource("Resource_c3ub1"), SubResource("Resource_3qrao"), SubResource("Resource_h8t34"), SubResource("Resource_r0k5k")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_sowxl"]
+script = ExtResource("11_pi3f8")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_yeojj"]
+script = ExtResource("11_pi3f8")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_6qdj5"]
+script = ExtResource("11_pi3f8")
+consequence_type = 3
+value = "hotdog_ban_once"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_vswxt"]
+script = ExtResource("11_pi3f8")
+consequence_type = 3
+value = "hotdog_ban_1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_aeli0"]
+script = ExtResource("12_06qv1")
+notif_title = "You Cannot Evade Justice"
+desc = "Evading bans will just get you another ban. ( +10 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("11_pi3f8")]([SubResource("Resource_sowxl"), SubResource("Resource_yeojj"), SubResource("Resource_6qdj5"), SubResource("Resource_vswxt")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("13_gpeje")
+case_id = "hotdog_1_banned"
+case_display_name = "Ban Evasion"
+case_owner = ExtResource("1_gph8j")
+case_description = "I think this is someone we banned a bit ago that made a new account to ban evade. I don't know, just a hunch, though."
+chatlog = SubResource("Resource_tubrj")
+report_target = ExtResource("13_jdo4s")
+ignore_consequences = ExtResource("10_vfc5v")
+warning_consequences = ExtResource("14_227fj")
+kick_consequences = SubResource("Resource_aeli0")
+false_report_consequences = ExtResource("9_ovq7h")
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0, 0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

@@ -19,14 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://b5rhwodrijy1n" path="res://scenes/game_menu/notifier_panel.tscn" id="10_edfq3"]
 [ext_resource type="AudioStream" uid="uid://d1qoqt46q7qks" path="res://audio/Dark.wav" id="12_c7117"]
 [ext_resource type="AudioStream" uid="uid://db8rk0ul4ykgn" path="res://audio/Good.wav" id="13_6576e"]
+[ext_resource type="PackedScene" uid="uid://bifp1x0uwhai8" path="res://scenes/game_menu/profile_viewer_panel.tscn" id="13_if733"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7117"]
 
 [node name="GameScene" type="Node2D" unique_id=138664679 node_paths=PackedStringArray("canvas_order")]
 script = ExtResource("1_ppdqi")
-daily_event_scheduler = {
-1: "test_day"
-}
 fallback_days = Array[ExtResource("2_ngofp")]([ExtResource("3_if733"), ExtResource("4_e5qyd")])
 event_button_scene = ExtResource("2_ougo8")
 canvas_order = [NodePath("ReadReportsCanvas"), NodePath("ReadRulesCanvas"), NodePath("ReadStatusCanvas"), NodePath("RestCanvas")]
@@ -57,7 +55,7 @@ offset_top = 160.0
 offset_right = 1904.0
 offset_bottom = 205.0
 theme = ExtResource("3_nv67f")
-text = "Today's Cases"
+text = "Inbox"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -80,6 +78,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_lock_ = true
 
+[node name="ProfileViewerPanel" parent="ReadReportsCanvas" unique_id=1294629967 instance=ExtResource("13_if733")]
+visible = false
+
 [node name="ReadRulesCanvas" type="CanvasLayer" parent="." unique_id=314634955]
 visible = false
 
@@ -98,22 +99,25 @@ size_flags_vertical = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="ReadRulesCanvas/ScrollContainer/PanelContainer" unique_id=1059420513]
 layout_mode = 2
 bbcode_enabled = true
-text = "[font_size=32]Server Rules
-
+text = "[font_size=64]Server Rules[/font_size]
+[font_size=32]
 1.) Please be nice to each other!
 The world can use a lot more kindness :)	
 
-2.) Please don't post illegal content.
-Illegal content such as pirated content, scam websites, or CSAM are strictly prohibited. 
+2.) Follow the Disarray ToS.
+Most of the things in the Disarray ToS should already be covered here, but the most important one is that you need to be 13 or older to use it. If you are less than 13 years old, we reserve the right to kick you until you're old enough. The other important point in the Disarray ToS is that ban evasion (creating a new account to access a server you're banned from) is not allowed.
 
-3) Please be respectful of other people.
-Please remember that there is a human person behind the account you are talking to. Don't harass, threaten, or bully other people, even if you disagree with them.
+3.) Please don't post illegal content.
+Illegal content such as pirated content, scamming attempts, or CSAM (Child Sexual Abuse Material) are strictly prohibited. Illegal content such as these are very serious offenses, and you will instantly be banned from the server.
 
-4.) Don't post personal information.
+4.) Please be respectful of other people.
+Please remember that there is a human person behind the account you are talking to. Don't intentionally annoy, harass, threaten, or bully other people, even if you disagree with them. We reserve the right to remove you from the server for extreme cases of disrespect towards other members. Furthermore, any form of bigoty, including but not limited to sexism, racism, homophobia, transphobia, ableism, etc. are not allowed.
+
+5.) Don't post personal information.
 This is a public server, so anything you post here may be a risk to your personal safety. Don't post personal information of other people either.
 
-5.) No NSFW.
-This is an all-ages server, so any content not appropriate for all ages are removed. This includes graphic sexual content or gore.
+6.) No NSFW.
+This is an all-ages server, so any content not appropriate for all ages are not allowed. While the Terms of Service for this app states that you need to be at least 13 years old to use the app, we'd rather err on the safe side. This includes graphic sexual content or gore.
 [/font_size]"
 
 [node name="ReadStatusCanvas" type="CanvasLayer" parent="." unique_id=1137443004]
@@ -162,6 +166,24 @@ text = "Member Count"
 vertical_alignment = 1
 
 [node name="MemberCount" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=650220376]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ReadStatusCanvas/PanelContainer/VBoxContainer" unique_id=2115907950]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer4" unique_id=1152845350]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "New Members Per Day"
+vertical_alignment = 1
+
+[node name="MemberGain" type="Label" parent="ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer4" unique_id=115849847]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
@@ -260,6 +282,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="IntroductionPanel" parent="NotificationCanvas/BackgroundBlocker" unique_id=753466569 instance=ExtResource("10_edfq3")]
+visible = false
+layout_mode = 1
+offset_left = -896.0
+offset_top = -476.0
+offset_right = 896.0
+offset_bottom = 484.0
+
+[node name="Label" parent="NotificationCanvas/BackgroundBlocker/IntroductionPanel/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(753466569, 503195755) index="0" unique_id=482188025]
+text = "Before We Begin"
+
+[node name="Label" parent="NotificationCanvas/BackgroundBlocker/IntroductionPanel/VBoxContainer" parent_id_path=PackedInt32Array(753466569, 2012904334) index="1" unique_id=800492753]
+text = "Before you start playing, please note the game depicts the following:
+- Swearing
+- Depictions of online bullying
+- Mentions of suicide and suicide-baiting
+- Mentions of IRL Stalking
+- Depictions of racism, sexism, homophobia, transphobia, bigotry in general 
+- Mentions of pedophilia (No CSAM is shown in the game)
+
+We do not condone any of the following actions in the game, or in real life. Please be kind to each other.
+
+(If you choose Don't Show Again, this warning can be re-enabled in the game options.)"
+
+[node name="DontShowAgainButton" type="Button" parent="NotificationCanvas/BackgroundBlocker/IntroductionPanel/VBoxContainer" parent_id_path=PackedInt32Array(753466569, 2012904334) index="2" unique_id=1782309616]
+layout_mode = 2
+text = "Don't Show Again"
+
 [node name="ConsequencePanel" parent="NotificationCanvas/BackgroundBlocker" unique_id=1910956695 instance=ExtResource("10_edfq3")]
 visible = false
 layout_mode = 1
@@ -275,6 +325,7 @@ z_index = -1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("4_xr17b")
 
 [node name="OptionsCanvas" type="CanvasLayer" parent="." unique_id=2099014923]
@@ -306,7 +357,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Options"
 
-[node name="OptionCloseButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1263313386 instance=ExtResource("9_tau56")]
+[node name="OptionCloseButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=2026815548 instance=ExtResource("9_tau56")]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1678769756]
@@ -323,6 +374,26 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 max_value = 1.0
 step = 0.1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=63421301]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1760315572]
+layout_mode = 2
+text = "Show Warning at Start"
+
+[node name="DisableWarning" type="OptionButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=956979926]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+icon_alignment = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
 
 [node name="ReturnToMenuButton" type="Button" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1043724486]
 layout_mode = 2
@@ -350,12 +421,20 @@ sprite_frames = SubResource("SpriteFrames_c7117")
 [connection signal="kick_offender" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_kick_offender"]
 [connection signal="request_evidence" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_request_evidence"]
 [connection signal="request_hide_me" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_request_hide_me"]
+[connection signal="request_profile" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_request_profile"]
 [connection signal="warn_offender" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_warn_offender"]
 [connection signal="hide_evidence_panel" from="ReadReportsCanvas/EvidencePanel" to="." method="_on_evidence_panel_hide_evidence_panel"]
+[connection signal="request_profile_panel" from="ReadReportsCanvas/EvidencePanel" to="." method="_on_evidence_panel_request_profile_panel"]
+[connection signal="hide_profile_panel" from="ReadReportsCanvas/ProfileViewerPanel" to="." method="_on_profile_viewer_panel_hide_profile_panel"]
 [connection signal="trigger_close" from="RestCanvas/RestNotif" to="." method="_on_rest_notif_trigger_close"]
 [connection signal="pressed" from="DayCounter/PanelContainer/HBoxContainer/VBoxContainer2/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/IntroductionPanel" to="." method="_on_introduction_panel_trigger_close"]
+[connection signal="pressed" from="NotificationCanvas/BackgroundBlocker/IntroductionPanel/VBoxContainer/DontShowAgainButton" to="." method="_on_dont_show_again_button_pressed"]
 [connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/ConsequencePanel" to="." method="_on_consequence_panel_trigger_close"]
 [connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/GameOverPanel" to="." method="_on_game_over_panel_trigger_close"]
 [connection signal="pressed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/OptionCloseButton" to="." method="_on_option_close_button_pressed"]
 [connection signal="value_changed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolSlider" to="." method="_on_bgm_vol_slider_value_changed"]
+[connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3/DisableWarning" to="." method="_on_disable_warning_item_selected"]
 [connection signal="pressed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
+
+[editable path="NotificationCanvas/BackgroundBlocker/IntroductionPanel"]

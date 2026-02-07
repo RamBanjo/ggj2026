@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://dra8yvt7avg2a"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_frw3g"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_ke3vk"]
+
+[resource]
+script = ExtResource("2_ke3vk")
+internal_id = "member_m2"
+display_name = "memelord67"
+profile_picture = ExtResource("1_frw3g")
+profile_desc = "SIX SEVEN!!!"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://dnwhnd8j8icb8"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_dhxde"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_cerpm"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_e8x2x"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="4_gnk88"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_8gmae"]
+
+[sub_resource type="Resource" id="Resource_gfwrw"]
+script = ExtResource("2_cerpm")
+consequence_type = 5
+value = "3"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_6d5dg"]
+script = ExtResource("2_cerpm")
+consequence_type = 2
+value = "20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_dsmc8"]
+script = ExtResource("2_cerpm")
+consequence_type = 3
+value = "filter_active"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_waodl"]
+script = ExtResource("1_dhxde")
+notif_title = "The Great Firewall"
+desc = "Done and dusted! The spam filter is now active on your server. The server should detect a sudden influx of spammers and block them from sending any messages in the first place. (+10 Atmosphere, +3 Member Income)"
+consq_effects = Array[ExtResource("2_cerpm")]([SubResource("Resource_gfwrw"), SubResource("Resource_6d5dg"), SubResource("Resource_dsmc8")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_k8fhg"]
+script = ExtResource("1_dhxde")
+notif_title = "Tomorrow's Another Day"
+desc = "You decide to put off setting up the Spam Filter. Hopefully, it won't become a problem tomorrow..."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("3_e8x2x")
+internal_id = "spam_filter"
+title = "Install Spam Filter"
+sender = ExtResource("4_gnk88")
+desc = "I've heard rumors about spambots raiding servers and filling them with various sorts of scams. Gift card links, fake car insurance, fake giveaways...
+
+Let's install a spam filter in our server before it becomes our problem."
+options = PackedStringArray("Just Do It (-3)", "Maybe Tomorrow")
+option_cost = Array[int]([3, 0])
+consequences = Array[ExtResource("1_dhxde")]([SubResource("Resource_waodl"), SubResource("Resource_k8fhg")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

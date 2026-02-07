@@ -33,27 +33,54 @@ static func initialize_cases():
 			file_name = random_case_dir.get_next()
 			
 	print("load random cases: ", len(random_cases))
-			
-static func get_random_case():
-	return random_cases[randi() % len(random_cases)]
+
+static var cases_seen_today : PackedStringArray = []
+static var unique_cases_seen_this_run : PackedStringArray = []
+
+static func reset_today_seen_cases():
+	cases_seen_today = []
+	
+static func reset_unique_cases_seen_this_run():
+	unique_cases_seen_this_run = []
+	
+static func make_list_of_unseen_cases():
+	return random_cases.filter(func(x : ModeratorCase):
+		
+		return x.case_id not in cases_seen_today and x.case_id not in unique_cases_seen_this_run and x.can_spawn()
+		)
+
+static func default_nonexttreme_filter(x: ModeratorCase):
+	return not x.is_extreme
+
+static func get_random_case(filter: Callable = default_nonexttreme_filter):
+	
+	var unseen_cases = make_list_of_unseen_cases().filter(filter)
+	
+	var selected_case = unseen_cases[randi() % len(unseen_cases)]
+	cases_seen_today.append(selected_case.case_id)
+	
+	if selected_case.is_unique:
+		unique_cases_seen_this_run.append(selected_case.case_id)
+	
+	return selected_case
 	
 static func get_random_legit():
-	var legit_cases = random_cases.filter(func(x: ModeratorCase):
+	return get_random_case().filter(func(x: ModeratorCase):
 		return not x.is_false_report
 		)
 	
-	return legit_cases[randi() % len(legit_cases)]
-	
 static func get_random_false():
-	var legit_cases = random_cases.filter(func(x: ModeratorCase):
+	return get_random_case().filter(func(x: ModeratorCase):
 		return x.is_false_report
 		)
-	
-	return legit_cases[randi() % len(legit_cases)]	
 
 static func get_random_spammer():
-	var legit_cases = random_cases.filter(func(x: ModeratorCase):
+	return get_random_case().filter(func(x: ModeratorCase):
 		return x.is_spammer
 		)
+
+static func get_random_extreme():
+	return get_random_case(func(x):
+		return x.is_extreme
+		)
 	
-	return legit_cases[randi() % len(legit_cases)]	

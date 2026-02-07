@@ -13,7 +13,8 @@ enum ModEventType{
 	SPAWN_VALID_CASE,
 	SPAWN_SPAMMER,
 	SPAWN_FIXED_EVENT,
-	SPAWN_RANDOM_EVENT
+	SPAWN_RANDOM_EVENT,
+	REI_CYST_DEAL
 }
 
 ##The ID of the case or message being called, if this is a SPAWN_FIXED_CASE or NON_CASE_MESSAGE event.
@@ -21,26 +22,16 @@ enum ModEventType{
 
 @export var event_type : ModEventType
 
-##The event flag that must be triggered for this event to appear. If blank, it always spawns, unless prevented by avoid_event_flag
-@export var req_event_flag : String
-
-##The event flag that will cause this event to become invalid.
-@export var avoid_event_flag : String
-
-@export var min_spawn_atmos : int = -1
-@export var max_spawn_atmos : int = -1
-@export var min_spawn_member : int = -1
-@export var max_spawn_member : int = -1
-
-func minmax_conditions_met():
-	return MainChatroom.atmosphere_level_valid(min_spawn_atmos, max_spawn_atmos) and MainChatroom.member_count_valid(min_spawn_member, max_spawn_member)
+@export var conditionals : Array[Conditional]
 
 func can_spawn():
-	if req_event_flag == "":
-		return avoid_event_flag not in MainChatroom.triggered_flags and minmax_conditions_met()
-		
-	return req_event_flag in MainChatroom.triggered_flags and avoid_event_flag not in MainChatroom.triggered_flags and minmax_conditions_met()
-
+	for cond in conditionals:
+		if not cond.test_conditional():
+			return false
+			
+	return true
+	
+	
 func load_fixed_case() -> ModeratorCase:
 	var return_case : ModeratorCase = null
 	

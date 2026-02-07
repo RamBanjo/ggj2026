@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://c6p6nax7uw6x0"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_0c63w"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_h4nmm"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_y7se7"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_h4nmm"]
+[ext_resource type="Resource" uid="uid://c8frgc2fm7klb" path="res://res/consequences/consq_eff/trigger_kick_evil_flag.tres" id="3_hopj4"]
+[ext_resource type="Resource" uid="uid://bxc1rirso0g54" path="res://res/chatmembers/story_important_members/evil_member.tres" id="3_y7se7"]
+
+[sub_resource type="Resource" id="Resource_ll38l"]
+script = ExtResource("2_h4nmm")
+consequence_type = 1
+value = "20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_yr1xd"]
+script = ExtResource("2_h4nmm")
+consequence_type = 5
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_h4nmm"]
+script = ExtResource("2_h4nmm")
+consequence_type = 3
+value = "ray_cist"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_hopj4"]
+script = ExtResource("1_0c63w")
+notif_title = "Mysterious Influx"
+desc = "Quite a few members has joined the server, and the word spread like wildfire! This person really knows lots of people. (+20 Members, +10 Member Income)"
+consq_effects = Array[ExtResource("2_h4nmm")]([SubResource("Resource_ll38l"), SubResource("Resource_yr1xd"), SubResource("Resource_h4nmm")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_aei5v"]
+script = ExtResource("2_h4nmm")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bpscg"]
+script = ExtResource("1_0c63w")
+notif_title = "No Love Lost"
+desc = "You refuse the offer. The server doesn't need to grow this large this quickly. The user calls you a slur questioning your mental capabilities, then leaves. (-1 Member)"
+consq_effects = Array[ExtResource("2_h4nmm")]([SubResource("Resource_aei5v"), ExtResource("3_hopj4")])
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_dnk6q"]
+script = ExtResource("2_h4nmm")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bqf1x"]
+script = ExtResource("2_h4nmm")
+consequence_type = 5
+value = "2"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_4m3mi"]
+script = ExtResource("2_h4nmm")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_76qdi"]
+script = ExtResource("1_0c63w")
+notif_title = "Popper's Paradox"
+desc = "A quick look at this person's profile is enough to tell you that they have no intention to act civil in the long run. Being tolerant of others doesn't mean you have to tolerate those who don't accept other people. To demonstrate this point, you ban them from the server. (-1 Member, +10 Atmosphere, +2 Member Income)"
+consq_effects = Array[ExtResource("2_h4nmm")]([SubResource("Resource_dnk6q"), SubResource("Resource_bqf1x"), SubResource("Resource_4m3mi"), ExtResource("3_hopj4")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_y7se7")
+internal_id = "dark_deal"
+title = "Nice Server"
+sender = ExtResource("3_y7se7")
+desc = "Nice server you got there. It could use more members, though. I'll let my friends know about this place. I'll bring in a lot of friends, you'll thank me later."
+options = PackedStringArray("OK", "Refuse", "Kick (-1)")
+option_cost = Array[int]([0, 0, 1])
+default_ignore = 0
+consequences = Array[ExtResource("1_0c63w")]([SubResource("Resource_hopj4"), SubResource("Resource_bpscg"), SubResource("Resource_76qdi")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

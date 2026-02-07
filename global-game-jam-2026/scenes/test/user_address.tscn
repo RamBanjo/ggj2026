@@ -21,9 +21,20 @@ layout_mode = 2
 texture = ExtResource("1_j4sxu")
 expand_mode = 1
 
+[node name="Button" type="Button" parent="HBoxContainer/PFP" unique_id=1526660537]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Name" type="Label" parent="HBoxContainer" unique_id=2122736571]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "MyName"
 clip_text = true
+
+[connection signal="pressed" from="HBoxContainer/PFP/Button" to="." method="_pfp_clicked"]

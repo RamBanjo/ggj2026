@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://dtgwf3q2nhv8"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_5w0nf"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="2_shg10"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_mw5qh"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_tmkgk"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_wtcm5"]
+[ext_resource type="Resource" uid="uid://qe20vmhne37w" path="res://res/consequences/false_report_extreme.tres" id="6_5w0nf"]
+[ext_resource type="Resource" uid="uid://cd7acdhqk5jsg" path="res://res/consequences/ignore_extreme_2.tres" id="7_qx5bk"]
+[ext_resource type="Resource" uid="uid://dy5rjwd1qbmps" path="res://res/consequences/kick_consq_bad.tres" id="8_hwaoo"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_kyg1g"]
+[ext_resource type="Resource" uid="uid://b85k7tq8c6dkk" path="res://res/consequences/warn_consequence_innocent.tres" id="10_lvbbs"]
+
+[sub_resource type="Resource" id="Resource_5meb7"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("2_shg10")
+text = "we shouldn't tell kids about gay people. this is how they become gay."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_5w0nf"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("3_mw5qh")
+text = "you can't be for real. then you also think it's also not okay to tell kids about straight people, right?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_shg10"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("2_shg10")
+text = "no, because being straight is natural."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_mw5qh"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("3_mw5qh")
+text = "theres plenty of animals in the animal kingdom that can have homosexual behavior. lions, penguins, sheep, to name a few."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tmkgk"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("2_shg10")
+text = "this genius thinks he's so smart, comparing gay people to animal. your words, not mine."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_wtcm5"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("3_mw5qh")
+text = "humans are animals, you dipshit.
+anyways, this debate is getting nowhere.
+to the blocklist you go"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_xknwr"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("2_shg10")
+text = "where are you going
+im not done with you yet"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qx5bk"]
+script = ExtResource("1_5w0nf")
+speaker = ExtResource("2_shg10")
+text = "how dare you silence my free speech
+im telling the mods about this"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_30gsw"]
+script = ExtResource("4_tmkgk")
+chat_messages = Array[ExtResource("1_5w0nf")]([SubResource("Resource_5meb7"), SubResource("Resource_5w0nf"), SubResource("Resource_shg10"), SubResource("Resource_mw5qh"), SubResource("Resource_tmkgk"), SubResource("Resource_wtcm5"), SubResource("Resource_xknwr"), SubResource("Resource_qx5bk")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_kyg1g")
+case_id = "ext_9"
+case_display_name = "Oppression"
+case_description = "I'm being oppressed for my opinions! If you support free speech, you'll agree with me."
+chatlog = SubResource("Resource_30gsw")
+ignore_consequences = ExtResource("7_qx5bk")
+warning_consequences = ExtResource("10_lvbbs")
+kick_consequences = ExtResource("8_hwaoo")
+false_report_consequences = ExtResource("6_5w0nf")
+is_false_report = true
+is_extreme = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://dqavgkr4lmytf"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_as0nw"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_70ph0"]
+
+[resource]
+script = ExtResource("2_70ph0")
+internal_id = "member_i2"
+display_name = "ilessthanthreeu"
+profile_picture = ExtResource("1_as0nw")
+profile_desc = "i <3 u"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

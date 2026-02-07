@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bfxhtjjpkd2lu"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_nwg5p"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="2_icaan"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_a88uc"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_g0t6o"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_65bll"]
+[ext_resource type="Resource" uid="uid://jevsjw1ks5m2" path="res://res/consequences/false_report_protest.tres" id="6_nwg5p"]
+[ext_resource type="Resource" uid="uid://cultp8f2v5gwr" path="res://res/consequences/ignore_extreme.tres" id="7_icaan"]
+[ext_resource type="Resource" uid="uid://ha3jxutkppix" path="res://res/consequences/kick_ext.tres" id="8_a88uc"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_pwmx0"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="10_g0t6o"]
+
+[sub_resource type="Resource" id="Resource_a73b8"]
+script = ExtResource("1_nwg5p")
+speaker = ExtResource("2_icaan")
+text = "Look man, you can't be blaming minorities for everything bad in your life. It's not the gay people's faults that everything in your life is falling apart."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_icaan"]
+script = ExtResource("1_nwg5p")
+speaker = ExtResource("3_a88uc")
+text = "SHUT UP, YOU THINK YOURE BETTER THAN ME
+WHY ARE YOU PROTECTING THOSE CHILD GROOMERS
+YOURE A GROOMER PEDO TOO THEN"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_a88uc"]
+script = ExtResource("1_nwg5p")
+speaker = ExtResource("2_icaan")
+text = "what"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_g0t6o"]
+script = ExtResource("1_nwg5p")
+speaker = ExtResource("3_a88uc")
+text = "@everyone THIS PERSON IS A CHILD GROOMER PEDO AND IS A THREAT TO SOCIETY"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_nwg5p"]
+script = ExtResource("4_g0t6o")
+chat_messages = Array[ExtResource("1_nwg5p")]([SubResource("Resource_a73b8"), SubResource("Resource_icaan"), SubResource("Resource_a88uc"), SubResource("Resource_g0t6o"), SubResource("Resource_g0t6o"), SubResource("Resource_g0t6o")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_pwmx0")
+case_id = "ext_10"
+case_display_name = "Public Slandering"
+case_description = "My name is being dragged through the mud just because I disagreed with this person."
+chatlog = SubResource("Resource_nwg5p")
+ignore_consequences = ExtResource("7_icaan")
+warning_consequences = ExtResource("10_g0t6o")
+kick_consequences = ExtResource("8_a88uc")
+false_report_consequences = ExtResource("6_nwg5p")
+is_extreme = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

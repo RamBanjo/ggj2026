@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://dx0vcfck7r1vp"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_fsd8s"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_0xc8g"]
+
+[sub_resource type="Resource" id="Resource_fsd8s"]
+script = ExtResource("1_fsd8s")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_0xc8g"]
+script = ExtResource("1_fsd8s")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("2_0xc8g")
+notif_title = "Before It Gets Worse"
+desc = "This member has caused enough problems to be kicked from the server, and everyone agrees! The atmosphere improves. ( +10 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("1_fsd8s")]([SubResource("Resource_fsd8s"), SubResource("Resource_0xc8g")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

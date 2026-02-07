@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://cmyjidu0c0wa6"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_ghfd6"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_danpi"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_qn1x6"]
+[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="4_nrkra"]
+
+[sub_resource type="Resource" id="Resource_46gam"]
+script = ExtResource("2_danpi")
+internal_id = "welcome"
+call_id = "welcome"
+event_type = 3
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_r4o75"]
+script = ExtResource("2_danpi")
+call_id = "test_mod_case"
+event_type = 1
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_ghfd6")
+today_events = Array[ExtResource("2_danpi")]([SubResource("Resource_46gam"), SubResource("Resource_r4o75"), ExtResource("4_nrkra"), ExtResource("4_nrkra")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

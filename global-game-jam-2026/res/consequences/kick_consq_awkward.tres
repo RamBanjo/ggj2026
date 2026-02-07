@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://cs1d8blvnjww7"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_xyu53"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_fsn13"]
+
+[sub_resource type="Resource" id="Resource_pio5e"]
+script = ExtResource("1_xyu53")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_h7rnh"]
+script = ExtResource("1_xyu53")
+consequence_type = 2
+value = "-5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("2_fsn13")
+notif_title = "Over The Top"
+desc = "It's a bit of an overkill to kick this member from the server for a small offense. The silence is a bit awakward, but no arguments otherwise. (-5 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("1_xyu53")]([SubResource("Resource_pio5e"), SubResource("Resource_h7rnh")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

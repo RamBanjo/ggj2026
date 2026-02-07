@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="GlobalGameJam2026"
+config/name="Echoes in the Log"
 run/main_scene="uid://covh4g0gauw1k"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://mjr47r0n4cgf"
 
 [display]
 

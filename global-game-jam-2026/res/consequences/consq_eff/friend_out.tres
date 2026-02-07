@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConsequenceEffect" format=3 uid="uid://upac5sw8k5ak"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_bux4n"]
+
+[resource]
+script = ExtResource("1_bux4n")
+consequence_type = 3
+value = "friend_leave"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"

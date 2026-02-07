@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ModEvent" format=3 uid="uid://cglvg2l78lwdc"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_i2mlt"]
+[ext_resource type="Resource" uid="uid://ctlei7fhsnwys" path="res://res/conditionals/spicy_not_kicked.tres" id="2_hwdyg"]
+[ext_resource type="Resource" uid="uid://ch88en8qyu2mj" path="res://res/conditionals/no_ip_ban_cond.tres" id="3_0mgra"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="4_qmmw1"]
+
+[sub_resource type="Resource" id="Resource_d453f"]
+script = ExtResource("1_i2mlt")
+condtype = 6
+value = "hotdog_kick_once"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("4_qmmw1")
+call_id = "ip_ban"
+event_type = 8
+conditionals = Array[ExtResource("1_i2mlt")]([ExtResource("2_hwdyg"), SubResource("Resource_d453f"), ExtResource("3_0mgra")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"

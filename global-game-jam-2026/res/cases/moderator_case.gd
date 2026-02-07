@@ -20,22 +20,35 @@ class_name ModeratorCase
 @export var report_target : ChatMember
 
 ##Consequence for ignoring this. 
-@export var ignore_consequences : Array[ModConsequence]
+@export var ignore_consequences : ModConsequence
 
 ##Consequence for giving out warning.
-@export var warning_consequences: Array[ModConsequence]
+@export var warning_consequences: ModConsequence
 
 ##Consequence for kicking.
-@export var kick_consequences: Array[ModConsequence]
+@export var kick_consequences: ModConsequence
 
 ##Consequence for false_reporting.
-@export var false_report_consequences: Array[ModConsequence]
+@export var false_report_consequences: ModConsequence
 
 #Booleans that exist to categorize quests.
 @export var is_false_report : bool
 @export var is_spammer : bool
+@export var is_extreme : bool
+
+##If a case is unique, it only shows up once per entire run and will not appear again after it's been resolved.
+@export var is_unique : bool
 
 #A random witness will be assigned if not blank. For each unique number an array of witness will be created.
 @export var require_witness_count : int
-
 @export var require_witness_pattern : PackedInt32Array
+
+##For random quests, this quest will only appear if all conditionals listed here are met.
+@export var conditionals : Array[Conditional]
+
+func can_spawn():
+	for cond in conditionals:
+		if not cond.test_conditional():
+			return false
+			
+	return true

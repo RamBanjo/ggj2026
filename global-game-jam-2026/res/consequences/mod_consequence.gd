@@ -1,36 +1,34 @@
 extends Resource
 class_name ModConsequence
 
-@export var consequence_type : ConsequenceType
 @export var notif_title : String = "As a result of your actions..."
-@export var value : String
 @export_multiline var desc : String
+@export var consq_effects : Array[ConsequenceEffect]
+@export var is_positive : bool
+@export var is_negative : bool
 
-enum ConsequenceType{
-	NOTHING,
-	DELTA_SERVER_MEMBERS,
-	DELTA_SERVER_ATMOSPHERE,
-	TRIGGER_EVENT_FLAG,
-	GOOD_FALSE_REPORT,
-	BAD_FALSE_REPORT,
-	DELTA_MAX_ACTIONS
-}
-
-func is_positive():
-	return get_int_value() >= 0
-
-func get_int_value():
-	return value.to_int()
+func is_valid():
+	return true
 
 func activate_consequence():
-	match consequence_type:
-		ConsequenceType.DELTA_SERVER_MEMBERS:
-			MainChatroom.member_count += get_int_value()
-		ConsequenceType.DELTA_SERVER_ATMOSPHERE:
-			MainChatroom.server_atmosphere += get_int_value()
-		ConsequenceType.DELTA_MAX_ACTIONS:
-			MainChatroom.current_max_actions += get_int_value()			
-		ConsequenceType.TRIGGER_EVENT_FLAG:
-			MainChatroom.triggered_flags.append(value)
+	for effect in consq_effects:
+		effect.activate_consequence()
+
+func get_consequence_title():
+	return notif_title
+
+func get_consequence_description():
+	return desc
+
+func get_positiveness():
+	return is_positive
+	
+func get_negativeness():
+	return is_negative
+	
+func is_inbox_spawn():
+	for consq in consq_effects:
+		if consq.is_inbox_spawn():
+			return true
 			
-		#False Reports are only triggered through the False Report button and can be handled 
+	return false

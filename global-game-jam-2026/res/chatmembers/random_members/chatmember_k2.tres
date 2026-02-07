@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://cmr0m5xe31s2c"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_yjiua"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_cskb1"]
+
+[resource]
+script = ExtResource("2_cskb1")
+internal_id = "member_k2"
+display_name = "KingBonBon"
+profile_picture = ExtResource("1_yjiua")
+profile_desc = "I'm a serial chocolatier who bragged about making chocolate"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

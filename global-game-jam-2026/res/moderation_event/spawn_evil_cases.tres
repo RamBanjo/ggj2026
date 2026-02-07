@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ModEvent" format=3 uid="uid://bhr1ri3v1ckbm"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_sly1m"]
+[ext_resource type="Resource" uid="uid://c8crflyegkkml" path="res://res/conditionals/evil_accept.tres" id="2_hwj5x"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_jrat7"]
+[ext_resource type="Resource" uid="uid://7myyyk3am11r" path="res://res/conditionals/evil_not_kicked.tres" id="3_rpfke"]
+
+[resource]
+script = ExtResource("2_jrat7")
+internal_id = "evil_cases"
+event_type = 10
+conditionals = Array[ExtResource("1_sly1m")]([ExtResource("2_hwj5x"), ExtResource("3_rpfke")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"

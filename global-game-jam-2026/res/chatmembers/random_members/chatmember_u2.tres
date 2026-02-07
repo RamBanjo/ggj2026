@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://st4pnrymu1ys"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_kokp6"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_p3n13"]
+
+[resource]
+script = ExtResource("2_p3n13")
+internal_id = "member_u2"
+display_name = "under_delta"
+profile_picture = ExtResource("1_kokp6")
+profile_desc = "You feel your sins cralwing on your back."
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

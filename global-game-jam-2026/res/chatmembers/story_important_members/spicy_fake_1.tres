@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://o4h32lxgq0q8"]
+
+[ext_resource type="Texture2D" uid="uid://c6ov8elaskm11" path="res://sprites/pfp/cloud.png" id="1_6h5c8"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_jhy7r"]
+
+[resource]
+script = ExtResource("2_jhy7r")
+internal_id = "fake_spicy_1"
+display_name = "padkrapaO_muukrOb"
+profile_picture = ExtResource("1_6h5c8")
+profile_desc = "I hate spicy food
+If it's spicy I'm suing"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

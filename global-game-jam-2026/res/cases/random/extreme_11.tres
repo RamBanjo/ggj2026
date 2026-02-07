@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://cuqdeo311e0si"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_2xo6n"]
+[ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="1_evqnd"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="2_evqnd"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_xq472"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_iu141"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_o8ed6"]
+[ext_resource type="Resource" uid="uid://da8kjokvvxa7i" path="res://res/consequences/false_report_friend_bad.tres" id="7_evqnd"]
+[ext_resource type="Resource" uid="uid://ha3jxutkppix" path="res://res/consequences/kick_ext.tres" id="8_i3rs6"]
+[ext_resource type="Resource" uid="uid://duip11av1yxw6" path="res://res/consequences/ignore_friend_bad.tres" id="8_xq472"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_5gkcs"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="10_j68ei"]
+
+[sub_resource type="Resource" id="Resource_a73b8"]
+script = ExtResource("1_2xo6n")
+speaker = ExtResource("2_evqnd")
+text = "Who's up for a game of A Mongoose Game?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_evqnd"]
+script = ExtResource("1_2xo6n")
+speaker = ExtResource("3_xq472")
+text = "quit acting like a fake gamer girl, this is why gaming is so woke now"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_xq472"]
+script = ExtResource("1_2xo6n")
+speaker = ExtResource("3_xq472")
+text = "you're just an attention whore seeking the approval of chad, all girls are the same"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_iu141"]
+script = ExtResource("1_2xo6n")
+speaker = ExtResource("3_xq472")
+text = "you never pick the nice guys. i'm such a nice guy, but i can't find anyone to date. its because you bitches keep choosing the wrong man"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_o8ed6"]
+script = ExtResource("1_2xo6n")
+speaker = ExtResource("2_evqnd")
+text = "And you call yourself a nice guy?!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_nwg5p"]
+script = ExtResource("4_iu141")
+chat_messages = Array[ExtResource("1_2xo6n")]([SubResource("Resource_a73b8"), SubResource("Resource_evqnd"), SubResource("Resource_xq472"), SubResource("Resource_iu141"), SubResource("Resource_o8ed6")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_5gkcs")
+case_id = "ext_11"
+case_display_name = "What's This Place"
+case_owner = ExtResource("1_evqnd")
+case_description = "I can't believe this is the sort of place you would invite me to? What is this bullshit?!"
+chatlog = SubResource("Resource_nwg5p")
+ignore_consequences = ExtResource("8_xq472")
+warning_consequences = ExtResource("10_j68ei")
+kick_consequences = ExtResource("8_i3rs6")
+false_report_consequences = ExtResource("7_evqnd")
+is_extreme = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

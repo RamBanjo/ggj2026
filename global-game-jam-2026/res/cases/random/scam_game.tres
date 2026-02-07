@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://nw55por7xkae"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_x7igs"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_1w0ly"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_y5wo8"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_voe6s"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_lyik3"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_ea7ua"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="7_rnevx"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="8_0sq0l"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_tf1t1"]
+[ext_resource type="Resource" uid="uid://wndxcojxby6p" path="res://res/consequences/warn_consequence_spammer.tres" id="10_gm46a"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_x7igs")
+speaker = ExtResource("2_1w0ly")
+text = "hello"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_x7igs"]
+script = ExtResource("1_x7igs")
+speaker = ExtResource("3_y5wo8")
+text = "Sorry, do I know you?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_1w0ly"]
+script = ExtResource("1_x7igs")
+speaker = ExtResource("2_1w0ly")
+text = "im a new game dev
+need someone to play test my game
+can you download this and play it
+[LINK REDACTED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_voe6s")
+chat_messages = Array[ExtResource("1_x7igs")]([SubResource("Resource_73pw0"), SubResource("Resource_x7igs"), SubResource("Resource_1w0ly")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_tf1t1")
+case_id = "scam_game"
+case_display_name = "Try My Game Scam"
+case_description = "Pretty sure this is a scam, right?"
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_rnevx")
+warning_consequences = ExtResource("10_gm46a")
+kick_consequences = ExtResource("8_0sq0l")
+false_report_consequences = ExtResource("6_ea7ua")
+is_spammer = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

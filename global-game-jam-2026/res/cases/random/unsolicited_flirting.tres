@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://dpm2q1g0uxujq"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_nt6pc"]
+[ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="1_pb4lp"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_pb4lp"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="3_6nk2l"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_6nk2l"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="4_sixcj"]
+[ext_resource type="Resource" uid="uid://da8kjokvvxa7i" path="res://res/consequences/false_report_friend_bad.tres" id="6_pb4lp"]
+[ext_resource type="Resource" uid="uid://duip11av1yxw6" path="res://res/consequences/ignore_friend_bad.tres" id="7_6nk2l"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="7_f6bgr"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="8_x66b7"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="9_alphi"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_nt6pc")
+speaker = ExtResource("2_pb4lp")
+text = "hhhey there beautiful"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_pb4lp"]
+script = ExtResource("1_nt6pc")
+speaker = ExtResource("2_pb4lp")
+text = "im a nice guy, you know
+youre so very pretty
+do you wanna go on a date with me"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_sixcj"]
+script = ExtResource("1_nt6pc")
+speaker = ExtResource("4_6nk2l")
+text = "Real nice guys don't have to say that they're nice guys
+Also, no, not interested."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6nk2l"]
+script = ExtResource("1_nt6pc")
+speaker = ExtResource("2_pb4lp")
+text = "come on... give me a chance..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_q0ldd"]
+script = ExtResource("1_nt6pc")
+speaker = ExtResource("4_6nk2l")
+text = "Being unable to understand the word no is the exact reason why you're still single."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("3_6nk2l")
+chat_messages = Array[ExtResource("1_nt6pc")]([SubResource("Resource_73pw0"), SubResource("Resource_pb4lp"), SubResource("Resource_sixcj"), SubResource("Resource_6nk2l"), SubResource("Resource_q0ldd")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("8_x66b7")
+case_id = "unsolicited_flirting"
+case_display_name = "Creepy Nice Guy"
+case_owner = ExtResource("1_pb4lp")
+case_description = "This person is being weird in the DMs. Tell them to quit it."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_6nk2l")
+warning_consequences = ExtResource("9_alphi")
+kick_consequences = ExtResource("7_f6bgr")
+false_report_consequences = ExtResource("6_pb4lp")
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

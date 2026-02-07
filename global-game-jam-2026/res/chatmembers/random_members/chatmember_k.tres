@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://cl2x53h3b2kri"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_4sbu4"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_rh1fv"]
+
+[resource]
+script = ExtResource("2_rh1fv")
+internal_id = "member_k"
+display_name = "kqjzx__"
+profile_picture = ExtResource("1_4sbu4")
+profile_desc = "man makes worst scrabble word ever, asked to leave the tournament"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

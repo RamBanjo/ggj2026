@@ -34,7 +34,7 @@ const ATMOSPHERE_LOSE_CONDITION = 0
 const TIME_LIMIT = 15
 
 const DEFAULT_DAILY_ACTIONS = 3
-const DEFAULT_MEMBER_COUNT = 10
+const DEFAULT_MEMBER_COUNT = 50
 const DEFAULT_ATMOSPHERE = 50
 
 const DEFAULT_MEMBER_INCOME = 20
@@ -82,13 +82,13 @@ static func server_is_dead():
 	return false
 	
 static func server_is_winning():
-	if member_count >= MEMBER_WIN_CONDITION and server_atmosphere >= ATMOSPHERE_WIN_CONDITION:
+	if member_count >= MEMBER_WIN_CONDITION and server_atmosphere >= ATMOSPHERE_WIN_CONDITION and ingame_day >= TIME_LIMIT:
 		return true
 		
 	return false
 	
 static func server_is_boring():
-	if ingame_day >= TIME_LIMIT:
+	if ingame_day >= TIME_LIMIT and not server_is_winning():
 		return true
 		
 	return false

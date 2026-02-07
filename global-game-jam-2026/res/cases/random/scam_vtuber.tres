@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bswpwtvim65h1"]
+
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="1_or7pl"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_vj02d"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_njtow"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_y12fo"]
+[ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="6_c7mx0"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="7_wyqmh"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="8_rjwua"]
+[ext_resource type="Resource" uid="uid://bhulps81fnceq" path="res://res/consequences/kick_consq_too_young.tres" id="9_swqor"]
+[ext_resource type="Resource" uid="uid://5pv7aryyu31y" path="res://res/chatmembers/story_important_members/fake_anna.tres" id="10_5usq6"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="11_gvwq6"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="12_su4jn"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("2_vj02d")
+speaker = ExtResource("10_5usq6")
+text = "Congratulations, lucky viewer! You're the 100,00th random person I have DM'd. You're the lucky winner! Your prize is a signed figurine, and a free ticket to my next fanmeet!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_m1spt"]
+script = ExtResource("2_vj02d")
+speaker = ExtResource("1_or7pl")
+text = "hm. never heard of this event before, but okay
+i was watching the stream last night, you didn't mention any of it"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_or7pl"]
+script = ExtResource("2_vj02d")
+speaker = ExtResource("10_5usq6")
+text = "Ah, of course! It's content for the new video, I haven't posted it yet, so you'll see it soon! So sorry I didn't say anything during the stream, it was supposed to be a surprise!
+
+All you have to do to get your prize is to pay shipping and you'll get it delivered right to your home!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_vj02d"]
+script = ExtResource("2_vj02d")
+speaker = ExtResource("1_or7pl")
+text = "anna didn't stream last night.
+she was supposed to, but she overslept and apologized on twerper
+you're just a pretender using her name to scam people."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_1pe0v"]
+script = ExtResource("2_vj02d")
+speaker = ExtResource("1_or7pl")
+text = "blocked and reported."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_njtow")
+chat_messages = Array[ExtResource("2_vj02d")]([SubResource("Resource_73pw0"), SubResource("Resource_m1spt"), SubResource("Resource_or7pl"), SubResource("Resource_vj02d"), SubResource("Resource_1pe0v")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("11_gvwq6")
+case_id = "scam_vtuber"
+case_display_name = "nice try bozo"
+case_owner = ExtResource("1_or7pl")
+case_description = "if you wanna impersonate anna arbalest at least know her schedule. this reeks heavily of scam."
+chatlog = SubResource("Resource_qpltm")
+report_target = ExtResource("10_5usq6")
+ignore_consequences = ExtResource("8_rjwua")
+warning_consequences = ExtResource("12_su4jn")
+kick_consequences = ExtResource("9_swqor")
+false_report_consequences = ExtResource("7_wyqmh")
+conditionals = Array[ExtResource("5_y12fo")]([ExtResource("6_c7mx0")])
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

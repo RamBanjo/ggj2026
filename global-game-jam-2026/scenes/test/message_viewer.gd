@@ -88,13 +88,12 @@ func load_mod_report(report: ModeratorCase, override_sender: ChatMember = null, 
 	event_button_container.hide()
 	
 	msgnamelabel.text = report.case_display_name
-	
 	if report.case_owner != null:
 		reporter_name.update_member(report.case_owner, "Reporter")
 	else:
 		reporter_name.update_member(override_sender, "Reporter")
 		
-	if report.case_owner != null:	
+	if report.report_target != null:	
 		offender_name.update_member(report.report_target, "Offender")
 	else:
 		offender_name.update_member(override_target, "Offender")
@@ -156,3 +155,7 @@ func _on_op_3_pressed() -> void:
 signal request_evidence
 func _on_evidence_button_pressed() -> void:
 	request_evidence.emit()
+
+signal request_profile
+func _request_profile(member: ChatMember):
+	request_profile.emit(self, member)

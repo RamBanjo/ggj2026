@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://chvypaasa88rp"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_3uk4p"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_ffdy1"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="2_5m1eb"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="2_ynpmj"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_5m1eb"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="3_auwqu"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="4_auwqu"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="7_iv5s3"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="7_kubge"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="8_iyakm"]
+[ext_resource type="Resource" uid="uid://cs1d8blvnjww7" path="res://res/consequences/kick_consq_awkward.tres" id="10_pt6mk"]
+
+[sub_resource type="Resource" id="Resource_246gf"]
+script = ExtResource("1_ffdy1")
+speaker = ExtResource("2_5m1eb")
+text = "I actually like pineapple on pizza, and I eat them with ketchup"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_auwqu"]
+script = ExtResource("1_ffdy1")
+speaker = ExtResource("3_5m1eb")
+text = "NOT APPROVED! I'm calling the Pizza Police"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_5m1eb"]
+script = ExtResource("1_ffdy1")
+speaker = ExtResource("2_5m1eb")
+text = "haha, yeah, i get that reference, i'm not afraid of the pizza police"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_iyakm"]
+script = ExtResource("1_ffdy1")
+speaker = ExtResource("4_auwqu")
+text = "You are a tasteless asshole, and nobody likes you"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_wbek0"]
+script = ExtResource("1_ffdy1")
+speaker = ExtResource("3_5m1eb")
+text = "oi, that's a bit too far, man"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_kubge"]
+script = ExtResource("1_ffdy1")
+speaker = ExtResource("3_5m1eb")
+text = "this guy's got a bad taste in pizza, doesn't mean you get to call him that"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_pt6mk"]
+script = ExtResource("1_ffdy1")
+speaker = ExtResource("4_auwqu")
+text = "i'm just speaking the truth, if they don't like it, they can fuck off"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_iv5s3"]
+script = ExtResource("3_auwqu")
+chat_messages = Array[ExtResource("1_ffdy1")]([SubResource("Resource_246gf"), SubResource("Resource_auwqu"), SubResource("Resource_5m1eb"), SubResource("Resource_iyakm"), SubResource("Resource_wbek0"), SubResource("Resource_kubge"), SubResource("Resource_pt6mk")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_y7g1d"]
+script = ExtResource("7_iv5s3")
+consequence_type = 2
+value = "-5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_shqky"]
+script = ExtResource("8_iyakm")
+notif_title = "They Have A Point"
+desc = "You shrug as you claim there's nothing you can do. After all, the offender kind of has a point. Pineapple on pizza with ketchup is kind of gross. This inaction does make you look bad, though. (-5 Atmosphere)"
+consq_effects = Array[ExtResource("7_iv5s3")]([SubResource("Resource_y7g1d")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_o3ecl"]
+script = ExtResource("7_iv5s3")
+consequence_type = 2
+value = "5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_3sli6"]
+script = ExtResource("8_iyakm")
+notif_title = "Behavior Not Approved"
+desc = "You tell the offender they can be against crimes against good Italian food without being rude. The offender apologizes and promises to not do it again. (+5 Atmosphere)"
+consq_effects = Array[ExtResource("7_iv5s3")]([SubResource("Resource_o3ecl")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_ynpmj")
+case_id = "pineapple_pizza"
+case_display_name = "Pizza Argument"
+case_description = "I'm being insulted and called names for my tastes in food :("
+chatlog = SubResource("Resource_iv5s3")
+ignore_consequences = SubResource("Resource_shqky")
+warning_consequences = SubResource("Resource_3sli6")
+kick_consequences = ExtResource("10_pt6mk")
+false_report_consequences = ExtResource("7_kubge")
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0, 0, 0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://bs0orcyr03h8w"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_yr2h4"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_edwoc"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_edwoc"]
+[ext_resource type="Resource" uid="uid://cl8qja5x6s05e" path="res://res/moderation_event/vt01_intro.tres" id="4_xaq4x"]
+[ext_resource type="Resource" uid="uid://pdwskqua3vo1" path="res://res/moderation_event/vt02_intro.tres" id="5_7fm1s"]
+[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="5_58u8g"]
+
+[sub_resource type="Resource" id="Resource_vgme2"]
+script = ExtResource("2_edwoc")
+call_id = "moderator_flag"
+event_type = 3
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_k1yhp"]
+script = ExtResource("2_edwoc")
+call_id = "spicy_spoiler"
+event_type = 1
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_yr2h4")
+today_events = Array[ExtResource("2_edwoc")]([SubResource("Resource_vgme2"), ExtResource("4_xaq4x"), ExtResource("5_7fm1s"), SubResource("Resource_k1yhp"), ExtResource("5_58u8g"), ExtResource("5_58u8g")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://cj1jyc1ixdr4e"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_tfnmw"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="2_e43hm"]
+
+[resource]
+script = ExtResource("1_tfnmw")
+internal_id = "vt01_apology"
+speaker = ExtResource("2_e43hm")
+title = "Sorry for Yesterday"
+text = "hey, it's me from yesterday. sorry you had to see all that.
+
+im very passionate about anna. she's cute, playful, and spreads joy everwhere she goes. she's someone i aspire to be like. an idol, if you will. i made a bad joke that someone else took offense to, so i'll own up to that.
+
+when i use an anna profile picture, i am representing her fans. the next time i post, i need to think how her fandom as a whole would look if i post what i plan to."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

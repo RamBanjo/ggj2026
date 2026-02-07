@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://det00rwfju3so"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_b350c"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_hcb87"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_hn1ry"]
+[ext_resource type="Resource" uid="uid://cnvmh4v5g5lcr" path="res://res/chatmembers/story_important_members/irl_opportunity.tres" id="4_rl5c4"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_6rbab"]
+
+[sub_resource type="Resource" id="Resource_k80cg"]
+script = ExtResource("2_hcb87")
+consequence_type = 4
+value = "1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bfqqn"]
+script = ExtResource("2_hcb87")
+consequence_type = 3
+value = "maybe_later"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_paluw"]
+script = ExtResource("1_b350c")
+notif_title = "As Good As New"
+desc = "You travel to the phone shop. Thanks to the phone's power issue being solved, you can now be comfortable using it for moderating the Disarray server! (+1 to Max Action Points)"
+consq_effects = Array[ExtResource("2_hcb87")]([SubResource("Resource_k80cg"), SubResource("Resource_bfqqn")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_twpuj"]
+script = ExtResource("1_b350c")
+notif_title = "On Hold"
+desc = "You decide the phone is an issue that can wait a bit."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_4xqq7"]
+script = ExtResource("5_6rbab")
+condtype = 7
+value = "fix_phone"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("3_hn1ry")
+internal_id = "fix_phone"
+title = "Dead Ringer"
+sender = ExtResource("4_rl5c4")
+desc = "Your phone has been acting up for a while, but you havent had the chance to get it looked at yet. Thanks to it turning itself off randomly from time to time, you find it difficult to actually do anything on the phone, including running the server.
+
+Do you go to the repair shop to fix the phone?"
+options = PackedStringArray("Repair Phone (-3)", "Maybe Later")
+option_cost = Array[int]([3, 0])
+spawn_conditions = Array[ExtResource("5_6rbab")]([SubResource("Resource_4xqq7")])
+consequences = Array[ExtResource("1_b350c")]([SubResource("Resource_paluw"), SubResource("Resource_twpuj")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

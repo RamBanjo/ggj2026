@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://c68rqcvij1oly"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_yx12j"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_jql7l"]
+
+[resource]
+script = ExtResource("2_jql7l")
+internal_id = "member_i"
+display_name = "idiomproverbs"
+profile_picture = ExtResource("1_yx12j")
+profile_desc = "Elephant in the Room:
+ADDRESS ME"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

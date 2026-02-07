@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://c8nlniwteekxf"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_xauk1"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_o8id6"]
+
+[resource]
+script = ExtResource("2_o8id6")
+internal_id = "member_l2"
+display_name = "LCBStaff"
+profile_picture = ExtResource("1_xauk1")
+profile_desc = "this is my break from the grind
+please don't ruin it for me"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

@@ -1,10 +1,18 @@
 [gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://6pwont0jr313"]
 
 [ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_7rb66"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_kqbym"]
+
+[sub_resource type="Resource" id="Resource_o3ecl"]
+script = ExtResource("1_kqbym")
+consequence_type = 2
+value = "5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [resource]
 script = ExtResource("1_7rb66")
-consequence_type = 2
-value = "5"
-desc = "The offender apologizes and promises to not do it again."
+notif_title = "All Is Forgiven"
+desc = "The offender apologizes and promises to not do it again. (+5 Atmosphere)"
+consq_effects = Array[ExtResource("1_kqbym")]([SubResource("Resource_o3ecl")])
+is_positive = true
 metadata/_custom_type_script = "uid://sus7no6fg7t7"

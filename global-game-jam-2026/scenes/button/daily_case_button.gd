@@ -50,8 +50,7 @@ func activate_event_consequences(idx: int):
 
 func apply_ignore_consequences():
 	if report != null:
-		for consq in report.ignore_consequences:
-			consq.activate_consequence()
+		report.ignore_consequences.activate_consequence()
 		return
 		
 	if event != null:
@@ -59,19 +58,22 @@ func apply_ignore_consequences():
 			
 func apply_warn_consequences():
 	if report != null:
-		for consq in report.warning_consequences:
-			consq.activate_consequence()
+		report.warning_consequences.activate_consequence()
 			
 func apply_kick_consequences():
 	if report != null:
-		for consq in report.kick_consequences:
-			consq.activate_consequence()
+		report.kick_consequences.activate_consequence()
 
 func apply_false_report_consq():
 	if report != null:
-		for consq in report.false_report_consequences:
-			consq.activate_consequence()
+		report.false_report_consequences.activate_consequence()
 
+signal request_spawn_inbox
+
+func check_if_this_spawns_inbox(consq: ModConsequence):
+	if consq.is_inbox_spawn():
+		request_spawn_inbox.emit(consq)
+		
 func get_event_name():
 	if is_case:
 		return report.case_display_name

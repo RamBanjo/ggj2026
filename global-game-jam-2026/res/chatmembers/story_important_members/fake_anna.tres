@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://5pv7aryyu31y"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_cbnvc"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_n4hrb"]
+
+[resource]
+script = ExtResource("1_n4hrb")
+internal_id = "fake_anna"
+display_name = "Anna Arbalest (REAL)"
+profile_picture = ExtResource("1_cbnvc")
+profile_desc = "Bonsoir~ I'm  the Sharpshooting Knight VTuber, Anna Arbalest, represnting NanaIro~ This is totally the official account~"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

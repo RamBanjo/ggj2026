@@ -10,7 +10,7 @@ class_name NotifierPanel
 @onready var close_button : Button = $VBoxContainer/CloseButton
 
 @export var title : String = ""
-@export var body_text : String = ""
+@export_multiline var body_text : String = ""
 @export var button_text : String = ""
 
 signal trigger_close

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ModEvent" format=3 uid="uid://cxm7kko1d76um"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_7a10t"]
+[ext_resource type="Resource" uid="uid://dq3f4xqid88ty" path="res://res/conditionals/no_filter_cond.tres" id="3_7a10t"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="4_ywhff"]
+
+[resource]
+script = ExtResource("4_ywhff")
+call_id = "spam_filter"
+event_type = 8
+conditionals = Array[ExtResource("1_7a10t")]([ExtResource("3_7a10t")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"

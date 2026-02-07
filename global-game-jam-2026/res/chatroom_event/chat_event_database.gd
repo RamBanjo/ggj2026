@@ -35,4 +35,9 @@ static func initialize_events():
 	print("load random events: ", len(rand_event))
 			
 static func get_random_event():
-	return rand_event[randi() % len(rand_event)]
+	
+	var filtered_list = rand_event.filter(func(x : ChatroomEvent):
+		return x.can_spawn()
+		)
+	
+	return filtered_list[randi() % len(filtered_list)] as ChatroomEvent

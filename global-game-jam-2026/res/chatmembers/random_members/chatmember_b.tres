@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://cbmjqcqqmovas"]
 
 [ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_3wmm5"]
-[ext_resource type="Texture2D" uid="uid://c6ov8elaskm11" path="res://sprites/pfp/cloud.png" id="1_r0ilt"]
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_r0ilt"]
 
 [resource]
 script = ExtResource("1_3wmm5")
-internal_id = "member_a"
+internal_id = "member_b"
 display_name = "billynomoney"
 profile_picture = ExtResource("1_r0ilt")
 profile_desc = "im not bbno$"

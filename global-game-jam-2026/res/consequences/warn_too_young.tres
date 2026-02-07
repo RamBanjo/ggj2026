@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://5yxxv1jmofkd"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_feiqi"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_ul5g8"]
+
+[resource]
+script = ExtResource("2_ul5g8")
+notif_title = "Stranger Danger"
+desc = "You warn the offender about the dangers of being too young on a platform like this. You're unsure whether the lesson goes through to them, but you feel this is a better alternative than banning altogether."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

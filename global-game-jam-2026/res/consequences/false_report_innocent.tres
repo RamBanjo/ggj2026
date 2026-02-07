@@ -1,10 +1,18 @@
 [gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://bw2gync3h110y"]
 
 [ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_uhj3e"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_xe1x1"]
+
+[sub_resource type="Resource" id="Resource_211hg"]
+script = ExtResource("1_xe1x1")
+consequence_type = 2
+value = "-10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [resource]
 script = ExtResource("1_uhj3e")
-consequence_type = 2
-value = "-10"
-desc = "The reporter is upset that yout think they are lying. The atmosphere worsens! (-10 Atmosphere)"
+notif_title = "Cassandra"
+desc = "The reporter is upset that you think they are lying. The atmosphere worsens! (-10 Atmosphere)"
+consq_effects = Array[ExtResource("1_xe1x1")]([SubResource("Resource_211hg")])
+is_negative = true
 metadata/_custom_type_script = "uid://sus7no6fg7t7"

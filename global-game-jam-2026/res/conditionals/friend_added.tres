@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Conditional" format=3 uid="uid://8e7uko0hdi6m"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_mueyt"]
+
+[resource]
+script = ExtResource("1_mueyt")
+condtype = 6
+value = "friend_added"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"

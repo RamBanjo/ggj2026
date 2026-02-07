@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://o84fb0nvmde0"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_d0l2u"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_fr7is"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_jlw5h"]
+[ext_resource type="Resource" uid="uid://cnvmh4v5g5lcr" path="res://res/chatmembers/story_important_members/irl_opportunity.tres" id="3_fr7is"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_jlw5h"]
+
+[sub_resource type="Resource" id="Resource_8djpg"]
+script = ExtResource("2_jlw5h")
+consequence_type = 5
+value = "1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_g6jna"]
+script = ExtResource("1_d0l2u")
+notif_title = "Set and Forget"
+desc = "You posted the advertisement link. It's quick and easy, why not? (+1 Member Income)"
+consq_effects = Array[ExtResource("2_jlw5h")]([SubResource("Resource_8djpg")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_jlw5h"]
+script = ExtResource("2_jlw5h")
+consequence_type = 5
+value = "2"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_5pmeq"]
+script = ExtResource("1_d0l2u")
+notif_title = "High-Quality Art"
+desc = "You make some promotional images for your server and post it on the advertisement server! This will definitely get more eyes than just posting the link. (+3 Member Income)"
+consq_effects = Array[ExtResource("2_jlw5h")]([SubResource("Resource_jlw5h")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_iy12d"]
+script = ExtResource("1_d0l2u")
+notif_title = "Too Much Effort"
+desc = "Eh, maybe not now. There are more pressing matters."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_fr7is")
+internal_id = "advertisement"
+title = "Bulletin Board"
+sender = ExtResource("3_fr7is")
+desc = "While surfing around other Disarray servers, you come across a promotion server where people can promote their server.
+
+How do you promote the server?"
+options = PackedStringArray("Post Link (-1)", "Promotional Art (-3)", "Do Nothing")
+option_cost = Array[int]([1, 3, 0])
+default_ignore = 2
+consequences = Array[ExtResource("1_d0l2u")]([SubResource("Resource_g6jna"), SubResource("Resource_5pmeq"), SubResource("Resource_iy12d")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

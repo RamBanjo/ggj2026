@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://ha3jxutkppix"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_60ypm"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_k0p5e"]
+
+[sub_resource type="Resource" id="Resource_60ypm"]
+script = ExtResource("1_60ypm")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_k0p5e"]
+script = ExtResource("1_60ypm")
+consequence_type = 2
+value = "5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("2_k0p5e")
+notif_title = "Member Removed"
+desc = "Member removed. (+5 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("1_60ypm")]([SubResource("Resource_60ypm"), SubResource("Resource_k0p5e")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

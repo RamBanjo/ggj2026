@@ -31,3 +31,8 @@ func update_member_name_and_display():
 	if member != null:
 		name_label.text = member.display_name
 		picture.texture = member.profile_picture	
+
+
+signal request_profile_panel
+func _pfp_clicked() -> void:
+	request_profile_panel.emit(member)

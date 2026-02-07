@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://bxc1rirso0g54"]
+
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_pajsc"]
+[ext_resource type="Texture2D" uid="uid://dh5p7ag245vmd" path="res://sprites/pfp/deadguy.png" id="1_xb05i"]
+
+[resource]
+script = ExtResource("1_pajsc")
+internal_id = "evil_member"
+display_name = "rei_cyst"
+profile_picture = ExtResource("1_xb05i")
+profile_desc = "woke is ruining this country
+empathy is a sin
+if you get mad at my opinions you're a loser
+facts don't care about your feelings"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

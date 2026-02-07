@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://m5v4rk1caosi"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_tv61y"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_8ca7j"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_6e74f"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_ierew"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_xp53l"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_4uh21"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="7_muftc"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="8_icud2"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_elecx"]
+[ext_resource type="Resource" uid="uid://wndxcojxby6p" path="res://res/consequences/warn_consequence_spammer.tres" id="10_2oif6"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_tv61y")
+speaker = ExtResource("2_8ca7j")
+text = "Is this you?
+[IMAGE REDACTED - Vapor Profile of the other person.]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_x7igs"]
+script = ExtResource("1_tv61y")
+speaker = ExtResource("3_6e74f")
+text = "Yes, that's me on Vapor. Is there something?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_1w0ly"]
+script = ExtResource("1_tv61y")
+speaker = ExtResource("2_8ca7j")
+text = "I'm so sorry, I meant to report another cheater I was playing with, but I accidentally reported your profile instead"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tv61y"]
+script = ExtResource("1_tv61y")
+speaker = ExtResource("2_8ca7j")
+text = "They're going to delete your account in 12 hours because you broke terms of service and doing illegal things
+
+Go talk to the Vapor admin VaporAdmin419 he'll help you fix this"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_ierew")
+chat_messages = Array[ExtResource("1_tv61y")]([SubResource("Resource_73pw0"), SubResource("Resource_x7igs"), SubResource("Resource_1w0ly"), SubResource("Resource_tv61y")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_elecx")
+case_id = "scam_false_report"
+case_display_name = "Reported on Vapor"
+case_description = "I don't know... I don't think I'm supposed to talk to a Vapor admin on this app."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_muftc")
+warning_consequences = ExtResource("10_2oif6")
+kick_consequences = ExtResource("8_icud2")
+false_report_consequences = ExtResource("6_4uh21")
+is_spammer = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

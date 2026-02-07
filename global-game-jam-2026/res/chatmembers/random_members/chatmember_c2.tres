@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://pk6encrk5uvx"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_h10ym"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_nd4gy"]
+
+[resource]
+script = ExtResource("2_nd4gy")
+internal_id = "member_c2"
+display_name = "calciumsquad"
+profile_picture = ExtResource("1_h10ym")
+profile_desc = "LET US ENLIST FOR THE BONE WARS, BROTHER"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Conditional" format=3 uid="uid://ctlei7fhsnwys"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_mk21w"]
+
+[resource]
+script = ExtResource("1_mk21w")
+condtype = 7
+value = "spicy_kick"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"

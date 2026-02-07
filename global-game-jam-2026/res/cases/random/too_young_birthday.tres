@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://d7flb347t75h"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_acac8"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_ups08"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_3r06n"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_l17dk"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_7kyev"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_06naq"]
+[ext_resource type="Resource" uid="uid://canl5igybc628" path="res://res/consequences/ignore_light_penalty.tres" id="7_5axyr"]
+[ext_resource type="Resource" uid="uid://bhulps81fnceq" path="res://res/consequences/kick_consq_too_young.tres" id="8_ko8bv"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_xsgmr"]
+[ext_resource type="Resource" uid="uid://5yxxv1jmofkd" path="res://res/consequences/warn_too_young.tres" id="10_5axyr"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_acac8")
+speaker = ExtResource("2_ups08")
+text = "It's going to be my birthday soon!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_5axyr"]
+script = ExtResource("1_acac8")
+speaker = ExtResource("3_3r06n")
+text = "nice"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_bupu3"]
+script = ExtResource("1_acac8")
+speaker = ExtResource("2_ups08")
+text = "I'll be 12 when the birthday hits!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6li0a"]
+script = ExtResource("1_acac8")
+speaker = ExtResource("2_ups08")
+text = "oh oops"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_yhq82"]
+script = ExtResource("1_acac8")
+speaker = ExtResource("3_3r06n")
+text = "arent you a bit too young to be on here"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_bwcr3"]
+script = ExtResource("1_acac8")
+speaker = ExtResource("2_ups08")
+text = "please don't tell the mods i promise i'll behave"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tkbir"]
+script = ExtResource("1_acac8")
+speaker = ExtResource("3_3r06n")
+text = "sorry kiddo, it's for your own safety. i got nothing against you, but there can be some real weirdos here. come back next year when you're 13."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_l17dk")
+chat_messages = Array[ExtResource("1_acac8")]([SubResource("Resource_73pw0"), SubResource("Resource_5axyr"), SubResource("Resource_bupu3"), SubResource("Resource_6li0a"), SubResource("Resource_yhq82"), SubResource("Resource_bwcr3"), SubResource("Resource_tkbir")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_xsgmr")
+case_id = "too_young_birthday"
+case_display_name = "Age Discrepancy"
+case_description = "Almost-birthday kid just outed their own age. Hate to have to report this, but it's for their own good."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_5axyr")
+warning_consequences = ExtResource("10_5axyr")
+kick_consequences = ExtResource("8_ko8bv")
+false_report_consequences = ExtResource("6_06naq")
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

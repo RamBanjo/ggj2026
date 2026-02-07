@@ -37,8 +37,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=800492753]
 custom_minimum_size = Vector2(960, 256)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 3
 text = "The server members are upset!
 They really are upset!!!"
 horizontal_alignment = 1

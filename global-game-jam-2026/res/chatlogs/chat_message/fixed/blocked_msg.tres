@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://b1sb44qq42vfi"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_6r6xa"]
+[ext_resource type="Resource" uid="uid://ci0utm0236ii5" path="res://res/chatmembers/story_important_members/system_ms.tres" id="2_ssih1"]
+
+[resource]
+script = ExtResource("1_6r6xa")
+speaker = ExtResource("2_ssih1")
+text = "This user has been blocked. They will not be able to DM you."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

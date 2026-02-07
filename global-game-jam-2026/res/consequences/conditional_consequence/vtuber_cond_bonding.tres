@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ConditionalConsequence" format=3 uid="uid://td0ffeckyvsv"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_4itpv"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_uh1ui"]
+[ext_resource type="Script" uid="uid://bhsexpqo18x0r" path="res://res/consequences/conditional_consequence/conditional_consequence.gd" id="3_nib36"]
+
+[sub_resource type="Resource" id="Resource_keig7"]
+script = ExtResource("1_4itpv")
+condtype = 6
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_4k7fo"]
+script = ExtResource("2_uh1ui")
+consequence_type = 3
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_dpvvg"]
+script = ExtResource("2_uh1ui")
+consequence_type = 3
+value = "vtuber_bond_2"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("3_nib36")
+conditional_list = Array[ExtResource("1_4itpv")]([SubResource("Resource_keig7")])
+fail_title = "Bonding"
+fail_positive = true
+consequence_if_fail = Array[ExtResource("2_uh1ui")]([SubResource("Resource_4k7fo")])
+notif_title = "Bonding Further"
+consq_effects = Array[ExtResource("2_uh1ui")]([SubResource("Resource_dpvvg")])
+is_positive = true
+metadata/_custom_type_script = "uid://bhsexpqo18x0r"

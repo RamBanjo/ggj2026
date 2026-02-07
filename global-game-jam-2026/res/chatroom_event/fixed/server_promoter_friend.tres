@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://phwy4x42dt82"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_vofef"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_wh68x"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_o045d"]
+[ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="4_oy8cu"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_pc4n5"]
+[ext_resource type="Resource" uid="uid://8e7uko0hdi6m" path="res://res/conditionals/friend_added.tres" id="6_21ipo"]
+
+[sub_resource type="Resource" id="Resource_op7mq"]
+script = ExtResource("2_wh68x")
+consequence_type = 1
+value = "30"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bwex0"]
+script = ExtResource("2_wh68x")
+consequence_type = 5
+value = "1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_mwc23"]
+script = ExtResource("1_vofef")
+notif_title = "Word of Mouth"
+desc = "Your friend keeps good on her promise and brings a few of her own friends into the server! (+30 Members, +1 Member Income)"
+consq_effects = Array[ExtResource("2_wh68x")]([SubResource("Resource_op7mq"), SubResource("Resource_bwex0")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("3_o045d")
+internal_id = "server_promoter_friend"
+title = "Lovely Place"
+sender = ExtResource("4_oy8cu")
+desc = "This place isn't so bad. I think I get the gist of what you're doing here now...
+
+I've got a few other friends who could use an online hangout spot like this. I'll let them know of this place."
+options = PackedStringArray("OK")
+spawn_conditions = Array[ExtResource("5_pc4n5")]([ExtResource("6_21ipo")])
+default_ignore = 0
+consequences = Array[ExtResource("1_vofef")]([SubResource("Resource_mwc23")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

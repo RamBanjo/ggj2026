@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://bdiocsjjyo02n"]
+
+[ext_resource type="Texture2D" uid="uid://jci6fn7rupmc" path="res://sprites/pfp/animeface.png" id="1_axa0i"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_rmg07"]
+
+[resource]
+script = ExtResource("1_rmg07")
+internal_id = "vtfan01"
+display_name = "pH_fl0wing"
+profile_picture = ExtResource("1_axa0i")
+profile_desc = "Why do we have hands?
+- Pat Anna Arbalest
+- Hold Anna Arbalest
+- Cherish Anna Arbalest
+- Forfeit All Mortal Posessions to Anna Arbalest"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

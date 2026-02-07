@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://c41554l6w2a67"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_m54rb"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_ak1vj"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_gfwrw"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="3_ak1vj"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_gfwrw"]
+
+[sub_resource type="Resource" id="Resource_gfwrw"]
+script = ExtResource("2_gfwrw")
+consequence_type = 5
+value = "2"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_6d5dg"]
+script = ExtResource("2_gfwrw")
+consequence_type = 2
+value = "20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_dsmc8"]
+script = ExtResource("2_gfwrw")
+consequence_type = 3
+value = "ipban_active"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_waodl"]
+script = ExtResource("1_m54rb")
+notif_title = "The Great Firewall"
+desc = "Done and dusted! The IP address ban is now active on your server. Nobody should be able to ban evade anymore. (+20 Atmosphere, +2 Member Income)"
+consq_effects = Array[ExtResource("2_gfwrw")]([SubResource("Resource_gfwrw"), SubResource("Resource_6d5dg"), SubResource("Resource_dsmc8")])
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_k8fhg"]
+script = ExtResource("1_m54rb")
+notif_title = "Tomorrow's Another Day"
+desc = "You decide to put off setting up the IP Ban thing. Hopefully, you'll have more time to do it tomorrow."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_ak1vj")
+internal_id = "ip_ban"
+title = "IP Ban"
+sender = ExtResource("3_ak1vj")
+desc = "We've got a case of a ban evader who's made a few alt accounts to circumvent being banned from here. We definitely need to set up some security measures...
+
+Say, we haven't set up security features for this servers yet, right? Let's find some time to do that together."
+options = PackedStringArray("Do It Today (-2)", "Do It Later")
+option_cost = Array[int]([2, 0])
+consequences = Array[ExtResource("1_m54rb")]([SubResource("Resource_waodl"), SubResource("Resource_k8fhg")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://dk6awrqc6wyff"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_gkf2e"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_nnhel"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_ieeag"]
+[ext_resource type="Resource" uid="uid://cnvmh4v5g5lcr" path="res://res/chatmembers/story_important_members/irl_opportunity.tres" id="4_6hoh6"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_hpuio"]
+
+[sub_resource type="Resource" id="Resource_k80cg"]
+script = ExtResource("2_nnhel")
+consequence_type = 5
+value = "1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_gkf2e"]
+script = ExtResource("2_nnhel")
+consequence_type = 1
+value = "50"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bfqqn"]
+script = ExtResource("2_nnhel")
+consequence_type = 3
+value = "new_bot"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_paluw"]
+script = ExtResource("1_gkf2e")
+notif_title = "Let's Go Gambling"
+desc = "You coded a game bot that lets people collect gacha game cards on it. People come over to the server just to play the game! (+50 Members, +1 Member Income)"
+consq_effects = Array[ExtResource("2_nnhel")]([SubResource("Resource_k80cg"), SubResource("Resource_gkf2e"), SubResource("Resource_bfqqn")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_twpuj"]
+script = ExtResource("1_gkf2e")
+notif_title = "Incomplete Code"
+desc = "The code is a bit too complex. You decide to figure this out later."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_4xqq7"]
+script = ExtResource("5_hpuio")
+condtype = 7
+value = "new_bot"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("3_ieeag")
+internal_id = "new_bot"
+title = "Hello World"
+sender = ExtResource("4_6hoh6")
+desc = "Ah, one of the Disarray servers you joined a while ago. The \"Code your own Disarray Bot\" server. You've been meaning to get into this for a while now, but you know nothing about programming at all.
+
+You could take the time to learn. Maybe it'll become useful with the server in some way."
+options = PackedStringArray("Hit the Books (-3)", "Maybe Later")
+option_cost = Array[int]([3, 0])
+spawn_conditions = Array[ExtResource("5_hpuio")]([SubResource("Resource_4xqq7")])
+consequences = Array[ExtResource("1_gkf2e")]([SubResource("Resource_paluw"), SubResource("Resource_twpuj")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

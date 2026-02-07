@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Conditional" format=3 uid="uid://i04yy6jll8pa"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_7bmxt"]
+
+[resource]
+script = ExtResource("1_7bmxt")
+condtype = 6
+value = "hotdog_kick_once"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"

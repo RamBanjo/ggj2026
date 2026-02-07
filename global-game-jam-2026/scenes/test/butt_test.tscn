@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://nbocay10k2lw"]
+
+[ext_resource type="Texture2D" uid="uid://bdxrosx1ylhsh" path="res://sprites/main menu/Button/normal.png" id="1_bt4yc"]
+
+[node name="ButtTest" type="NinePatchRect" unique_id=1976599321]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_top = 224.0
+offset_right = 512.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bt4yc")
+region_rect = Rect2(0, 285, 1920, 557)
+patch_margin_left = 480
+patch_margin_top = 256
+patch_margin_right = 480
+patch_margin_bottom = 256

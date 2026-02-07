@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://pgriodai7ibd"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_wbmp3"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="2_rhdnr"]
+
+[resource]
+script = ExtResource("1_wbmp3")
+internal_id = "moderator_profile"
+speaker = ExtResource("2_rhdnr")
+title = "PROTIP: Viewing Profiles"
+text = "Welcome back! If you see the server has more members now, it's because of the promotion I did while you were away. You don't have to worry about finding new chat members, but if you ever find an opportunity to help, I'd be grateful.
+
+Here's some more cases for you today. Don't forget that other than chatlogs, you can also read people's profile to see what they put in their bio by clicking on their profile picture. You can tell a lot about a person if you read them, you know?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

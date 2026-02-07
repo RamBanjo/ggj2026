@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://qe20vmhne37w"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_x11jy"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_gxno3"]
+
+[sub_resource type="Resource" id="Resource_ldqt4"]
+script = ExtResource("1_x11jy")
+consequence_type = 2
+value = "5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_x11jy"]
+script = ExtResource("1_x11jy")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("2_gxno3")
+notif_title = "Troll Reports"
+desc = "The one who actually broke the rules was not the reported person, but the reporter. You swiftly ban them. (+5 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("1_x11jy")]([SubResource("Resource_ldqt4"), SubResource("Resource_x11jy")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

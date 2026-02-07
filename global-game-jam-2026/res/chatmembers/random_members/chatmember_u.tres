@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://p3dfnwt1b1rw"]
+
+[ext_resource type="Texture2D" uid="uid://hb3gwg5g7spy" path="res://sprites/pfp/generic_person.png" id="1_ude6a"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_xnh4i"]
+
+[resource]
+script = ExtResource("2_xnh4i")
+internal_id = "member_u"
+display_name = "uwuowouwu"
+profile_picture = ExtResource("1_ude6a")
+profile_desc = "uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu
+(i will not stop uwuing)"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

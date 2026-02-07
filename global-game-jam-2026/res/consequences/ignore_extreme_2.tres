@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://cd7acdhqk5jsg"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_ns8rl"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_upaq7"]
+
+[sub_resource type="Resource" id="Resource_y7g1d"]
+script = ExtResource("1_ns8rl")
+consequence_type = 2
+value = "-10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_5ths4"]
+script = ExtResource("1_ns8rl")
+consequence_type = 1
+value = "-20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_l438y"]
+script = ExtResource("1_ns8rl")
+consequence_type = 5
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("2_upaq7")
+notif_title = "At Least Do Something"
+desc = "Even if it was a false report, ignoring a clearly troublesome member making the report is going to make the server look bad. (-10 Atmosphere, -20 Members, -1 Member Income"
+consq_effects = Array[ExtResource("1_ns8rl")]([SubResource("Resource_y7g1d"), SubResource("Resource_5ths4"), SubResource("Resource_l438y")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

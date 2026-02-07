@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bc7p0vcprnsex"]
+
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="1_2jxcj"]
+[ext_resource type="Resource" uid="uid://dk55touchunoj" path="res://res/chatmembers/story_important_members/altmaker_prime.tres" id="1_76nsu"]
+[ext_resource type="Resource" uid="uid://cbxmj5yj100uv" path="res://res/chatmembers/story_important_members/spicy_real_intro.tres" id="1_bd82w"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_jyw2c"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="2_g077s"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="3_ff1mr"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_g077s"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="4_57vg3"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_ff1mr"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="5_afofw"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="7_afofw"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="8_57vg3"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="9_afofw"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="9_j0xnf"]
+
+[sub_resource type="Resource" id="Resource_dbxfg"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("2_g077s")
+text = "hotdogs with hot sauce is good"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_m7c3o"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("3_g077s")
+text = "you are an imbedcile with no taste buds, the only good sauces on hot dogs are ketchup and mustard"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tj3ig"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("1_76nsu")
+text = "*imbecile"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_57vg3"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("2_g077s")
+text = "calm down bro it's just a hot dog"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_afofw"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("3_g077s")
+text = "you are the worst person in this server i hope you never reproduce"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_ff1mr"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("2_g077s")
+text = "this server is the only place where someone can say \"i love hot dogs with hot sauce\" and someone would say \"so you hate hot dogs with ketchup and mustard???\"
+
+invalid crashout, l and bozo"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_bd82w"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("2_g077s")
+text = "hey if someone is reporting this to the mods can i be in the screenshot"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_j0xnf"]
+script = ExtResource("1_jyw2c")
+speaker = ExtResource("4_ff1mr")
+text = "yessir o7"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tubrj"]
+script = ExtResource("3_ff1mr")
+chat_messages = Array[ExtResource("1_jyw2c")]([SubResource("Resource_dbxfg"), SubResource("Resource_m7c3o"), SubResource("Resource_tj3ig"), SubResource("Resource_57vg3"), SubResource("Resource_afofw"), SubResource("Resource_ff1mr"), SubResource("Resource_bd82w"), SubResource("Resource_j0xnf")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_sowxl"]
+script = ExtResource("8_57vg3")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_yeojj"]
+script = ExtResource("8_57vg3")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_6qdj5"]
+script = ExtResource("8_57vg3")
+consequence_type = 3
+value = "hotdog_ban_once"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_vswxt"]
+script = ExtResource("8_57vg3")
+consequence_type = 3
+value = "hotdog_ban_0"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_aeli0"]
+script = ExtResource("9_afofw")
+notif_title = "Before It Gets Worse"
+desc = "This member has caused enough problems to be kicked from the server, and everyone agrees! The atmosphere improves. ( +10 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("8_57vg3")]([SubResource("Resource_sowxl"), SubResource("Resource_yeojj"), SubResource("Resource_6qdj5"), SubResource("Resource_vswxt")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("1_2jxcj")
+case_id = "hotdog_0"
+case_display_name = "Hotdog Argument Goes Wrong"
+case_owner = ExtResource("1_bd82w")
+case_description = "I've never seen a person get so heated about hotdog toppings! Please do something about this."
+chatlog = SubResource("Resource_tubrj")
+report_target = ExtResource("1_76nsu")
+ignore_consequences = ExtResource("5_afofw")
+warning_consequences = ExtResource("9_j0xnf")
+kick_consequences = SubResource("Resource_aeli0")
+false_report_consequences = ExtResource("4_57vg3")
+require_witness_count = 3
+require_witness_pattern = PackedInt32Array(0, 0, 1, 2)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

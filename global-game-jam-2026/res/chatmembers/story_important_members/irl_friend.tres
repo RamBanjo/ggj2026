@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://b3mlo4mmnb8t6"]
+
+[ext_resource type="Texture2D" uid="uid://bbaxxq1stku7u" path="res://sprites/pfp/irl_opp.png" id="1_kp7de"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="1_x6wor"]
+
+[resource]
+script = ExtResource("1_x6wor")
+internal_id = "irl_friend"
+display_name = "IRL_Friend"
+profile_picture = ExtResource("1_kp7de")
+profile_desc = "It's me! Your friend from outside the server!"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

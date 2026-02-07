@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://cjrig32dlmaqq"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_py0nc"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="2_ulop0"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="3_uxjsl"]
+[ext_resource type="Script" uid="uid://bhsexpqo18x0r" path="res://res/consequences/conditional_consequence/conditional_consequence.gd" id="4_e4kya"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="5_4h8jl"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="6_py0nc"]
+[ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="7_cepxv"]
+[ext_resource type="Resource" uid="uid://s60l5pgp4inh" path="res://res/conditionals/vtfan02_not_kicked.tres" id="8_3itl2"]
+
+[sub_resource type="Resource" id="Resource_keig7"]
+script = ExtResource("2_ulop0")
+condtype = 6
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_4k7fo"]
+script = ExtResource("3_uxjsl")
+consequence_type = 3
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_dpvvg"]
+script = ExtResource("3_uxjsl")
+consequence_type = 3
+value = "vtuber_bond_2"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_4ti5c"]
+script = ExtResource("4_e4kya")
+conditional_list = Array[ExtResource("2_ulop0")]([SubResource("Resource_keig7")])
+fail_title = "Bonding Over A Mongoose"
+fail_desc = "(SUS A MONGOOSE)
+
+You play a social deduction game with the VTuber fans, and feel like you've grown closer to them!"
+fail_positive = true
+consequence_if_fail = Array[ExtResource("3_uxjsl")]([SubResource("Resource_4k7fo")])
+notif_title = "Bonding Further Over A Mongoose"
+desc = "(SUS A MONGOOSE)
+
+You play a social deduction game with the VTuber fans, and feel like you've become very close to each other!"
+consq_effects = Array[ExtResource("3_uxjsl")]([SubResource("Resource_dpvvg")])
+is_positive = true
+metadata/_custom_type_script = "uid://bhsexpqo18x0r"
+
+[resource]
+script = ExtResource("5_4h8jl")
+internal_id = "vt_hangout_2"
+title = "lets play a mongoose"
+sender = ExtResource("6_py0nc")
+desc = "...look. i'll be real here. with the bella bellcurve graduation news i want to hang out with rover for a bit and let him know he's appreciated. wanna join me and play a mongoose game together?"
+options = PackedStringArray("Play A Mongoose Game (-1)", "Sorry, Too Busy")
+option_cost = Array[int]([1, 0])
+spawn_conditions = Array[ExtResource("2_ulop0")]([ExtResource("7_cepxv"), ExtResource("8_3itl2")])
+consequences = Array[ExtResource("1_py0nc")]([SubResource("Resource_4ti5c")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

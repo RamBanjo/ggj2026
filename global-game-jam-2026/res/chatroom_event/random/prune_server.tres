@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://bduy0usj2lpnv"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_hh6km"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_3usvt"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_euaq1"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="3_3usvt"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_da570"]
+
+[sub_resource type="Resource" id="Resource_da570"]
+script = ExtResource("2_euaq1")
+consequence_type = 1
+value = "-20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_xqcts"]
+script = ExtResource("2_euaq1")
+consequence_type = 5
+value = "3"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_7jqsa"]
+script = ExtResource("2_euaq1")
+consequence_type = 3
+value = "pruned_server"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_vge4f"]
+script = ExtResource("1_hh6km")
+notif_title = "Spring Cleaning"
+desc = "You removed a few members that hasn't been talking for quite a bit... The server now appears more active, bumping the server up by a few ranks! (-20 Members, +3 Member Income)"
+consq_effects = Array[ExtResource("2_euaq1")]([SubResource("Resource_da570"), SubResource("Resource_xqcts"), SubResource("Resource_7jqsa")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_xnum6"]
+script = ExtResource("1_hh6km")
+notif_title = "Nothing Happens"
+desc = "You decide to keep the inactive members in case they log back in. They'll log back in, right?"
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_6tp36"]
+script = ExtResource("5_da570")
+condtype = 2
+value = "100"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_ti6rb"]
+script = ExtResource("5_da570")
+condtype = 7
+value = "pruned_server"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("2_3usvt")
+internal_id = "pruning"
+title = "Prune Inactive Members?"
+sender = ExtResource("3_3usvt")
+desc = "I'm seeing quite a few inactive members in chat... Some of them hasn't logged in since 2020. Should we remove those inactive members so we appear more active?"
+options = PackedStringArray("Remove Them (-2)", "Do Nothing")
+option_cost = Array[int]([2, 0])
+spawn_conditions = Array[ExtResource("5_da570")]([SubResource("Resource_6tp36"), SubResource("Resource_ti6rb")])
+consequences = Array[ExtResource("1_hh6km")]([SubResource("Resource_vge4f"), SubResource("Resource_xnum6")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

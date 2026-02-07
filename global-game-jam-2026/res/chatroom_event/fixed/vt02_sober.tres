@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://mv1jjs0k4ben"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_pnqg6"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_kr3mp"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_sagdj"]
+[ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="4_er0cn"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_er0cn"]
+
+[sub_resource type="Resource" id="Resource_kr3mp"]
+script = ExtResource("2_kr3mp")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_rt7ci"]
+script = ExtResource("1_pnqg6")
+notif_title = "Notification"
+desc = "rufntmbl has left the server. (-1 Member)"
+consq_effects = Array[ExtResource("2_kr3mp")]([SubResource("Resource_kr3mp")])
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_sagdj")
+internal_id = "vt02_sober"
+title = "sobering up"
+sender = ExtResource("4_er0cn")
+desc = "i failed as a human being. i let the alcohol demon take control of me again. if bella could see me in this state...
+
+no. i don't need to think about how she would think. being like this alone is already bad enough. i'm taking a break for a while. gotta get my life together. im going back to rehab.
+
+i owe you my life, and i'm glad you stepped in. i'll log off for now."
+options = PackedStringArray("Close")
+default_ignore = 0
+consequences = Array[ExtResource("1_pnqg6")]([SubResource("Resource_rt7ci")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

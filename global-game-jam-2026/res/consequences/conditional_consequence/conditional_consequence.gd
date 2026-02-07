@@ -1,44 +1,56 @@
-extends Resource
+extends ModConsequence
 class_name ConditionalConsequence
 
-enum ConditionalType{
-	RULE_IN_EFFECT,
-	RULE_NOT_IN_EFFECT,
-	MEMBER_COUNT_GREATER_EQUAL,
-	MEMBER_COUNT_LESSER_EQUAL,
-	ATMOSPHERE_GREATER_EQUAL,
-	ATMOSPHERE_LESSER_EQUAL
-}
+@export var conditional_list : Array[Conditional] = []
 
-var conditional_list : Array[ConditionalType] = []
-var conditional_test_val : Dictionary = {}
-
-func test_conditionals():
-	var idx : int = 0
-	
+func is_valid():
 	for cond in conditional_list:
-		match cond:
-			ConditionalType.RULE_IN_EFFECT:
-				if not MainChatroom.rule_is_in_effect(conditional_test_val[idx] as MainChatroom.ServerRules):
-					return false
-			ConditionalType.RULE_NOT_IN_EFFECT:
-				if MainChatroom.rule_is_in_effect(conditional_test_val[idx] as MainChatroom.ServerRules):
-					return false
-			ConditionalType.MEMBER_COUNT_GREATER_EQUAL:
-				if not MainChatroom.member_count >= conditional_test_val[idx]:
-					return false
-			ConditionalType.MEMBER_COUNT_LESSER_EQUAL:
-				if not MainChatroom.member_count <= conditional_test_val[idx]:
-					return false
-			ConditionalType.ATMOSPHERE_GREATER_EQUAL:
-				if not MainChatroom.server_atmosphere >= conditional_test_val[idx]:
-					return false
-			ConditionalType.ATMOSPHERE_LESSER_EQUAL:
-				if not MainChatroom.server_atmosphere <= conditional_test_val[idx]:
-					return false
-	idx += 1
-				
+		if not cond.test_conditional():
+			return false
 	return true
-				
-var consequence_if_pass : Array[ModConsequence]
-var consequence_if_fail : Array[ModConsequence]	
+
+@export var fail_title : String = "As a result of your actions..."
+@export_multiline var fail_desc : String
+@export var fail_positive : bool
+@export var fail_negative : bool
+@export var consequence_if_fail : Array[ConsequenceEffect]
+
+func activate_consequence():
+	if is_valid():
+		super.activate_consequence()
+	else:
+		for consq in consequence_if_fail:
+			consq.activate_consequence()
+
+func get_consequence_title():
+	if is_valid():
+		return super.get_consequence_title()
+	else:
+		return fail_title
+		
+func get_consequence_description():
+	if is_valid():
+		return super.get_consequence_description()
+	else:
+		return fail_desc
+		
+func get_positiveness():
+	if is_valid():
+		return super.get_positiveness()
+	else:
+		return fail_positive
+
+func get_negativeness():
+	if is_valid():
+		return super.get_negativeness()
+	else:
+		return fail_negative
+		
+func is_inbox_spawn():
+	if is_valid():
+		return super.is_inbox_spawn()
+	else:
+		for consq in consequence_if_fail:
+			if consq.is_inbox_spawn():
+				return true
+		return false

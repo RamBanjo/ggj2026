@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChatMember" format=3 uid="uid://cc1dwnx08bgc0"]
+
+[ext_resource type="Texture2D" uid="uid://blupktnvahp04" path="res://sprites/pfp/pig2.png" id="1_1v27i"]
+[ext_resource type="Script" uid="uid://ddexf3embsiw5" path="res://res/chatmembers/chat_member.gd" id="2_yc0aq"]
+
+[resource]
+script = ExtResource("2_yc0aq")
+internal_id = "altmaker_2"
+display_name = "small_hatdog"
+profile_picture = ExtResource("1_1v27i")
+profile_desc = "dothogger? not_dothogger? i dont know what youre talking about"
+metadata/_custom_type_script = "uid://ddexf3embsiw5"

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://b53sesdgk3y0i"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_ymead"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_jwlkt"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_w76au"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_w76au"]
+[ext_resource type="Resource" uid="uid://cbxmj5yj100uv" path="res://res/chatmembers/story_important_members/spicy_real_intro.tres" id="4_2dtn4"]
+
+[sub_resource type="Resource" id="Resource_avq62"]
+script = ExtResource("2_w76au")
+consequence_type = 3
+value = "spicy_thanked"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_mrrpi"]
+script = ExtResource("1_ymead")
+notif_title = ""
+desc = "You replied to the server member, telling them that they can come to you should they have any issues in the future."
+consq_effects = Array[ExtResource("2_w76au")]([SubResource("Resource_avq62")])
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_jwlkt")
+internal_id = "spicy_thank"
+title = "Something Funny"
+sender = ExtResource("4_2dtn4")
+desc = "You know, I just noticed something funny after you IP banned the hotdog guy.
+
+After you did that, all the cases of people trying to get me in trouble by pretending to be me just stopped. Gone.
+
+Was that guy behind the thing the whole time? Was it because I accidentally spoiled that movie for them?
+
+No matter what you did, thanks for getting rid of that problem for me."
+options = PackedStringArray("Reply")
+option_cost = Array[int]([0])
+default_ignore = 0
+consequences = Array[ExtResource("1_ymead")]([SubResource("Resource_mrrpi")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

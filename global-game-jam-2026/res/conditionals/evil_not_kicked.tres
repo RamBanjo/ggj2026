@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Conditional" format=3 uid="uid://7myyyk3am11r"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_8sgro"]
+
+[resource]
+script = ExtResource("1_8sgro")
+condtype = 7
+value = "kick_rei_cyst"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bqsrohu46cypc"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_oknuu"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_4x2bn"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_gdvjs"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_gluwu"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_y6087"]
+[ext_resource type="Resource" uid="uid://cd7acdhqk5jsg" path="res://res/consequences/ignore_extreme_2.tres" id="6_4wobj"]
+[ext_resource type="Resource" uid="uid://qe20vmhne37w" path="res://res/consequences/false_report_extreme.tres" id="6_oknuu"]
+[ext_resource type="Resource" uid="uid://dy5rjwd1qbmps" path="res://res/consequences/kick_consq_bad.tres" id="8_oknuu"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_cdcnn"]
+[ext_resource type="Resource" uid="uid://b85k7tq8c6dkk" path="res://res/consequences/warn_consequence_innocent.tres" id="10_4x2bn"]
+
+[sub_resource type="Resource" id="Resource_5meb7"]
+script = ExtResource("1_oknuu")
+speaker = ExtResource("3_gdvjs")
+text = "allowing femoids to vote was a mistake, it's why we got this woke shit today"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_4wobj"]
+script = ExtResource("1_oknuu")
+speaker = ExtResource("3_gdvjs")
+text = "men are becoming so woke and beta because of DEI and all that stuff, it's the women's fault"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_oknuu"]
+script = ExtResource("1_oknuu")
+speaker = ExtResource("2_4x2bn")
+text = "If you hate women so much, why do you always want to sleep with us"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_4x2bn"]
+script = ExtResource("1_oknuu")
+speaker = ExtResource("2_4x2bn")
+text = "no wonder why you can't score a date, you sad, pathetic, person"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_gdvjs"]
+script = ExtResource("1_oknuu")
+speaker = ExtResource("3_gdvjs")
+text = "YOU DARE TALK BACK TO ME, FEMOID???"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_30gsw"]
+script = ExtResource("4_gluwu")
+chat_messages = Array[ExtResource("1_oknuu")]([SubResource("Resource_5meb7"), SubResource("Resource_4wobj"), SubResource("Resource_oknuu"), SubResource("Resource_4x2bn"), SubResource("Resource_gdvjs")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_cdcnn")
+case_id = "ext_3"
+case_display_name = "Femoids, Am I Right?"
+case_description = "This femoid dares to defy me! Mods, ban her at once"
+chatlog = SubResource("Resource_30gsw")
+ignore_consequences = ExtResource("6_4wobj")
+warning_consequences = ExtResource("10_4x2bn")
+kick_consequences = ExtResource("8_oknuu")
+false_report_consequences = ExtResource("6_oknuu")
+is_false_report = true
+is_extreme = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

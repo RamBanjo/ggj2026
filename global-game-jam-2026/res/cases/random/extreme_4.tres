@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bd7gqkqk38w7j"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_hys1u"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_kjc3o"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_pxlem"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_71vik"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_yxhag"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_6ovre"]
+[ext_resource type="Resource" uid="uid://cultp8f2v5gwr" path="res://res/consequences/ignore_extreme.tres" id="7_lt8wy"]
+[ext_resource type="Resource" uid="uid://ha3jxutkppix" path="res://res/consequences/kick_ext.tres" id="8_u5cvo"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_nlpop"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="10_ne6ud"]
+
+[sub_resource type="Resource" id="Resource_5meb7"]
+script = ExtResource("1_hys1u")
+speaker = ExtResource("3_pxlem")
+text = "im making a new save file for Baldman's Gate. can't wait to start playing!
+
+[IMAGE REDACTED - Character creation screen for the game Baldman's Gate]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_hys1u"]
+script = ExtResource("1_hys1u")
+speaker = ExtResource("2_kjc3o")
+text = "ew, thats the gay woke trash game"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_kjc3o"]
+script = ExtResource("1_hys1u")
+speaker = ExtResource("3_pxlem")
+text = "sorry what"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_pxlem"]
+script = ExtResource("1_hys1u")
+speaker = ExtResource("2_kjc3o")
+text = "that game you're playing is woke dei trash
+go woke and go broke"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_71vik"]
+script = ExtResource("1_hys1u")
+speaker = ExtResource("2_kjc3o")
+text = "they let you pick PRONOUNS in the character select screen
+and it lets you be in gay relationships
+bad because woke, dead on arrival"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_yxhag"]
+script = ExtResource("1_hys1u")
+speaker = ExtResource("3_pxlem")
+text = "imagine failing language this bad, lol
+everyone has pronouns, you is a pronoun"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6ovre"]
+script = ExtResource("1_hys1u")
+speaker = ExtResource("2_kjc3o")
+text = "well then my pronoun is \"kiss/myass\" you [SLUR REMOVED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_30gsw"]
+script = ExtResource("4_71vik")
+chat_messages = Array[ExtResource("1_hys1u")]([SubResource("Resource_5meb7"), SubResource("Resource_hys1u"), SubResource("Resource_kjc3o"), SubResource("Resource_pxlem"), SubResource("Resource_71vik"), SubResource("Resource_yxhag"), SubResource("Resource_6ovre")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_nlpop")
+case_id = "ext_4"
+case_display_name = "i just wanna play Baldman's Gate"
+case_description = "I'm being flamed just for posting screenshots apparently"
+chatlog = SubResource("Resource_30gsw")
+ignore_consequences = ExtResource("7_lt8wy")
+warning_consequences = ExtResource("10_ne6ud")
+kick_consequences = ExtResource("8_u5cvo")
+false_report_consequences = ExtResource("6_6ovre")
+is_extreme = true
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"
