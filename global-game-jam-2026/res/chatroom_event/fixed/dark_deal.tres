@@ -42,7 +42,7 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 [sub_resource type="Resource" id="Resource_bpscg"]
 script = ExtResource("1_0c63w")
 notif_title = "No Love Lost"
-desc = "You refuse the offer. The server doesn't need to grow this large this quickly. The user calls you a slur questioning your mental capabilities, then leaves. (-1 Member)"
+desc = "You refuse the offer. The server doesn't need to grow this large this quickly. The user calls you an ableist slur questioning your mental capabilities, then leaves. (-1 Member)"
 consq_effects = Array[ExtResource("2_h4nmm")]([SubResource("Resource_aei5v"), ExtResource("3_hopj4")])
 metadata/_custom_type_script = "uid://sus7no6fg7t7"
 

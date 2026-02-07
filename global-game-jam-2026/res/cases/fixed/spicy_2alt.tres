@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bdhxqxvdr4ndo"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_u35kk"]
+[ext_resource type="Resource" uid="uid://sx3rtnsapmwx" path="res://res/chatmembers/story_important_members/spicy_fake_2.tres" id="2_0sv4s"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_u35kk"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_0sv4s"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_bfm5w"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_3rcnl"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="6_sm6wp"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="7_183cd"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="8_h7h83"]
+[ext_resource type="Resource" uid="uid://xob4l0dhfv2q" path="res://res/consequences/consq_eff/spicy_kick_flag.tres" id="9_nedqj"]
+[ext_resource type="Resource" uid="uid://cbxmj5yj100uv" path="res://res/chatmembers/story_important_members/spicy_real_intro.tres" id="10_lo6uh"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="11_w30q8"]
+
+[sub_resource type="Resource" id="Resource_flcpd"]
+script = ExtResource("1_u35kk")
+speaker = ExtResource("2_0sv4s")
+text = "[IP ADDRESS REDACTED]
+[IP ADDRESS REDACTED]
+[IP ADDRESS REDACTED]
+[IP ADDRESS REDACTED]
+[IP ADDRESS REDACTED]
+[IP ADDRESS REDACTED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_4e7bd"]
+script = ExtResource("1_u35kk")
+speaker = ExtResource("3_u35kk")
+text = "You can't be serious. That's...uh...quite a list you've got there!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_g0duo"]
+script = ExtResource("1_u35kk")
+speaker = ExtResource("2_0sv4s")
+text = "sure is. and you can't do jack shit about me, fuck you"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6oxfk"]
+script = ExtResource("1_u35kk")
+speaker = ExtResource("4_0sv4s")
+text = "oh, we can't. but i know someone who can~"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_236mi"]
+script = ExtResource("4_bfm5w")
+chat_messages = Array[ExtResource("1_u35kk")]([SubResource("Resource_flcpd"), SubResource("Resource_4e7bd"), SubResource("Resource_g0duo"), SubResource("Resource_6oxfk")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_bv738"]
+script = ExtResource("6_sm6wp")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_i8j63"]
+script = ExtResource("7_183cd")
+notif_title = "Good Catch!"
+desc = "You notice that the name of the reported account and the harasser are very subtly different, and told the victim as such. You explained this to the reporter and promised to look into it. (+10 Atmosphere)"
+consq_effects = Array[ExtResource("6_sm6wp")]([SubResource("Resource_bv738")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_hucpu"]
+script = ExtResource("6_sm6wp")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_nua35"]
+script = ExtResource("7_183cd")
+notif_title = "Sinking Feeling"
+desc = "You kicked the person from the group chat without a second thought, but a nagging feeling tells you something isn't right...
+(-1 Member)"
+consq_effects = Array[ExtResource("6_sm6wp")]([ExtResource("9_nedqj"), SubResource("Resource_hucpu")])
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_2i24v"]
+script = ExtResource("7_183cd")
+notif_title = "Confusion"
+desc = "You go to talk to the reported person and ask them to not send those sort of messages again. They are confused because they don't remember sending any sort of message like that.
+
+You'll need to look into this further."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("11_w30q8")
+case_id = "spicy_2alt"
+case_display_name = "Illegal Doxxing"
+case_description = "oh this person is just posting the IP address of everyone in this server."
+chatlog = SubResource("Resource_236mi")
+report_target = ExtResource("10_lo6uh")
+ignore_consequences = ExtResource("8_h7h83")
+warning_consequences = SubResource("Resource_2i24v")
+kick_consequences = SubResource("Resource_nua35")
+false_report_consequences = SubResource("Resource_i8j63")
+is_false_report = true
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

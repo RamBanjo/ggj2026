@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://5aq556cunics"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_8ofby"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_xmqdy"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_kfcxx"]
+[ext_resource type="Resource" uid="uid://cglvg2l78lwdc" path="res://res/moderation_event/offer_ip_ban.tres" id="4_n5vqj"]
+[ext_resource type="Resource" uid="uid://cxm7kko1d76um" path="res://res/moderation_event/offer_spam_filter.tres" id="5_1w37u"]
+[ext_resource type="Resource" uid="uid://nikvogwp2s1p" path="res://res/moderation_event/spawn_spicy_thank.tres" id="6_3lohl"]
+[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="7_pp4ao"]
+[ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="8_vocuh"]
+
+[sub_resource type="Resource" id="Resource_w5782"]
+script = ExtResource("2_xmqdy")
+internal_id = "dark_deal"
+event_type = 8
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_8ofby")
+today_events = Array[ExtResource("2_xmqdy")]([SubResource("Resource_w5782"), ExtResource("4_n5vqj"), ExtResource("5_1w37u"), ExtResource("6_3lohl"), ExtResource("7_pp4ao"), ExtResource("7_pp4ao"), ExtResource("8_vocuh")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

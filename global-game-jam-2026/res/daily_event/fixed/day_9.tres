@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://ppyiwp8dy0el"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_obsmu"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_xpxcs"]
+[ext_resource type="Resource" uid="uid://cglvg2l78lwdc" path="res://res/moderation_event/offer_ip_ban.tres" id="3_aa6qq"]
+[ext_resource type="Resource" uid="uid://cxm7kko1d76um" path="res://res/moderation_event/offer_spam_filter.tres" id="4_mbxxs"]
+[ext_resource type="Resource" uid="uid://nikvogwp2s1p" path="res://res/moderation_event/spawn_spicy_thank.tres" id="5_kwt7f"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="7_aa6qq"]
+[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="7_bpixc"]
+[ext_resource type="Resource" uid="uid://ch88en8qyu2mj" path="res://res/conditionals/no_ip_ban_cond.tres" id="8_mbxxs"]
+[ext_resource type="Resource" uid="uid://ctlei7fhsnwys" path="res://res/conditionals/spicy_not_kicked.tres" id="9_kwt7f"]
+[ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="10_mbxxs"]
+
+[sub_resource type="Resource" id="Resource_aw8jd"]
+script = ExtResource("2_xpxcs")
+call_id = "spicy_2"
+event_type = 1
+conditionals = Array[ExtResource("7_aa6qq")]([ExtResource("8_mbxxs"), ExtResource("9_kwt7f"), ExtResource("10_mbxxs")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_mbxxs"]
+script = ExtResource("7_aa6qq")
+condtype = 7
+value = "ipban_active"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_kwt7f"]
+script = ExtResource("7_aa6qq")
+condtype = 7
+value = "spicy_kick"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_bpixc"]
+script = ExtResource("7_aa6qq")
+condtype = 6
+value = "vtfan01_kick"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_bi10l"]
+script = ExtResource("2_xpxcs")
+call_id = "spicy_2alt"
+event_type = 1
+conditionals = Array[ExtResource("7_aa6qq")]([SubResource("Resource_mbxxs"), SubResource("Resource_kwt7f"), SubResource("Resource_bpixc")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_aa6qq"]
+script = ExtResource("2_xpxcs")
+call_id = "vt_hangout_1"
+event_type = 8
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_obsmu")
+today_events = Array[ExtResource("2_xpxcs")]([ExtResource("3_aa6qq"), ExtResource("4_mbxxs"), ExtResource("5_kwt7f"), ExtResource("7_bpixc"), ExtResource("7_bpixc"), ExtResource("7_bpixc"), SubResource("Resource_aw8jd"), SubResource("Resource_bi10l"), SubResource("Resource_aa6qq")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://dpcwmyj7uctu7"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_w5782"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_t3xsb"]
+[ext_resource type="Resource" uid="uid://cglvg2l78lwdc" path="res://res/moderation_event/offer_ip_ban.tres" id="3_erbnd"]
+[ext_resource type="Resource" uid="uid://cxm7kko1d76um" path="res://res/moderation_event/offer_spam_filter.tres" id="4_v8y3b"]
+[ext_resource type="Resource" uid="uid://nikvogwp2s1p" path="res://res/moderation_event/spawn_spicy_thank.tres" id="5_rojbi"]
+[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="6_bvj6p"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="7_tgdgh"]
+[ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="8_nj8qr"]
+
+[sub_resource type="Resource" id="Resource_w5782"]
+script = ExtResource("2_t3xsb")
+internal_id = "dark_deal"
+event_type = 8
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_w5782")
+today_events = Array[ExtResource("2_t3xsb")]([SubResource("Resource_w5782"), ExtResource("3_erbnd"), ExtResource("4_v8y3b"), ExtResource("5_rojbi"), ExtResource("6_bvj6p"), ExtResource("6_bvj6p"), ExtResource("8_nj8qr")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"
