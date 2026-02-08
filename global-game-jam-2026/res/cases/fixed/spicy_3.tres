@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_k1fcg"]
 [ext_resource type="Resource" uid="uid://d03ij7nch8jvq" path="res://res/chatmembers/story_important_members/spicy_fake_3.tres" id="2_k1fcg"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_fubfw"]
 [ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_k1fcg"]
 [ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_fpd5y"]
 [ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_5g45s"]
@@ -20,7 +21,7 @@ metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
 
 [sub_resource type="Resource" id="Resource_fubfw"]
 script = ExtResource("1_k1fcg")
-speaker = ExtResource("3_k1fcg")
+speaker = ExtResource("3_fubfw")
 text = "who the hell starts a conversation like that
 i just sat down"
 metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
@@ -28,7 +29,8 @@ metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
 [sub_resource type="Resource" id="Resource_k1fcg"]
 script = ExtResource("1_k1fcg")
 speaker = ExtResource("2_k1fcg")
-text = "CHILDREN CAN CONSENT
+text = "THERES NOTHING WRONG WITH BEING A PEDOPHILE
+CHILDREN CAN CONSENT
 AGE IS JUST A NUMBER"
 metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
 

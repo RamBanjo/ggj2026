@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_y5wo8"]
 [ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_voe6s"]
 [ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_lyik3"]
+[ext_resource type="Resource" uid="uid://dq3f4xqid88ty" path="res://res/conditionals/no_filter_cond.tres" id="6_1w0ly"]
 [ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_ea7ua"]
 [ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="7_rnevx"]
 [ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="8_0sq0l"]
@@ -48,4 +49,5 @@ warning_consequences = ExtResource("10_gm46a")
 kick_consequences = ExtResource("8_0sq0l")
 false_report_consequences = ExtResource("6_ea7ua")
 is_spammer = true
+conditionals = Array[ExtResource("5_lyik3")]([ExtResource("6_1w0ly")])
 metadata/_custom_type_script = "uid://cjbcj8s1270lj"

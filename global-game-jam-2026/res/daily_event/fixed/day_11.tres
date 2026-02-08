@@ -6,16 +6,35 @@
 [ext_resource type="Resource" uid="uid://cglvg2l78lwdc" path="res://res/moderation_event/offer_ip_ban.tres" id="4_n5vqj"]
 [ext_resource type="Resource" uid="uid://cxm7kko1d76um" path="res://res/moderation_event/offer_spam_filter.tres" id="5_1w37u"]
 [ext_resource type="Resource" uid="uid://nikvogwp2s1p" path="res://res/moderation_event/spawn_spicy_thank.tres" id="6_3lohl"]
+[ext_resource type="Resource" uid="uid://bhr1ri3v1ckbm" path="res://res/moderation_event/spawn_evil_cases.tres" id="6_xmqdy"]
 [ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="7_pp4ao"]
 [ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="8_vocuh"]
 
+[sub_resource type="Resource" id="Resource_n5vqj"]
+script = ExtResource("2_xmqdy")
+call_id = "server_promoter_friend"
+event_type = 8
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
 [sub_resource type="Resource" id="Resource_w5782"]
 script = ExtResource("2_xmqdy")
-internal_id = "dark_deal"
+internal_id = "spicy_3"
+event_type = 1
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_kfcxx"]
+script = ExtResource("2_xmqdy")
+call_id = "vtuber_marriage"
+event_type = 1
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_xmqdy"]
+script = ExtResource("2_xmqdy")
+call_id = "vt_hangout_2"
 event_type = 8
 metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [resource]
 script = ExtResource("1_8ofby")
-today_events = Array[ExtResource("2_xmqdy")]([SubResource("Resource_w5782"), ExtResource("4_n5vqj"), ExtResource("5_1w37u"), ExtResource("6_3lohl"), ExtResource("7_pp4ao"), ExtResource("7_pp4ao"), ExtResource("8_vocuh")])
+today_events = Array[ExtResource("2_xmqdy")]([ExtResource("4_n5vqj"), ExtResource("5_1w37u"), ExtResource("6_3lohl"), SubResource("Resource_n5vqj"), SubResource("Resource_w5782"), ExtResource("6_xmqdy"), ExtResource("7_pp4ao"), ExtResource("8_vocuh"), SubResource("Resource_kfcxx"), SubResource("Resource_xmqdy")])
 metadata/_custom_type_script = "uid://ckf8xftro8530"

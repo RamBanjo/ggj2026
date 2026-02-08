@@ -22,7 +22,7 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 [sub_resource type="Resource" id="Resource_mwc23"]
 script = ExtResource("1_vofef")
 notif_title = "Word of Mouth"
-desc = "Your friend keeps good on her promise and brings a few of her own friends into the server! (+30 Members, +1 Member Income)"
+desc = "Your friend makes good on her promise and brings a few of her own friends into the server! (+30 Members, +1 Member Income)"
 consq_effects = Array[ExtResource("2_wh68x")]([SubResource("Resource_op7mq"), SubResource("Resource_bwex0")])
 is_positive = true
 metadata/_custom_type_script = "uid://sus7no6fg7t7"
@@ -34,7 +34,7 @@ title = "Lovely Place"
 sender = ExtResource("4_oy8cu")
 desc = "This place isn't so bad. I think I get the gist of what you're doing here now...
 
-I've got a few other friends who could use an online hangout spot like this. I'll let them know of this place."
+I've got a few other friends who could use a wholesome online hangout spot like this. I'll let them know of this place."
 options = PackedStringArray("OK")
 spawn_conditions = Array[ExtResource("5_pc4n5")]([ExtResource("6_21ipo")])
 default_ignore = 0

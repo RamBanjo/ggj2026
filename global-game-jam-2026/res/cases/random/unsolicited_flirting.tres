@@ -9,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://da8kjokvvxa7i" path="res://res/consequences/false_report_friend_bad.tres" id="6_pb4lp"]
 [ext_resource type="Resource" uid="uid://duip11av1yxw6" path="res://res/consequences/ignore_friend_bad.tres" id="7_6nk2l"]
 [ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="7_f6bgr"]
+[ext_resource type="Resource" uid="uid://c3vtwjt5sdhcx" path="res://res/conditionals/friend_not_leave.tres" id="7_q0ldd"]
+[ext_resource type="Resource" uid="uid://8e7uko0hdi6m" path="res://res/conditionals/friend_added.tres" id="8_4qt1i"]
 [ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="8_x66b7"]
 [ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="9_alphi"]
 
@@ -61,4 +63,5 @@ ignore_consequences = ExtResource("7_6nk2l")
 warning_consequences = ExtResource("9_alphi")
 kick_consequences = ExtResource("7_f6bgr")
 false_report_consequences = ExtResource("6_pb4lp")
+conditionals = Array[ExtResource("4_sixcj")]([ExtResource("7_q0ldd"), ExtResource("8_4qt1i")])
 metadata/_custom_type_script = "uid://cjbcj8s1270lj"

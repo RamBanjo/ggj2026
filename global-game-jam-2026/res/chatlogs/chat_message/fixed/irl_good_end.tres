@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://bl7jkrqayin0q"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_ulcck"]
+[ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="2_ulcck"]
+
+[resource]
+script = ExtResource("1_ulcck")
+internal_id = "irl_good_end"
+speaker = ExtResource("2_ulcck")
+title = "Another Side Of You"
+text = "You know, before you told me you're helping manage this place, I had no idea you've been running this entire operation with that head mod. It seemed intimidating at first, but I think hanging out with a lot of people like this from time to time ain't bad. I do enjoy the company.
+
+Hey... You think I have what it takes to become a WhoTuber?"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

@@ -18,7 +18,7 @@
 [sub_resource type="Resource" id="Resource_fj4gs"]
 script = ExtResource("1_6865n")
 speaker = ExtResource("2_br2fr")
-text = "Anybody watched \"My Cats and the Bread? Is it good?"
+text = "Anybody watched \"My Cats and the Bread\"? Is it good?"
 metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
 
 [sub_resource type="Resource" id="Resource_4e7bd"]
@@ -132,6 +132,6 @@ ignore_consequences = ExtResource("9_6865n")
 warning_consequences = SubResource("Resource_g0duo")
 kick_consequences = SubResource("Resource_4a5y8")
 false_report_consequences = ExtResource("8_6865n")
-require_witness_count = 3
-require_witness_pattern = PackedInt32Array(0, 0, 0, 1, 2)
+require_witness_count = 4
+require_witness_pattern = PackedInt32Array(0, 1, 1, 2, 3)
 metadata/_custom_type_script = "uid://cjbcj8s1270lj"

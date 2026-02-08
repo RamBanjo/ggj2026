@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://btv4c2ikfnjj7"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_vt7xt"]
+[ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="2_vt7xt"]
+
+[resource]
+script = ExtResource("1_vt7xt")
+internal_id = "vt02_good_end"
+speaker = ExtResource("2_vt7xt")
+title = "rehab going great"
+text = "my therapist allowed me to send you one message. i'm supposed to be on social media detox as part of my rehab, but he probably realizes i wouldn't even be doing therapy without your push.
+
+i owe you my life. i'm going to get my life back together and quit the poison that ruined it in the first place. i'm now talking to a therapist, and he says he'll help me quit alcohol for good.
+
+wish me luck."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

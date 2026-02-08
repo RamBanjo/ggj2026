@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://cdupm2eaxvbb2"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_bsbua"]
+[ext_resource type="Resource" uid="uid://cbxmj5yj100uv" path="res://res/chatmembers/story_important_members/spicy_real_intro.tres" id="2_bsbua"]
+
+[resource]
+script = ExtResource("1_bsbua")
+internal_id = "spicy_good_end"
+speaker = ExtResource("2_bsbua")
+title = "Impostors Ejected"
+text = "You know, things have gotten pretty boring after all those accounts pretending to be me trying to get me into trouble are now all gone. Doesn't mean it's a bad thing, though! I prefer boring over whatever the hell that was.
+
+If you wanna play some A Mongoose Game, do hit me up, yeah? Me and my esports team are pretty good at it."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

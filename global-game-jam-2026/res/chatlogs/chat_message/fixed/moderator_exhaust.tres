@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_vwkbt")
-internal_id = "welcome"
+internal_id = "moderator_exhaust"
 speaker = ExtResource("2_5rimn")
 title = "I'm tired..."
 text = "I've been here for a while already. Met all sorts of people, good and bad... It's been fun, but I don't know how much longer I can keep this place running. I love this place, but I also have my day job to keep up with...
@@ -14,5 +14,5 @@ You'd never believe it if I told you what I did for a living, haha.
 
 Anyways, keep doing your thing, man. I'm sure we'll figure something out before then.
 
-(If you don't meet the Goal before Day 20, the Head Admin will give up moderating the server, and you'll get the Normal Ending!)"
+(If you don't meet the Goal before Day 16, the Head Admin will give up moderating the server, and you'll get the Normal Ending!)"
 metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

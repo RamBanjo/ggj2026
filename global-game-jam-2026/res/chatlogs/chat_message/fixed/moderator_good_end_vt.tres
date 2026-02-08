@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://dlrxdxlxlqdhl"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_f1l16"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="2_kmxym"]
+
+[resource]
+script = ExtResource("1_f1l16")
+internal_id = "moderator_good_end_vt"
+speaker = ExtResource("2_kmxym")
+title = "Retirement"
+text = "Heya. About that retirement I was thinking of, it's still gonna happen. At the very least, though, I think I found the perfect successor to the head mod position.
+
+You.
+
+You've managed to help grow this server considerably, and you have a good sense of judgment. I can rest easy as I entrust this server to you.
+
+I do get busy from time to time with my work, but I'll come back to hang around you if I'm free. Especially with the alcoholism rehab case I'm working on at work... The case came in just yesterday."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

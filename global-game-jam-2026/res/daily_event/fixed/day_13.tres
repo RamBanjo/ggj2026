@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://dtgsptba56lfa"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_aukuq"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_y2w4j"]
+[ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="4_gsfe5"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_27p17"]
+[ext_resource type="Resource" uid="uid://s60l5pgp4inh" path="res://res/conditionals/vtfan02_not_kicked.tres" id="5_hwfi1"]
+[ext_resource type="Resource" uid="uid://c8crflyegkkml" path="res://res/conditionals/evil_accept.tres" id="7_f8r70"]
+[ext_resource type="Resource" uid="uid://ch6i54mqo8kvq" path="res://res/conditionals/no_evil_deal.tres" id="8_gsfe5"]
+[ext_resource type="Resource" uid="uid://bhr1ri3v1ckbm" path="res://res/moderation_event/spawn_evil_cases.tres" id="8_ox40p"]
+
+[sub_resource type="Resource" id="Resource_16owc"]
+script = ExtResource("2_y2w4j")
+call_id = "vtuber_finale"
+event_type = 8
+conditionals = Array[ExtResource("5_27p17")]([ExtResource("4_gsfe5"), ExtResource("5_hwfi1")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_gsfe5"]
+script = ExtResource("2_y2w4j")
+call_id = "emergency_meeting"
+event_type = 8
+conditionals = Array[ExtResource("5_27p17")]([ExtResource("7_f8r70")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_hwfi1"]
+script = ExtResource("2_y2w4j")
+conditionals = Array[ExtResource("5_27p17")]([ExtResource("8_gsfe5")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_aukuq"]
+script = ExtResource("2_y2w4j")
+event_type = 9
+conditionals = Array[ExtResource("5_27p17")]([ExtResource("8_gsfe5")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_aukuq")
+today_events = Array[ExtResource("2_y2w4j")]([SubResource("Resource_16owc"), ExtResource("8_ox40p"), SubResource("Resource_gsfe5"), SubResource("Resource_hwfi1"), SubResource("Resource_aukuq")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="6_j22m1"]
 [ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="6_mrpvw"]
 [ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="7_m5ryu"]
+[ext_resource type="Resource" uid="uid://dq3f4xqid88ty" path="res://res/conditionals/no_filter_cond.tres" id="7_t5wpv"]
 [ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="8_algcq"]
 
 [sub_resource type="Resource" id="Resource_73pw0"]
@@ -61,4 +62,5 @@ false_report_consequences = ExtResource("4_j22m1")
 is_spammer = true
 require_witness_count = 1
 require_witness_pattern = PackedInt32Array(0)
+conditionals = Array[ExtResource("6_j22m1")]([ExtResource("7_t5wpv")])
 metadata/_custom_type_script = "uid://cjbcj8s1270lj"

@@ -14,7 +14,7 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [sub_resource type="Resource" id="Resource_mrrpi"]
 script = ExtResource("1_ymead")
-notif_title = ""
+notif_title = "Just Doing My Job"
 desc = "You replied to the server member, telling them that they can come to you should they have any issues in the future."
 consq_effects = Array[ExtResource("2_w76au")]([SubResource("Resource_avq62")])
 metadata/_custom_type_script = "uid://sus7no6fg7t7"

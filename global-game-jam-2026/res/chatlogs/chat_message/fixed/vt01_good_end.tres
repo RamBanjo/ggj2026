@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ChatMessage" format=3 uid="uid://dai0g8amq867n"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_647bp"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="2_647bp"]
+
+[resource]
+script = ExtResource("1_647bp")
+internal_id = "vt01_good_end"
+speaker = ExtResource("2_647bp")
+title = "need help?"
+text = "yo. heard about the head mod handing the server over to you. if you ever need a right-hand, then i can offer some help. fill the gap you once filled.
+
+might not be as good as you yet, but i'll try my best."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"

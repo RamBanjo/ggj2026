@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Chatlog" format=3 uid="uid://dfap1c7ppmepe"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_5ks3h"]
+[ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="2_5v3om"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="3_qxlkb"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_dbs2v"]
+
+[sub_resource type="Resource" id="Resource_15hcn"]
+script = ExtResource("1_5ks3h")
+speaker = ExtResource("2_5v3om")
+text = "i finally figured it out. its been in front of me this whole time.
+she literally lives in the same city."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_dnxll"]
+script = ExtResource("1_5ks3h")
+speaker = ExtResource("2_5v3om")
+text = "[ADDRESS REDACTED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_5noho"]
+script = ExtResource("1_5ks3h")
+speaker = ExtResource("2_5v3om")
+text = "its a bit away from where i live, but i can manage.
+ill go see bella. i need to tell her how i feel"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_7tiuk"]
+script = ExtResource("1_5ks3h")
+speaker = ExtResource("3_qxlkb")
+text = "don't do this, man. you're already one foot in the grave. step back for a bit and let's take a long breath."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_a7e4v"]
+script = ExtResource("1_5ks3h")
+speaker = ExtResource("2_5v3om")
+text = "i am...nothing without her. nothing at all.
+i need her. she needs me. yes, she needs me..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_p3r60"]
+script = ExtResource("1_5ks3h")
+speaker = ExtResource("2_5v3om")
+text = "and im going to make her realize, one way or another."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[resource]
+script = ExtResource("4_dbs2v")
+chat_messages = Array[ExtResource("1_5ks3h")]([SubResource("Resource_15hcn"), SubResource("Resource_dnxll"), SubResource("Resource_5noho"), SubResource("Resource_7tiuk"), SubResource("Resource_a7e4v"), SubResource("Resource_p3r60")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"

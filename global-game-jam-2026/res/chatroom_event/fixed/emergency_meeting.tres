@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 [sub_resource type="Resource" id="Resource_eex7w"]
 script = ExtResource("1_n7s2i")
 notif_title = "Clean the Slate"
-desc = "You went through the members list with the head mod and that alone got you to remove several accounts saying hateful things and putting hateful messages in their profile. The nightmare should now be over. (-150 Members, -10 Member Income, +20 Atmosphere)"
+desc = "You went through the members list with the head mod and that alone got you to remove several accounts saying hateful things and putting hateful messages in their profile. The nightmare is now over. (-150 Members, -10 Member Income, +20 Atmosphere)"
 consq_effects = Array[ExtResource("2_u1eo4")]([SubResource("Resource_u1eo4"), SubResource("Resource_frfwd"), SubResource("Resource_07s3k"), ExtResource("3_u1eo4")])
 is_positive = true
 metadata/_custom_type_script = "uid://sus7no6fg7t7"

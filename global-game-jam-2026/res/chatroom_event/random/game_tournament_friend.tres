@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://bbn6emusktos0"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_dnd73"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_nguap"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_sqlry"]
+[ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="4_s7eig"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_ulq16"]
+[ext_resource type="Resource" uid="uid://8e7uko0hdi6m" path="res://res/conditionals/friend_added.tres" id="6_7j38o"]
+[ext_resource type="Resource" uid="uid://c3vtwjt5sdhcx" path="res://res/conditionals/friend_not_leave.tres" id="7_mtnot"]
+
+[sub_resource type="Resource" id="Resource_op7mq"]
+script = ExtResource("2_nguap")
+consequence_type = 1
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bwex0"]
+script = ExtResource("2_nguap")
+consequence_type = 5
+value = "2"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_3ow12"]
+script = ExtResource("2_nguap")
+consequence_type = 3
+value = "mongoose_tournament"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_mwc23"]
+script = ExtResource("1_dnd73")
+notif_title = "Impostor Party"
+desc = "You hosted a tournament for A Mongoose Game within the server. Some server members brought in friends to form a team for the tournament, and some are even staying after the tournament ended! (+10 Members, +2 Member Income)"
+consq_effects = Array[ExtResource("2_nguap")]([SubResource("Resource_op7mq"), SubResource("Resource_bwex0"), SubResource("Resource_3ow12")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_mtnot"]
+script = ExtResource("1_dnd73")
+notif_title = "Not Today, Mongoose"
+desc = "You don't feel like playing social deduction games today. You pass on this offer for now."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_voirn"]
+script = ExtResource("5_ulq16")
+condtype = 7
+value = "mongoose_tournament"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("3_sqlry")
+internal_id = "game_tournament_friend"
+title = "Let's Start a Tournament"
+sender = ExtResource("4_s7eig")
+desc = "Hey, remember that game we used to play together? That social deduction game with the mongoose? I think it's called A Mongoose Game?
+
+I thought maybe we could start something fun for the server. What if we hosted a tournament for A Mongoose Game? I could free up one of my comission slots for one of the prizes."
+options = PackedStringArray("Host Tournament (-2)", "Maybe Later")
+spawn_conditions = Array[ExtResource("5_ulq16")]([ExtResource("6_7j38o"), ExtResource("7_mtnot"), SubResource("Resource_voirn")])
+consequences = Array[ExtResource("1_dnd73")]([SubResource("Resource_mwc23"), SubResource("Resource_mtnot")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

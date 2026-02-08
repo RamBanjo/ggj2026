@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://cu86xv4ibpfon"]
+
+[ext_resource type="Resource" uid="uid://dfap1c7ppmepe" path="res://res/chatlogs/vtuber_finale_chatlog.tres" id="1_2kdwt"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_jhr0b"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_g4itx"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_2kdwt"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="3_5pl3j"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="3_g4itx"]
+[ext_resource type="Script" uid="uid://bhsexpqo18x0r" path="res://res/consequences/conditional_consequence/conditional_consequence.gd" id="5_xwbqr"]
+
+[sub_resource type="Resource" id="Resource_xwbqr"]
+script = ExtResource("3_2kdwt")
+condtype = 6
+value = "vtuber_bond_2"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_qho8r"]
+script = ExtResource("3_5pl3j")
+consequence_type = 3
+value = "vt_finale_chat"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_qg1lh"]
+script = ExtResource("3_5pl3j")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_v7n55"]
+script = ExtResource("3_5pl3j")
+consequence_type = 3
+value = "vtfan02_kick"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_mk4l8"]
+script = ExtResource("3_5pl3j")
+consequence_type = 3
+value = "vt_finale_chat"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_6pta0"]
+script = ExtResource("5_xwbqr")
+conditional_list = Array[ExtResource("3_2kdwt")]([SubResource("Resource_xwbqr")])
+fail_title = "Do You Hear The Bell Tolling?"
+fail_desc = "After a long, unfruitful conversation which fails to convince him to not do something he'll later regret, rufntmbl sent just one \"sorry.\", and then leaves the server. His fate remains unknown. (-1 Member)"
+fail_negative = true
+consequence_if_fail = Array[ExtResource("3_5pl3j")]([SubResource("Resource_qho8r"), SubResource("Resource_qg1lh"), SubResource("Resource_v7n55")])
+notif_title = "Crisis Averted"
+desc = "It took a lot of convincing, but you manage to talk rufntmbl down from doing anything drastic."
+consq_effects = Array[ExtResource("3_5pl3j")]([SubResource("Resource_mk4l8")])
+is_positive = true
+metadata/_custom_type_script = "uid://bhsexpqo18x0r"
+
+[sub_resource type="Resource" id="Resource_t5ifu"]
+script = ExtResource("3_5pl3j")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_skllw"]
+script = ExtResource("3_5pl3j")
+consequence_type = 3
+value = "vtfan02_kick"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_cn4xo"]
+script = ExtResource("1_jhr0b")
+notif_title = "Doing Nothing"
+desc = "You decide it would be best to not intervene. rufntmbl leaves the server soon after. (-1 Member)"
+consq_effects = Array[ExtResource("3_5pl3j")]([SubResource("Resource_t5ifu"), SubResource("Resource_skllw")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_g4itx")
+internal_id = "vtuber_finale_event"
+title = "please help him."
+sender = ExtResource("3_g4itx")
+desc = "i'm desperate. i need your help.
+
+its crazy how i am now worried sick about someone i threatened to kill the first time we met. he's not acting like himself ever since the news that his oshi bella is getting married came out.
+
+please do something. anything. i don't want him to do something he can't take back."
+chatlog = ExtResource("1_2kdwt")
+options = PackedStringArray("Talk Him Down (-1)", "Ignore")
+option_cost = Array[int]([1, 0])
+consequences = Array[ExtResource("1_jhr0b")]([SubResource("Resource_6pta0"), SubResource("Resource_cn4xo")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

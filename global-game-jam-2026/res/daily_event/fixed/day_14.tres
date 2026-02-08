@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://uewheyee0e6k"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_nv4ry"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_8m7pi"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_dkfnd"]
+[ext_resource type="Resource" uid="uid://dq3f4xqid88ty" path="res://res/conditionals/no_filter_cond.tres" id="5_sbwc1"]
+[ext_resource type="Resource" uid="uid://bhr1ri3v1ckbm" path="res://res/moderation_event/spawn_evil_cases.tres" id="6_r7tbn"]
+
+[sub_resource type="Resource" id="Resource_sbwc1"]
+script = ExtResource("2_8m7pi")
+call_id = "moderator_exhaust"
+event_type = 3
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_nv4ry"]
+script = ExtResource("3_dkfnd")
+condtype = 7
+value = "vt_finale_chat"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_l5ben"]
+script = ExtResource("2_8m7pi")
+call_id = "vt_finale_0_bonding"
+event_type = 8
+conditionals = Array[ExtResource("3_dkfnd")]([SubResource("Resource_nv4ry")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_8m7pi"]
+script = ExtResource("3_dkfnd")
+condtype = 6
+value = "vt_finale_0_bonding"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_dkfnd"]
+script = ExtResource("3_dkfnd")
+condtype = 7
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_yv1wg"]
+script = ExtResource("2_8m7pi")
+call_id = "vt_finale_0_bonding"
+event_type = 8
+conditionals = Array[ExtResource("3_dkfnd")]([SubResource("Resource_8m7pi"), SubResource("Resource_dkfnd")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_7frsp"]
+script = ExtResource("3_dkfnd")
+condtype = 6
+value = "vt_finale_0_bonding"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_r7tbn"]
+script = ExtResource("3_dkfnd")
+condtype = 6
+value = "vtuber_bond_1"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_38huu"]
+script = ExtResource("3_dkfnd")
+condtype = 7
+value = "vtuber_bond_2"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_timsn"]
+script = ExtResource("2_8m7pi")
+call_id = "vt_finale_1_bonding"
+event_type = 8
+conditionals = Array[ExtResource("3_dkfnd")]([SubResource("Resource_7frsp"), SubResource("Resource_r7tbn"), SubResource("Resource_38huu")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_5b2gy"]
+script = ExtResource("3_dkfnd")
+condtype = 6
+value = "vt_finale_0_bonding"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_ldn4s"]
+script = ExtResource("3_dkfnd")
+condtype = 6
+value = "vtuber_bond_2"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[sub_resource type="Resource" id="Resource_82mqp"]
+script = ExtResource("2_8m7pi")
+call_id = "vt_finale_2_bonding"
+event_type = 8
+conditionals = Array[ExtResource("3_dkfnd")]([SubResource("Resource_5b2gy"), SubResource("Resource_ldn4s")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_mvhi0"]
+script = ExtResource("2_8m7pi")
+event_type = 2
+conditionals = Array[ExtResource("3_dkfnd")]([ExtResource("5_sbwc1")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_nv4ry")
+today_events = Array[ExtResource("2_8m7pi")]([SubResource("Resource_sbwc1"), SubResource("Resource_l5ben"), SubResource("Resource_yv1wg"), SubResource("Resource_timsn"), SubResource("Resource_82mqp"), ExtResource("6_r7tbn"), SubResource("Resource_mvhi0")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

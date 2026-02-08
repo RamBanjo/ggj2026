@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://i314ifersrcr"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_4kdh1"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_pgp6y"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_bjce3"]
+[ext_resource type="Resource" uid="uid://xob4l0dhfv2q" path="res://res/consequences/consq_eff/spicy_kick_flag.tres" id="3_pgp6y"]
+[ext_resource type="Resource" uid="uid://cbxmj5yj100uv" path="res://res/chatmembers/story_important_members/spicy_real_intro.tres" id="4_lsd8i"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_ob50k"]
+
+[sub_resource type="Resource" id="Resource_bjce3"]
+script = ExtResource("2_pgp6y")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_pgp6y"]
+script = ExtResource("2_pgp6y")
+consequence_type = 2
+value = "-10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_mrrpi"]
+script = ExtResource("1_4kdh1")
+notif_title = "Notification"
+desc = "padkraprao_mookrob has left the server. (-1 Member, -10 Atmosphere)"
+consq_effects = Array[ExtResource("2_pgp6y")]([ExtResource("3_pgp6y"), SubResource("Resource_bjce3"), SubResource("Resource_pgp6y")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("3_bjce3")
+internal_id = "spicy_leave"
+title = "Feeling Unsafe"
+sender = ExtResource("4_lsd8i")
+desc = "Sorry. I tried to be patient and understanding, but I don't think I feel safe being in this place anymore.
+
+After that small stunt by my impersonator I got a bunch of death threats from people who thought I'm the fake that got banned, that I actually abuse animals and that I'm actually a pedophile like that faker said.
+
+If I continue to hang around, it'll get worse. Who knows what my impostor will try to pull next.
+
+Thanks for all you've done this far. Maybe we'll see each other again in another time."
+options = PackedStringArray("OK")
+option_cost = Array[int]([0])
+default_ignore = 0
+consequences = Array[ExtResource("1_4kdh1")]([SubResource("Resource_mrrpi")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

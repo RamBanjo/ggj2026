@@ -8,5 +8,5 @@ script = ExtResource("1_x6wor")
 internal_id = "irl_friend"
 display_name = "IRL_Friend"
 profile_picture = ExtResource("1_kp7de")
-profile_desc = "It's me! Your friend from outside the server!"
+profile_desc = "It's me! The friend that you also know in real life!"
 metadata/_custom_type_script = "uid://ddexf3embsiw5"

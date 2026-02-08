@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DailyEvent" format=3 uid="uid://d2t2xyow427t5"]
+
+[ext_resource type="Script" uid="uid://ckf8xftro8530" path="res://res/daily_event/daily_event.gd" id="1_3oaaa"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_ywkef"]
+[ext_resource type="Resource" uid="uid://cxm7kko1d76um" path="res://res/moderation_event/offer_spam_filter.tres" id="4_1tl6d"]
+[ext_resource type="Resource" uid="uid://nikvogwp2s1p" path="res://res/moderation_event/spawn_spicy_thank.tres" id="5_6m40d"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="6_koqim"]
+[ext_resource type="Resource" uid="uid://ctlei7fhsnwys" path="res://res/conditionals/spicy_not_kicked.tres" id="6_ywkef"]
+[ext_resource type="Resource" uid="uid://ch88en8qyu2mj" path="res://res/conditionals/no_ip_ban_cond.tres" id="7_eo2nb"]
+[ext_resource type="Resource" uid="uid://bhr1ri3v1ckbm" path="res://res/moderation_event/spawn_evil_cases.tres" id="7_xawvx"]
+[ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="8_4pwjv"]
+[ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="9_7y3y3"]
+[ext_resource type="Resource" uid="uid://br0ysbfbvv4pg" path="res://res/conditionals/ip_ban_cond.tres" id="11_eo2nb"]
+
+[sub_resource type="Resource" id="Resource_1tl6d"]
+script = ExtResource("2_ywkef")
+call_id = "server_promoter_spicy"
+event_type = 8
+conditionals = Array[ExtResource("6_koqim")]([ExtResource("6_ywkef"), ExtResource("11_eo2nb")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[sub_resource type="Resource" id="Resource_16owc"]
+script = ExtResource("2_ywkef")
+call_id = "spicy_leave"
+event_type = 8
+conditionals = Array[ExtResource("6_koqim")]([ExtResource("6_ywkef"), ExtResource("7_eo2nb")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"
+
+[resource]
+script = ExtResource("1_3oaaa")
+today_events = Array[ExtResource("2_ywkef")]([ExtResource("4_1tl6d"), ExtResource("5_6m40d"), SubResource("Resource_1tl6d"), SubResource("Resource_16owc"), ExtResource("7_xawvx"), ExtResource("8_4pwjv"), ExtResource("8_4pwjv"), ExtResource("9_7y3y3")])
+metadata/_custom_type_script = "uid://ckf8xftro8530"

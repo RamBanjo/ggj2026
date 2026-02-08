@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://dgeqjfwjtktdx"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_n6so4"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_qmy08"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_udcsf"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_qmy08"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="3_udcsf"]
+
+[sub_resource type="Resource" id="Resource_qmy08"]
+script = ExtResource("2_qmy08")
+consequence_type = 2
+value = "20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_8017w"]
+script = ExtResource("1_n6so4")
+notif_title = "A Friend In Me"
+desc = "You gladly accept the words of appreciation. It looks like you have formed an irreplacable bond over these past few days. (+20 Atmosphere)"
+consq_effects = Array[ExtResource("2_qmy08")]([SubResource("Resource_qmy08")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_udcsf")
+internal_id = "vt_finale_2_bonding"
+title = "thanks for being a friend."
+sender = ExtResource("3_udcsf")
+desc = "...thank you for helping me talk some sense into the guy. i don't know if i'll be able to convince him by myself.
+
+we've known each other for a relatively short time, but i feel like we can become even better friends in the future.
+
+so, from myself and on his behalf, thank you for being a friend."
+options = PackedStringArray("Reply")
+default_ignore = 0
+consequences = Array[ExtResource("1_n6so4")]([SubResource("Resource_8017w")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

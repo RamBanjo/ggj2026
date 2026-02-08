@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://bufyh4oxwrksv"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_b4dug"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="2_qe8ks"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_t0uey"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_t0uey"]
+[ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="4_t0uey"]
+
+[sub_resource type="Resource" id="Resource_qe8ks"]
+script = ExtResource("2_t0uey")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_t0uey"]
+script = ExtResource("2_t0uey")
+consequence_type = 2
+value = "-20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_x2uky"]
+script = ExtResource("2_t0uey")
+consequence_type = 3
+value = "vtfan01_kick"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_7pmdk"]
+script = ExtResource("1_b4dug")
+notif_title = "Notification"
+desc = "pH_fl0wing has left the server. (-1 Member, -20 Atmosphere)"
+consq_effects = Array[ExtResource("2_t0uey")]([SubResource("Resource_qe8ks"), SubResource("Resource_t0uey"), SubResource("Resource_x2uky")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("2_qe8ks")
+internal_id = "vt_finale_0_bonding"
+title = "he's on the fucking news."
+sender = ExtResource("4_t0uey")
+desc = "...
+
+i never thought i'd be entangled in something like this...
+
+that idiot... he broke into bella bellcurve's house while drunk. with a knife. the cops immediately got to him... he's probably going away for a long time.
+
+mmm. this place... it brings out too many bad memories. no hard feelings, but i can't stay here any longer."
+options = PackedStringArray("OK")
+default_ignore = 0
+consequences = Array[ExtResource("1_b4dug")]([SubResource("Resource_7pmdk")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

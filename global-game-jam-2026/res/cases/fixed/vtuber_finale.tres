@@ -2,55 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_q54x6"]
 [ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="1_tdmf3"]
-[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_5noho"]
+[ext_resource type="Resource" uid="uid://dfap1c7ppmepe" path="res://res/chatlogs/vtuber_finale_chatlog.tres" id="2_7tiuk"]
 [ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="2_tdmf3"]
 [ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="3_m315l"]
-[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_7tiuk"]
 [ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="6_15hcn"]
 [ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="7_dnxll"]
-
-[sub_resource type="Resource" id="Resource_15hcn"]
-script = ExtResource("2_5noho")
-speaker = ExtResource("3_m315l")
-text = "i finally figured it out. its been in front of me this whole time."
-metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
-
-[sub_resource type="Resource" id="Resource_dnxll"]
-script = ExtResource("2_5noho")
-speaker = ExtResource("3_m315l")
-text = "[ADDRESS REDACTED]"
-metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
-
-[sub_resource type="Resource" id="Resource_5noho"]
-script = ExtResource("2_5noho")
-speaker = ExtResource("3_m315l")
-text = "its a bit of walk from my house
-ill go see bella. i need to tell her how i feel"
-metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
-
-[sub_resource type="Resource" id="Resource_7tiuk"]
-script = ExtResource("2_5noho")
-speaker = ExtResource("1_tdmf3")
-text = "don't do this, man. you're already one foot in the grave. step back for a bit and let's take a long breath."
-metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
-
-[sub_resource type="Resource" id="Resource_a7e4v"]
-script = ExtResource("2_5noho")
-speaker = ExtResource("3_m315l")
-text = "i am...nothing without her. nothing at all.
-i need her. she needs me. yes, she needs me..."
-metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
-
-[sub_resource type="Resource" id="Resource_p3r60"]
-script = ExtResource("2_5noho")
-speaker = ExtResource("3_m315l")
-text = "and im going to make her realize, one way or another."
-metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
-
-[sub_resource type="Resource" id="Resource_qbg7n"]
-script = ExtResource("4_7tiuk")
-chat_messages = Array[ExtResource("2_5noho")]([SubResource("Resource_15hcn"), SubResource("Resource_dnxll"), SubResource("Resource_5noho"), SubResource("Resource_7tiuk"), SubResource("Resource_a7e4v"), SubResource("Resource_p3r60")])
-metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
 
 [sub_resource type="Resource" id="Resource_c58fr"]
 script = ExtResource("7_dnxll")
@@ -69,7 +25,7 @@ case_description = "i'm desperate. i need your help.
 its crazy how i am now worried sick about someone i threatened to kill the first time we met. he's not acting like himself ever since the news that his oshi bella is getting married came out.
 
 please do something. anything. i don't want him to do something he can't take back."
-chatlog = SubResource("Resource_qbg7n")
+chatlog = ExtResource("2_7tiuk")
 report_target = ExtResource("3_m315l")
 ignore_consequences = SubResource("Resource_c58fr")
 metadata/_custom_type_script = "uid://cjbcj8s1270lj"

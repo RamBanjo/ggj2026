@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_uduem"]
 [ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="4_dcrl6"]
 [ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_boubj"]
-[ext_resource type="Resource" uid="uid://8e7uko0hdi6m" path="res://res/conditionals/friend_added.tres" id="6_clv2o"]
+[ext_resource type="Resource" uid="uid://ctlei7fhsnwys" path="res://res/conditionals/spicy_not_kicked.tres" id="6_0t1wn"]
 
 [sub_resource type="Resource" id="Resource_op7mq"]
 script = ExtResource("2_tr1xh")
@@ -21,8 +21,8 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [sub_resource type="Resource" id="Resource_mwc23"]
 script = ExtResource("1_0t1wn")
-notif_title = "Word of Mouth"
-desc = "Your friend keeps good on her promise and brings a few of her own friends into the server! (+30 Members, +1 Member Income)"
+notif_title = "Cooperation"
+desc = "The club members arrive! They're friendly, they post hilarious memes, and they are GOATed at A Mongoose Game! (+30 Members, +1 Member Income)"
 consq_effects = Array[ExtResource("2_tr1xh")]([SubResource("Resource_op7mq"), SubResource("Resource_bwex0")])
 is_positive = true
 metadata/_custom_type_script = "uid://sus7no6fg7t7"
@@ -30,13 +30,15 @@ metadata/_custom_type_script = "uid://sus7no6fg7t7"
 [resource]
 script = ExtResource("3_uduem")
 internal_id = "server_promoter_spicy"
-title = "Unwinding"
+title = "Thanks Again"
 sender = ExtResource("4_dcrl6")
 desc = "Heya, thanks for fending off all those impostors again. Lemme repay you in kind.
 
-I run an esports club at my local university, and the members there could use a place to hang out and unwind. "
+I run an esports club at my local university, and the members there could use a place to hang out and unwind. Your place has the exact kind of chill and friendly environment we're looking for in a Disarray server. They'll love it here.
+
+Don't worry, I personally vetted each and everyone of them. Needless to say they'll be on their best behavior and not cause you any headaches."
 options = PackedStringArray("OK")
-spawn_conditions = Array[ExtResource("5_boubj")]([ExtResource("6_clv2o")])
+spawn_conditions = Array[ExtResource("5_boubj")]([ExtResource("6_0t1wn")])
 default_ignore = 0
 consequences = Array[ExtResource("1_0t1wn")]([SubResource("Resource_mwc23")])
 metadata/_custom_type_script = "uid://c8wp3x1baaiex"

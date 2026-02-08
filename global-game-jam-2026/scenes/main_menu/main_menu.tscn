@@ -198,6 +198,7 @@ text = "Show Warning at Start"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+alignment = 1
 icon_alignment = 2
 selected = 0
 item_count = 2

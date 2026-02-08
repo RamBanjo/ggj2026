@@ -14,6 +14,6 @@ metadata/_custom_type_script = "uid://cq0nqidyse0ng"
 [resource]
 script = ExtResource("2_k5ka2")
 call_id = "spicy_thank"
-event_type = 1
+event_type = 8
 conditionals = Array[ExtResource("1_lf31e")]([ExtResource("2_065en"), ExtResource("3_065en"), SubResource("Resource_065en")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"
