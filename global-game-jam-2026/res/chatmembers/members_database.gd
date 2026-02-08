@@ -10,13 +10,18 @@ static func initialize_random_members():
 	if randmem_dir != null:
 		randmem_dir.list_dir_begin()
 		var file_name = randmem_dir.get_next()
+
+		if '.tres.remap' in file_name:
+			file_name = file_name.trim_suffix('.remap')
 		
 		while file_name != "":
 			var full_path = MEMBER_PATH + "/" + file_name
 			var new_case : ChatMember = load(full_path)
 			members_list.append(new_case)
 			file_name = randmem_dir.get_next()
-			
+			if '.tres.remap' in file_name:
+				file_name = file_name.trim_suffix('.remap')	
+						
 	print("load random members: ", len(members_list))
 
 static var seen_members_today : Array = []

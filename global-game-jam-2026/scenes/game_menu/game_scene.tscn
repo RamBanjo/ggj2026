@@ -20,6 +20,10 @@
 [ext_resource type="AudioStream" uid="uid://d1qoqt46q7qks" path="res://audio/Dark.wav" id="12_c7117"]
 [ext_resource type="AudioStream" uid="uid://db8rk0ul4ykgn" path="res://audio/Good.wav" id="13_6576e"]
 [ext_resource type="PackedScene" uid="uid://bifp1x0uwhai8" path="res://scenes/game_menu/profile_viewer_panel.tscn" id="13_if733"]
+[ext_resource type="Script" uid="uid://daiivfnplv1ao" path="res://scenes/game_menu/notifier_panel.gd" id="18_ml11q"]
+[ext_resource type="Script" uid="uid://gtvk383r3apg" path="res://scenes/main_menu/disable_warning.gd" id="18_q5vik"]
+[ext_resource type="Script" uid="uid://d1wy4fidee1hv" path="res://scenes/main_menu/fullscreen_picker.gd" id="19_7y3jv"]
+[ext_resource type="Script" uid="uid://cocnmh0kjtsti" path="res://scenes/main_menu/res_picker.gd" id="20_ml11q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7117"]
 
@@ -314,10 +318,120 @@ text = "Don't Show Again"
 visible = false
 layout_mode = 1
 
-[node name="GameOverPanel" parent="NotificationCanvas/BackgroundBlocker" unique_id=1840001520 instance=ExtResource("10_edfq3")]
+[node name="GameOverPanel" type="PanelContainer" parent="NotificationCanvas/BackgroundBlocker" unique_id=1840001520]
 visible = false
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.0
+offset_top = -348.0
+offset_right = 896.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_nv67f")
+script = ExtResource("18_ml11q")
 closable = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel" unique_id=2012904334]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer" unique_id=503195755]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/HBoxContainer" unique_id=845547100]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "As a result of your decision..."
+vertical_alignment = 1
+
+[node name="TextureButton" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/HBoxContainer" unique_id=1263313386 instance=ExtResource("9_tau56")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer" unique_id=1267030896]
+custom_minimum_size = Vector2(960, 256)
+layout_mode = 2
+text = "The server members are upset!
+They really are upset!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer" unique_id=599956362]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Label2" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer" unique_id=1310404207]
+layout_mode = 2
+size_flags_vertical = 5
+text = "Server Status"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer" unique_id=58905218]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_constants/separation = 50
+
+[node name="AtmosphereLabel" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1253473226]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Atmosphere"
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=417691800]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+step = 1.0
+value = 50.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer" unique_id=695237829]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=12743999]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Member Count"
+vertical_alignment = 1
+
+[node name="MemberCount" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=766644605]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer" unique_id=1218665170]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=1457362970]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "New Members Per Day"
+vertical_alignment = 1
+
+[node name="MemberGain" type="Label" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=121700786]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer" unique_id=260762078]
+layout_mode = 2
+text = "Close"
+
+[node name="ConclusionStatsPanel" parent="NotificationCanvas/BackgroundBlocker" unique_id=1789217285 instance=ExtResource("10_edfq3")]
+visible = false
+layout_mode = 1
 
 [node name="EndingScene" type="TextureRect" parent="NotificationCanvas/BackgroundBlocker" unique_id=1680787523]
 visible = false
@@ -349,44 +463,39 @@ theme = ExtResource("3_nv67f")
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer" unique_id=1137712069]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=951286323]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=70493021]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Options"
-
-[node name="OptionCloseButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=2026815548 instance=ExtResource("9_tau56")]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1678769756]
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1938983594]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer" unique_id=271772851]
-layout_mode = 2
-text = "BGM"
-
-[node name="BGMVolSlider" type="HSlider" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1852318926]
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer" unique_id=128007992]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.5
+text = "BGM"
+
+[node name="BGMVolBar" type="HSlider" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer" unique_id=849009916]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
 max_value = 1.0
 step = 0.1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=63421301]
+[node name="HBoxContainer2" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=255862298]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1760315572]
-layout_mode = 2
-text = "Show Warning at Start"
-
-[node name="DisableWarning" type="OptionButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=956979926]
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1117736389]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.5
+text = "Show Warning at Start"
+
+[node name="DisableWarning" type="OptionButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=2009299009]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
 alignment = 1
 icon_alignment = 2
 selected = 0
@@ -395,6 +504,51 @@ popup/item_0/text = "Yes"
 popup/item_0/id = 0
 popup/item_1/text = "No"
 popup/item_1/id = 1
+script = ExtResource("18_q5vik")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=2114425885]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer4" unique_id=1832173384]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.5
+text = "Show Fullscreen"
+
+[node name="FullscreenPicker" type="OptionButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer4" unique_id=1441378399]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+alignment = 1
+icon_alignment = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+script = ExtResource("19_7y3jv")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=402929562]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=46408400]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.5
+text = "Resolution"
+
+[node name="ResPicker" type="OptionButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1852284760]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+alignment = 1
+icon_alignment = 2
+script = ExtResource("20_ml11q")
 
 [node name="ReturnToMenuButton" type="Button" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1043724486]
 layout_mode = 2
@@ -433,9 +587,13 @@ sprite_frames = SubResource("SpriteFrames_c7117")
 [connection signal="pressed" from="NotificationCanvas/BackgroundBlocker/IntroductionPanel/VBoxContainer/DontShowAgainButton" to="." method="_on_dont_show_again_button_pressed"]
 [connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/ConsequencePanel" to="." method="_on_consequence_panel_trigger_close"]
 [connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/GameOverPanel" to="." method="_on_game_over_panel_trigger_close"]
-[connection signal="pressed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/OptionCloseButton" to="." method="_on_option_close_button_pressed"]
-[connection signal="value_changed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolSlider" to="." method="_on_bgm_vol_slider_value_changed"]
-[connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3/DisableWarning" to="." method="_on_disable_warning_item_selected"]
+[connection signal="pressed" from="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/HBoxContainer/TextureButton" to="NotificationCanvas/BackgroundBlocker/GameOverPanel" method="_on_close_button_pressed"]
+[connection signal="pressed" from="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/CloseButton" to="NotificationCanvas/BackgroundBlocker/GameOverPanel" method="_on_close_button_pressed"]
+[connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/ConclusionStatsPanel" to="." method="_on_conclusion_stats_panel_trigger_close"]
+[connection signal="value_changed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolBar" to="." method="_on_bgm_vol_bar_value_changed"]
+[connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/DisableWarning" to="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/DisableWarning" method="_on_item_selected"]
+[connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer4/FullscreenPicker" to="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer4/FullscreenPicker" method="_on_item_selected"]
+[connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3/ResPicker" to="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3/ResPicker" method="_on_item_selected"]
 [connection signal="pressed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
 
 [editable path="NotificationCanvas/BackgroundBlocker/IntroductionPanel"]

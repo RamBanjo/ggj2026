@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://i04yy6jll8pa" path="res://res/conditionals/hotdog_kick_2.tres" id="5_gisea"]
 [ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="5_nlaq7"]
 [ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="8_6ablg"]
+[ext_resource type="Resource" uid="uid://cunjo7ynmbc2r" path="res://res/moderation_event/spawn_spicykick_replacement_case.tres" id="9_nlaq7"]
 
 [sub_resource type="Resource" id="Resource_x1hpn"]
 script = ExtResource("2_gisea")
@@ -24,5 +25,5 @@ metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [resource]
 script = ExtResource("1_d453f")
-today_events = Array[ExtResource("2_gisea")]([ExtResource("3_6ablg"), SubResource("Resource_x1hpn"), ExtResource("5_nlaq7"), SubResource("Resource_6ablg"), ExtResource("8_6ablg")])
+today_events = Array[ExtResource("2_gisea")]([ExtResource("3_6ablg"), SubResource("Resource_x1hpn"), ExtResource("5_nlaq7"), SubResource("Resource_6ablg"), ExtResource("8_6ablg"), ExtResource("9_nlaq7")])
 metadata/_custom_type_script = "uid://ckf8xftro8530"

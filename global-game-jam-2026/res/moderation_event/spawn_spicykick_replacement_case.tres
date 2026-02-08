@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ModEvent" format=3 uid="uid://cunjo7ynmbc2r"]
+
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="1_3fcwi"]
+[ext_resource type="Script" uid="uid://7bux4kauw2hy" path="res://res/moderation_event/mod_event.gd" id="2_8df8m"]
+
+[sub_resource type="Resource" id="Resource_pykst"]
+script = ExtResource("1_3fcwi")
+condtype = 6
+value = "spicy_kick"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
+[resource]
+script = ExtResource("2_8df8m")
+conditionals = Array[ExtResource("1_3fcwi")]([SubResource("Resource_pykst")])
+metadata/_custom_type_script = "uid://7bux4kauw2hy"

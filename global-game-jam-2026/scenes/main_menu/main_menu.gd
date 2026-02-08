@@ -13,18 +13,15 @@ extends Node2D
 static var initialized : bool = false
 
 func _ready() -> void:
+	GameOptions.load_all_options()
 	if not initialized:
 		initialize_everything()
 		initialized = true
 		
-	GameOptions.load_all_options()
-	main_menu_bgm_player.volume_db = linear_to_db(GameOptions.bgm_volume)
-	bgm_vol_bar.set_value_no_signal(GameOptions.bgm_volume)
+		DisplayServer.window_set_size(GameOptions.current_resolution)
+		GameOptions.set_fullscreen_status(GameOptions.fullscren_mode)
 	
-	if GameOptions.show_warning:
-		show_warning_dropper.select(0)
-	else:
-		show_warning_dropper.select(1)
+	main_menu_bgm_player.volume_db = linear_to_db(GameOptions.bgm_volume)
 	
 func initialize_everything():
 	CaseDatabase.initialize_cases()
@@ -65,10 +62,3 @@ func _on_itch_link_2_pressed() -> void:
 
 func _on_itch_link_3_pressed() -> void:
 	OS.shell_open("https://youtube.com/@spetosandbox")
-	
-func _on_bgm_vol_bar_value_changed(value: float) -> void:
-	main_menu_bgm_player.volume_db = linear_to_db(value)
-	GameOptions.save_bgm_volume(value)
-
-func _on_disable_warning_item_selected(index: int) -> void:
-	GameOptions.save_show_warning(index == 0)

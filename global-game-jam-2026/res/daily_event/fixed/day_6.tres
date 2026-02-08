@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="5_pykst"]
 [ext_resource type="Resource" uid="uid://ch7l4f2qadddl" path="res://res/conditionals/hotdog_kick_1.tres" id="6_rclal"]
 [ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="7_rypus"]
+[ext_resource type="Resource" uid="uid://cunjo7ynmbc2r" path="res://res/moderation_event/spawn_spicykick_replacement_case.tres" id="8_4rfac"]
 
 [sub_resource type="Resource" id="Resource_iu1k8"]
 script = ExtResource("2_rclal")
@@ -17,7 +18,7 @@ metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [sub_resource type="Resource" id="Resource_rypus"]
 script = ExtResource("2_rclal")
-internal_id = "hotdog_1_banned"
+call_id = "hotdog_1_banned"
 event_type = 1
 conditionals = Array[ExtResource("3_rypus")]([ExtResource("6_rclal"), ExtResource("4_4rfac")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"
@@ -37,5 +38,5 @@ metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [resource]
 script = ExtResource("1_3iuqx")
-today_events = Array[ExtResource("2_rclal")]([SubResource("Resource_iu1k8"), SubResource("Resource_rypus"), SubResource("Resource_4rfac"), ExtResource("5_pykst"), ExtResource("7_rypus")])
+today_events = Array[ExtResource("2_rclal")]([SubResource("Resource_iu1k8"), SubResource("Resource_rypus"), SubResource("Resource_4rfac"), ExtResource("5_pykst"), ExtResource("7_rypus"), ExtResource("8_4rfac")])
 metadata/_custom_type_script = "uid://ckf8xftro8530"

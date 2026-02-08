@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [sub_resource type="Resource" id="Resource_g4ijr"]
 script = ExtResource("2_fq8fe")
-call_id = "spicy_0"
+call_id = "spicy_1"
 event_type = 1
 conditionals = Array[ExtResource("4_brc1b")]([ExtResource("5_2yoat")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"

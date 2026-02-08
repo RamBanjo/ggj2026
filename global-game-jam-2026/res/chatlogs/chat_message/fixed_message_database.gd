@@ -12,24 +12,31 @@ static func initialize_messages():
 	if msg_dir != null:
 		msg_dir.list_dir_begin()
 		var file_name = msg_dir.get_next()
+
+		if '.tres.remap' in file_name:
+			file_name = file_name.trim_suffix('.remap')		
 		
 		while file_name != "":
 			var full_path = MESSAGE_PATH + "/" + file_name
 			var new_msg : ChatMessage = load(full_path)
 			message_list[new_msg.internal_id] = new_msg
 			file_name = msg_dir.get_next()
+			if '.tres.remap' in file_name:
+				file_name = file_name.trim_suffix('.remap')
 
 	var randmsgdir = DirAccess.open(RANDMSG_PATH)
 	if randmsgdir != null:
 		randmsgdir.list_dir_begin()
 		var file_name = randmsgdir.get_next()
-		
+		if '.tres.remap' in file_name:
+			file_name = file_name.trim_suffix('.remap')		
 		while file_name != "":
 			var full_path = RANDMSG_PATH + "/" + file_name
 			var new_msg : ChatMessage = load(full_path)
 			random_msg.append(new_msg)
 			file_name = msg_dir.get_next()
-						
+			if '.tres.remap' in file_name:
+				file_name = file_name.trim_suffix('.remap')
 	print("load random messages: ", len(random_msg))
 	
 static func get_random_msg():

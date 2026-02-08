@@ -12,12 +12,16 @@ static func initialize_cases():
 	if fixed_case_dir != null:
 		fixed_case_dir.list_dir_begin()
 		var file_name = fixed_case_dir.get_next()
-		
+		if '.tres.remap' in file_name:
+			file_name = file_name.trim_suffix('.remap')
+					
 		while file_name != "":
 			var full_path = FIXED_CASE_PATH + "/" + file_name
 			var new_case : ModeratorCase = load(full_path)
 			fixed_cases[new_case.case_id] = new_case
 			file_name = fixed_case_dir.get_next()
+			if '.tres.remap' in file_name:
+				file_name = file_name.trim_suffix('.remap')
 			
 	print("loaded fixed cases: ", len(fixed_cases))
 			
@@ -25,13 +29,16 @@ static func initialize_cases():
 	if random_case_dir != null:
 		random_case_dir.list_dir_begin()
 		var file_name = random_case_dir.get_next()
-		
+		if '.tres.remap' in file_name:
+			file_name = file_name.trim_suffix('.remap')
+					
 		while file_name != "":
 			var full_path = RANDOM_CASE_PATH + "/" + file_name
 			var new_case : ModeratorCase = load(full_path)
 			random_cases.append(new_case)
 			file_name = random_case_dir.get_next()
-			
+			if '.tres.remap' in file_name:
+				file_name = file_name.trim_suffix('.remap')			
 	print("load random cases: ", len(random_cases))
 
 static var cases_seen_today : PackedStringArray = []

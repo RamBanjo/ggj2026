@@ -16,14 +16,19 @@ const LABEL_BASE_TEXT = "Day {day}\nActions: {act}/{maxact}"
 
 @onready var atmosphere_bar : ProgressBar = $ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer/ProgressBar
 @onready var member_counter : Label = $ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer2/MemberCount
-@onready var member_goal : Label = $ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer3/MemberGoal
 @onready var member_income : Label = $ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer4/MemberGain
+@onready var member_goal : Label = $ReadStatusCanvas/PanelContainer/VBoxContainer/HBoxContainer3/MemberGoal
 
 @onready var notify_canvas = $NotificationCanvas
 
 @onready var notif_panel : NotifierPanel = $NotificationCanvas/BackgroundBlocker/ConsequencePanel
 @onready var game_end_panel : NotifierPanel = $NotificationCanvas/BackgroundBlocker/GameOverPanel
 @onready var warning_panel : NotifierPanel = $NotificationCanvas/BackgroundBlocker/IntroductionPanel
+@onready var conclusion_panel : NotifierPanel = $NotificationCanvas/BackgroundBlocker/ConclusionStatsPanel
+
+@onready var game_end_atmosphere_bar : ProgressBar = $NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer/ProgressBar
+@onready var game_end_member_counter : Label = $NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer2/MemberCount
+@onready var game_end_member_income : Label = $NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/VBoxContainer/HBoxContainer4/MemberGain
 
 @onready var option_canvas = $OptionsCanvas
 
@@ -39,8 +44,8 @@ var current_event_chatlog : Chatlog
 @onready var good_bgm : AudioStreamPlayer = $Good
 @onready var evil_bgm : AudioStreamPlayer = $Dark
 
-@onready var bgm_vol_slider : HSlider = $OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolSlider
-@onready var show_warning_dropper = $OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3/DisableWarning
+@onready var bgm_vol_slider : HSlider = $OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolBar
+@onready var show_warning_dropper = $OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/DisableWarning
 
 @export var good_end_bg : Texture2D
 @export var normal_end_bg : Texture2D
@@ -66,11 +71,6 @@ func _ready() -> void:
 	load_event_for_day(1)
 	
 	bgm_vol_slider.value = GameOptions.bgm_volume
-	
-	if GameOptions.show_warning:
-		show_warning_dropper.select(0)
-	else:
-		show_warning_dropper.select(1)	
 
 func force_evil_bgm():
 	evil_bgm.volume_linear = GameOptions.bgm_volume
@@ -106,14 +106,19 @@ var ending_found : bool = false
 
 func check_ending():
 	if MainChatroom.server_is_boring():
-		show_normal_ending()
 		ending_found = true
 	if MainChatroom.server_is_dead():
-		show_bad_ending()
 		ending_found = true
 	elif MainChatroom.server_is_winning():
-		show_good_ending()
 		ending_found = true
+		
+	if ending_found:
+		is_notifying = true
+		notify_canvas.show()
+		if MainChatroom.server_is_dead():
+			show_conclusion_game_over()
+		else:	
+			show_conclusion()
 
 func end_day():
 	CaseDatabase.reset_today_seen_cases()
@@ -334,7 +339,7 @@ const GAIN_MEMBER_TEXT : String = " The server has gained {new} new {member} whi
 const LOSE_MEMBER_TEXT : String = " The server has lost {new} {member} while you were away."
 
 const WIN_TITLE: String = "Congratulations!"
-const NORMAL_TITLE: String = "A Decent Server"
+const NORMAL_TITLE: String = "Tehe End"
 const LOSE_TITLE: String = "Game Over"
 const NEW_DAY_TITLE: String = "New Day"
 const SKIP_WORK_TITLE: String = "Whoops!"
@@ -403,17 +408,23 @@ func show_ignore_case_new_day(member_income : int):
 		
 	notif_panel.show_panel_with_text(SKIP_WORK_TITLE, bodytext, DEFAULT_CLOSE)
 	
-func show_consequence(consequence: ModConsequence):
+func show_consequence(consequence: ModConsequence, conditional_validity : bool = true):
+	
+	var my_consq = consequence
+	if consequence is ConditionalConsequence:
+		my_consq = consequence as ConditionalConsequence
+
 	is_notifying = true
 	notify_canvas.show()
 	var close_text = DEFAULT_CLOSE
 	
-	if consequence.is_positive:
+	if my_consq.get_positiveness():
 		close_text = GOOD_CLOSE
-	elif consequence.is_negative:
+	elif my_consq.get_negativeness():
 		close_text = BAD_CLOSE
 	
-	notif_panel.show_panel_with_text(consequence.get_consequence_title(), consequence.get_consequence_description(), close_text)
+	
+	notif_panel.show_panel_with_text(my_consq.get_consequence_title(), my_consq.get_consequence_description(), close_text)
 
 func _on_evidence_panel_hide_evidence_panel() -> void:
 	message_viewer.show()
@@ -424,8 +435,8 @@ func _on_message_viewer_false_report() -> void:
 	
 	MainChatroom.remaining_actions_today -= 1
 	
-	current_event_button.apply_false_report_consq()
 	show_consequence(current_event_button.report.false_report_consequences)
+	current_event_button.apply_false_report_consq()
 	
 	clear_current_selected_event()
 	
@@ -433,8 +444,9 @@ func _on_message_viewer_ignore() -> void:
 	if is_notifying:
 		return	
 	
-	current_event_button.apply_ignore_consequences()
+	
 	show_consequence(current_event_button.report.ignore_consequences)
+	current_event_button.apply_ignore_consequences()
 	
 	clear_current_selected_event()
 	
@@ -444,8 +456,9 @@ func _on_message_viewer_kick_offender() -> void:
 	
 	MainChatroom.remaining_actions_today -= 1
 	
-	current_event_button.apply_kick_consequences()
+	
 	show_consequence(current_event_button.report.kick_consequences)
+	current_event_button.apply_kick_consequences()
 	
 	clear_current_selected_event()
 	
@@ -455,8 +468,8 @@ func _on_message_viewer_warn_offender() -> void:
 	
 	MainChatroom.remaining_actions_today -= 1
 	
-	current_event_button.apply_warn_consequences()
 	show_consequence(current_event_button.report.warning_consequences)
+	current_event_button.apply_warn_consequences()
 	
 	clear_current_selected_event()
 	
@@ -473,8 +486,8 @@ func _on_message_viewer_event_option_chosen(idx: int) -> void:
 	if cost > 0:
 		MainChatroom.remaining_actions_today -= cost
 	
-	current_event_button.event.activate_consequence(idx)
 	show_consequence(current_event_button.event.consequences[idx])
+	current_event_button.event.activate_consequence(idx)
 	
 	clear_current_selected_event()
 
@@ -506,11 +519,6 @@ func _on_message_viewer_request_evidence() -> void:
 	evidence_viewer.show()
 	
 	evidence_viewer.load_chatlog(current_event_button.get_event_name(), current_event_chatlog, current_event_button.assigned_msg_owner, current_event_button.assigned_report_target, current_event_button.assigned_witnesses)
-
-
-func _on_bgm_vol_slider_value_changed(value: float) -> void:
-	GameOptions.save_bgm_volume(value)	
-	set_current_bgm()
 
 var sidelined_for_profile = null
 
@@ -551,3 +559,48 @@ func _on_dont_show_again_button_pressed() -> void:
 
 func _on_disable_warning_item_selected(index: int) -> void:
 	GameOptions.save_show_warning(index == 0)
+
+func _on_bgm_vol_bar_value_changed(value: float) -> void:
+	GameOptions.save_bgm_volume(value)	
+	set_current_bgm()
+	
+func show_conclusion_game_over():
+	
+	var ending_title = "Game Over: Critical Error"
+	var body_text = "Something went wrong with your server!"
+	
+	if MainChatroom.member_count <= MainChatroom.MEMBER_LOSE_THRESHOLD:
+		ending_title = "Game Over: Empty Server"
+		body_text = "Everyone has left your server..."
+	if MainChatroom.server_atmosphere <= MainChatroom.ATMOSPHERE_LOSE_CONDITION:
+		ending_title = "Game Over: Toxic Wasteland"
+		body_text = "The server is now so toxic it's not worth running..."
+
+	conclusion_panel.show_panel_with_text(ending_title, body_text, "Accept Fate")
+	
+func show_conclusion():
+	
+	var ending_title = "Normal Ending: Retirement"
+	var button_text = "OK"
+	var body_text = "You ran a decent server, but now it's time to retire."
+	
+	if MainChatroom.server_is_winning():
+		ending_title = "Good Ending: Heathy Growth"
+		button_text = "Claim Victory!"
+		body_text = "With you at the head of the server, the server grew in a healthy way. Now you have a large community that respects its members!"
+
+	conclusion_panel.show_panel_with_text(ending_title, body_text, "See Ending")	
+
+func show_stats_on_ending_panel():
+	game_end_atmosphere_bar.value = MainChatroom.server_atmosphere
+	game_end_member_counter.text = str(MainChatroom.member_count)
+	game_end_member_income.text = str(MainChatroom.member_income)
+
+func _on_conclusion_stats_panel_trigger_close() -> void:
+	show_stats_on_ending_panel()
+	if MainChatroom.server_is_boring():
+		show_normal_ending()
+	elif MainChatroom.server_is_dead():
+		show_bad_ending()
+	elif MainChatroom.server_is_winning():
+		show_good_ending()
