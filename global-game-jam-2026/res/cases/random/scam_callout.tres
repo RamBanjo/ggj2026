@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bflsdcyw22rxj"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_eddo3"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_o3f4e"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_2bmmj"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_s2isc"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_7ictj"]
+[ext_resource type="Resource" uid="uid://dq3f4xqid88ty" path="res://res/conditionals/no_filter_cond.tres" id="6_lpix1"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="7_1gdoo"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="8_siol8"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="9_m5ryg"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="10_wgfyx"]
+[ext_resource type="Resource" uid="uid://wndxcojxby6p" path="res://res/consequences/warn_consequence_spammer.tres" id="11_a1d3q"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_eddo3")
+speaker = ExtResource("2_o3f4e")
+text = "I'm doubling all your cryptos! The next 100 people to send anything to my Cryptowallet will get their EVERYTHING doubled in return!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_21ysq"]
+script = ExtResource("1_eddo3")
+speaker = ExtResource("3_2bmmj")
+text = "please tell me you got hacked. i'll be so disappointed in humanity if you are unironically promoting this."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_s2isc")
+chat_messages = Array[ExtResource("1_eddo3")]([SubResource("Resource_73pw0"), SubResource("Resource_21ysq")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("10_wgfyx")
+case_id = "scam_crypto"
+case_display_name = "Free Crypto"
+case_description = "Do people even fall for these anymore???"
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("8_siol8")
+warning_consequences = ExtResource("11_a1d3q")
+kick_consequences = ExtResource("9_m5ryg")
+false_report_consequences = ExtResource("7_1gdoo")
+is_spammer = true
+conditionals = Array[ExtResource("5_7ictj")]([ExtResource("6_lpix1")])
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

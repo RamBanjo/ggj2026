@@ -41,10 +41,16 @@ static var is_notifying : bool = false
 var current_event_button : ModCaseButton
 var current_event_chatlog : Chatlog
 
-@onready var good_bgm : AudioStreamPlayer = $Good
-@onready var evil_bgm : AudioStreamPlayer = $Dark
+@onready var good_bgm : AudioStreamPlayer = $GoodBase
+@onready var evil_bgm : AudioStreamPlayer = $BadBase
+@onready var good_bgm_layer2 : AudioStreamPlayer = $GoodLayer2
+@onready var evil_bgm_layer2 : AudioStreamPlayer = $BadLayer2
+@onready var vinyl_crack : AudioStreamPlayer = $VinylCrack
+
+@onready var click_noise : AudioStreamPlayer = $Click
 
 @onready var bgm_vol_slider : HSlider = $OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolBar
+@onready var sfx_vol_slider : HSlider = $OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer5/SFXVolBar
 @onready var show_warning_dropper = $OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/DisableWarning
 
 @export var good_end_bg : Texture2D
@@ -70,24 +76,36 @@ func _ready() -> void:
 	update_label()
 	load_event_for_day(1)
 	
-	bgm_vol_slider.value = GameOptions.bgm_volume
-
+	bgm_vol_slider.set_value_no_signal(GameOptions.bgm_volume)
+	sfx_vol_slider.set_value_no_signal(GameOptions.sfx_volume)
+	
 func force_evil_bgm():
 	evil_bgm.volume_linear = GameOptions.bgm_volume
 	good_bgm.volume_linear = 0
 	
 func set_current_bgm():
+	
+	var day_progress_ratio : float = float(MainChatroom.ingame_day) / float(MainChatroom.TIME_LIMIT)
+	
 	if MainChatroom.server_atmosphere >= 50:
 		evil_bgm.volume_linear = 0
+		evil_bgm_layer2.volume_linear = 0
 		good_bgm.volume_linear = GameOptions.bgm_volume
+		good_bgm_layer2.volume_linear = GameOptions.bgm_volume * day_progress_ratio
+		vinyl_crack.volume_linear = GameOptions.bgm_volume
 		
 	else:
 		
 		var current_ratio : float =  float(MainChatroom.server_atmosphere) / 50.0
-		 
+		
+		vinyl_crack.volume_linear = lerpf(0, 1, current_ratio) * GameOptions.bgm_volume
 		evil_bgm.volume_linear = lerpf(1, 0, current_ratio) * GameOptions.bgm_volume
 		good_bgm.volume_linear = lerpf(0, 1, current_ratio) * GameOptions.bgm_volume
-		
+		evil_bgm_layer2.volume_linear = lerpf(1, 0, current_ratio) * GameOptions.bgm_volume * day_progress_ratio		
+		good_bgm_layer2.volume_linear = lerpf(0, 1, current_ratio) * GameOptions.bgm_volume * day_progress_ratio		
+
+		evil_bgm_layer2.volume
+
 func update_label():
 	daylabel.text = LABEL_BASE_TEXT.format({
 		"day": MainChatroom.ingame_day,
@@ -156,6 +174,7 @@ func end_day():
 		update_label()
 		
 func _on_end_day_button_pressed() -> void:
+	click_noise.play()
 	end_day()
 	update_label()
 
@@ -211,6 +230,8 @@ func load_daily_event(day_id: String):
 func _on_report_button_pressed(object, type: String, button: ModCaseButton):
 	if is_notifying:
 		return
+		
+	click_noise.play()
 	
 	evidence_viewer.hide()
 	hide_profile_viewer()
@@ -234,6 +255,8 @@ func _on_report_button_pressed(object, type: String, button: ModCaseButton):
 		message_viewer.load_event(newcase, button.assigned_msg_owner)
 		current_event_chatlog = newcase.chatlog
 		return
+		
+	click_noise.play()
 	
 func instantiate_button_for_case(newcase: ModeratorCase):
 	var newbutton : ModCaseButton = event_button_scene.instantiate()
@@ -322,12 +345,14 @@ func _on_test_game_bg_request_change_panel(idx: int) -> void:
 		return true
 	)
 	canvas_order.get(idx).show()
+	click_noise.play()
 
 func _on_message_viewer_request_hide_me() -> void:
 	current_event_button = null
 	message_viewer.hide()
 	evidence_viewer.hide()
 	hide_profile_viewer()
+	click_noise.play()
 
 const WIN_TEXT : String = "Your server has grown into a large, healthy community that treats people with respect."
 const NORMAL_END_TEXT : String = "As the head moderator gave up on growing the server, one by one, the other moderators give up as well. Your server never grew large, but it's at least decent to be in."
@@ -427,9 +452,13 @@ func show_consequence(consequence: ModConsequence, conditional_validity : bool =
 	notif_panel.show_panel_with_text(my_consq.get_consequence_title(), my_consq.get_consequence_description(), close_text)
 
 func _on_evidence_panel_hide_evidence_panel() -> void:
+	click_noise.play()
+	
 	message_viewer.show()
 
 func _on_message_viewer_false_report() -> void:
+	click_noise.play()
+	
 	if is_notifying:
 		return
 	
@@ -441,6 +470,8 @@ func _on_message_viewer_false_report() -> void:
 	clear_current_selected_event()
 	
 func _on_message_viewer_ignore() -> void:
+	click_noise.play()
+	
 	if is_notifying:
 		return	
 	
@@ -451,6 +482,8 @@ func _on_message_viewer_ignore() -> void:
 	clear_current_selected_event()
 	
 func _on_message_viewer_kick_offender() -> void:
+	click_noise.play()
+	
 	if is_notifying:
 		return	
 	
@@ -463,6 +496,8 @@ func _on_message_viewer_kick_offender() -> void:
 	clear_current_selected_event()
 	
 func _on_message_viewer_warn_offender() -> void:
+	click_noise.play()
+	
 	if is_notifying:
 		return	
 	
@@ -479,6 +514,8 @@ func clear_current_selected_event():
 	update_label()
 
 func _on_message_viewer_event_option_chosen(idx: int) -> void:
+	click_noise.play()
+	
 	if is_notifying:
 		return	
 	
@@ -492,29 +529,37 @@ func _on_message_viewer_event_option_chosen(idx: int) -> void:
 	clear_current_selected_event()
 
 func _on_rest_notif_trigger_close() -> void:
+	click_noise.play()
 	end_day()
 
 func _on_game_over_panel_trigger_close() -> void:
+	click_noise.play()
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
 func _on_consequence_panel_trigger_close() -> void:
+	click_noise.play()
 	is_notifying = false
 	notify_canvas.hide()
 	check_ending()
 
 func _on_option_button_pressed() -> void:
+	click_noise.play()
 	is_notifying = true
 	option_canvas.show()
 
 func _on_option_close_button_pressed() -> void:
+	click_noise.play()
 	is_notifying = false
 	option_canvas.hide()
 
 func _on_return_to_menu_button_pressed() -> void:
+	click_noise.play()
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
 
 func _on_message_viewer_request_evidence() -> void:
+	click_noise.play()
+	
 	message_viewer.hide()
 	evidence_viewer.show()
 	
@@ -529,6 +574,7 @@ func _on_message_viewer_request_profile(hideme, profile: ChatMember) -> void:
 	sideline_panel_and_show_profile(hideme, profile)
 
 func sideline_panel_and_show_profile(hideme, profile: ChatMember):
+	click_noise.play()
 	
 	if not profile.can_show_profile():
 		return
@@ -548,10 +594,12 @@ func hide_profile_viewer():
 	sidelined_for_profile = null
 
 func _on_introduction_panel_trigger_close() -> void:
+	click_noise.play()
 	is_notifying = false
 	notify_canvas.hide()
 
 func _on_dont_show_again_button_pressed() -> void:
+	click_noise.play()
 	is_notifying = false
 	show_warning_dropper.select(1)
 	notify_canvas.hide()
@@ -563,6 +611,11 @@ func _on_disable_warning_item_selected(index: int) -> void:
 func _on_bgm_vol_bar_value_changed(value: float) -> void:
 	GameOptions.save_bgm_volume(value)	
 	set_current_bgm()
+
+func _on_sfx_vol_bar_value_changed(value: float) -> void:
+	GameOptions.save_sfx_volume(value)
+	click_noise.volume_linear = value
+	click_noise.play()
 	
 func show_conclusion_game_over():
 	
@@ -597,6 +650,7 @@ func show_stats_on_ending_panel():
 	game_end_member_income.text = str(MainChatroom.member_income)
 
 func _on_conclusion_stats_panel_trigger_close() -> void:
+	click_noise.play()
 	show_stats_on_ending_panel()
 	if MainChatroom.server_is_boring():
 		show_normal_ending()

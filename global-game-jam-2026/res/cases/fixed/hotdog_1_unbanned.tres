@@ -78,7 +78,7 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 [sub_resource type="Resource" id="Resource_6qdj5"]
 script = ExtResource("11_hdmhm")
 consequence_type = 3
-value = "hotdog_ban_once"
+value = "hotdog_kick_once"
 metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [sub_resource type="Resource" id="Resource_vswxt"]

@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://sus7no6fg7t7"
 [sub_resource type="Resource" id="Resource_jlw5h"]
 script = ExtResource("2_jlw5h")
 consequence_type = 5
-value = "2"
+value = "3"
 metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [sub_resource type="Resource" id="Resource_5pmeq"]

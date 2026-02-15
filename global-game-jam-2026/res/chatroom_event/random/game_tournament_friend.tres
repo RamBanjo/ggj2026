@@ -55,6 +55,7 @@ desc = "Hey, remember that game we used to play together? That social deduction 
 
 I thought maybe we could start something fun for the server. What if we hosted a tournament for A Mongoose Game? I could free up one of my comission slots for one of the prizes."
 options = PackedStringArray("Host Tournament (-2)", "Maybe Later")
+option_cost = Array[int]([2, 0])
 spawn_conditions = Array[ExtResource("5_ulq16")]([ExtResource("6_7j38o"), ExtResource("7_mtnot"), SubResource("Resource_voirn")])
 consequences = Array[ExtResource("1_dnd73")]([SubResource("Resource_mwc23"), SubResource("Resource_mtnot")])
 metadata/_custom_type_script = "uid://c8wp3x1baaiex"

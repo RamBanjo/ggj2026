@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bdi3o3ib7j8y5"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_ninbd"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_j15ub"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="3_6i6et"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_jhqrg"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_vkj77"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_64rec"]
+[ext_resource type="Resource" uid="uid://canl5igybc628" path="res://res/consequences/ignore_light_penalty.tres" id="7_rv2uy"]
+[ext_resource type="Resource" uid="uid://bhulps81fnceq" path="res://res/consequences/kick_consq_too_young.tres" id="8_7pdvt"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_r6i5t"]
+[ext_resource type="Resource" uid="uid://5yxxv1jmofkd" path="res://res/consequences/warn_too_young.tres" id="10_63fhb"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_ninbd")
+speaker = ExtResource("2_j15ub")
+text = "SIX SEVEN!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_ninbd"]
+script = ExtResource("1_ninbd")
+speaker = ExtResource("3_6i6et")
+text = "this again? you've been posting this to whatever people said
+spamming's no good"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_j15ub"]
+script = ExtResource("1_ninbd")
+speaker = ExtResource("2_j15ub")
+text = "SIX SEVEN!!!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6i6et"]
+script = ExtResource("1_ninbd")
+speaker = ExtResource("3_6i6et")
+text = "you HAVE to be doing this on purpose, right?
+these are jokes only a kid would make"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_jhqrg"]
+script = ExtResource("1_ninbd")
+speaker = ExtResource("2_j15ub")
+text = "hey im not a kid!
+i was born 2015"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_vkj77"]
+script = ExtResource("1_ninbd")
+speaker = ExtResource("3_6i6et")
+text = "this year is 2026 isn't it
+which would make you 11..."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_64rec"]
+script = ExtResource("1_ninbd")
+speaker = ExtResource("3_6i6et")
+text = "so yep still a kid lmao"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_jhqrg")
+chat_messages = Array[ExtResource("1_ninbd")]([SubResource("Resource_73pw0"), SubResource("Resource_ninbd"), SubResource("Resource_j15ub"), SubResource("Resource_6i6et"), SubResource("Resource_jhqrg"), SubResource("Resource_vkj77"), SubResource("Resource_64rec")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_r6i5t")
+case_id = "too_young_six_seven"
+case_display_name = "Six Seven~"
+case_description = "I have nothing against people who make 67 jokes but some people need to tone it down, lmao."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_rv2uy")
+warning_consequences = ExtResource("10_63fhb")
+kick_consequences = ExtResource("8_7pdvt")
+false_report_consequences = ExtResource("6_64rec")
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

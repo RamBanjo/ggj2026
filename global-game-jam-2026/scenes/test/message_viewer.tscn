@@ -106,7 +106,7 @@ text = "Flag Report"
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1860478727]
 visible = false
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 8
 
 [node name="Op0" type="Button" parent="VBoxContainer/HBoxContainer3" unique_id=1670027844]
 custom_minimum_size = Vector2(0, 84)

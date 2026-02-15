@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 [resource]
 script = ExtResource("2_nkqu1")
 notif_title = "Like Talking to a Brick Wall"
-desc = "The bot just keeps repeating the same message over and over. You're just wasting your time here..."
+desc = "The bot just keeps repeating the same message over and over. You're just wasting your time here... (-5 Atmosphere)"
 consq_effects = Array[ExtResource("1_xq81q")]([SubResource("Resource_tt7ns")])
 is_negative = true
 metadata/_custom_type_script = "uid://sus7no6fg7t7"

@@ -7,13 +7,17 @@
 [ext_resource type="Resource" uid="uid://cxm7kko1d76um" path="res://res/moderation_event/offer_spam_filter.tres" id="5_1w37u"]
 [ext_resource type="Resource" uid="uid://nikvogwp2s1p" path="res://res/moderation_event/spawn_spicy_thank.tres" id="6_3lohl"]
 [ext_resource type="Resource" uid="uid://bhr1ri3v1ckbm" path="res://res/moderation_event/spawn_evil_cases.tres" id="6_xmqdy"]
+[ext_resource type="Resource" uid="uid://8e7uko0hdi6m" path="res://res/conditionals/friend_added.tres" id="7_1w37u"]
 [ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="7_pp4ao"]
+[ext_resource type="Resource" uid="uid://c3vtwjt5sdhcx" path="res://res/conditionals/friend_not_leave.tres" id="8_3lohl"]
 [ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="8_vocuh"]
+[ext_resource type="Resource" uid="uid://ch6i54mqo8kvq" path="res://res/conditionals/no_evil_deal.tres" id="9_pp4ao"]
 
 [sub_resource type="Resource" id="Resource_n5vqj"]
 script = ExtResource("2_xmqdy")
 call_id = "server_promoter_friend"
 event_type = 8
+conditionals = Array[ExtResource("3_kfcxx")]([ExtResource("7_1w37u"), ExtResource("8_3lohl"), ExtResource("9_pp4ao")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [sub_resource type="Resource" id="Resource_w5782"]

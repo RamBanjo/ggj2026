@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://rujpk18qh7wl"
 [sub_resource type="Resource" id="Resource_bfqqn"]
 script = ExtResource("2_hcb87")
 consequence_type = 3
-value = "maybe_later"
+value = "fix_phone"
 metadata/_custom_type_script = "uid://rujpk18qh7wl"
 
 [sub_resource type="Resource" id="Resource_paluw"]
@@ -45,7 +45,7 @@ title = "Dead Ringer"
 sender = ExtResource("4_rl5c4")
 desc = "Your phone has been acting up for a while, but you havent had the chance to get it looked at yet. Thanks to it turning itself off randomly from time to time, you find it difficult to actually do anything on the phone, including running the server.
 
-Do you go to the repair shop to fix the phone?"
+The only repair shop you know and trust is a bit away, going there will take some time out of your day. Do you go to the repair shop to fix the phone?"
 options = PackedStringArray("Repair Phone (-3)", "Maybe Later")
 option_cost = Array[int]([3, 0])
 spawn_conditions = Array[ExtResource("5_6rbab")]([SubResource("Resource_4xqq7")])

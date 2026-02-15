@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="3_rypus"]
 [ext_resource type="Resource" uid="uid://ctlei7fhsnwys" path="res://res/conditionals/spicy_not_kicked.tres" id="4_4rfac"]
 [ext_resource type="Resource" uid="uid://64m1vskvbcmk" path="res://res/moderation_event/random_case.tres" id="5_pykst"]
-[ext_resource type="Resource" uid="uid://ch7l4f2qadddl" path="res://res/conditionals/hotdog_kick_1.tres" id="6_rclal"]
 [ext_resource type="Resource" uid="uid://ces8irbkdvhxb" path="res://res/moderation_event/random_event.tres" id="7_rypus"]
 [ext_resource type="Resource" uid="uid://cunjo7ynmbc2r" path="res://res/moderation_event/spawn_spicykick_replacement_case.tres" id="8_4rfac"]
 
@@ -16,22 +15,28 @@ event_type = 1
 conditionals = Array[ExtResource("3_rypus")]([ExtResource("4_4rfac")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
+[sub_resource type="Resource" id="Resource_pykst"]
+script = ExtResource("3_rypus")
+condtype = 6
+value = "hotdog_ban_0"
+metadata/_custom_type_script = "uid://cq0nqidyse0ng"
+
 [sub_resource type="Resource" id="Resource_rypus"]
 script = ExtResource("2_rclal")
 call_id = "hotdog_1_banned"
 event_type = 1
-conditionals = Array[ExtResource("3_rypus")]([ExtResource("6_rclal"), ExtResource("4_4rfac")])
+conditionals = Array[ExtResource("3_rypus")]([ExtResource("4_4rfac"), SubResource("Resource_pykst")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"
 
 [sub_resource type="Resource" id="Resource_rclal"]
 script = ExtResource("3_rypus")
 condtype = 7
-value = "hotdog_kick_1"
+value = "hotdog_ban_0"
 metadata/_custom_type_script = "uid://cq0nqidyse0ng"
 
 [sub_resource type="Resource" id="Resource_4rfac"]
 script = ExtResource("2_rclal")
-internal_id = "hotdog_1_unbanned"
+call_id = "hotdog_1_unbanned"
 event_type = 1
 conditionals = Array[ExtResource("3_rypus")]([SubResource("Resource_rclal"), ExtResource("4_4rfac")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"

@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://c4p7smpduxe0k"]
+
+[ext_resource type="Resource" uid="uid://b3mlo4mmnb8t6" path="res://res/chatmembers/story_important_members/irl_friend.tres" id="1_hrqnq"]
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="2_qc5xd"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_1dhlb"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_405l2"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="5_lhvfo"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="6_02wwf"]
+[ext_resource type="Resource" uid="uid://c3vtwjt5sdhcx" path="res://res/conditionals/friend_not_leave.tres" id="7_mhqy2"]
+[ext_resource type="Resource" uid="uid://8e7uko0hdi6m" path="res://res/conditionals/friend_added.tres" id="8_73acv"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="9_1dhlb"]
+[ext_resource type="Resource" uid="uid://b215evoa0ahfw" path="res://res/consequences/false_report_friend_good.tres" id="9_qc5xd"]
+[ext_resource type="Resource" uid="uid://duip11av1yxw6" path="res://res/consequences/ignore_friend_bad.tres" id="10_583l5"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="11_lhvfo"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="12_2v72p"]
+[ext_resource type="Resource" uid="uid://cs1d8blvnjww7" path="res://res/consequences/kick_consq_awkward.tres" id="13_qc5xd"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("2_qc5xd")
+speaker = ExtResource("3_1dhlb")
+text = "Here's a nice fanart of Anna Arbalest! Credits to the Artist
+
+[IMAGE REDACTED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_pb4lp"]
+script = ExtResource("2_qc5xd")
+speaker = ExtResource("4_405l2")
+text = "Hey, who's the \"artist\" you're crediting? I don't see no Twerper link"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_sixcj"]
+script = ExtResource("2_qc5xd")
+speaker = ExtResource("3_1dhlb")
+text = "sorry, i don't know who the artist is
+this has been reposted in like 4 different servers now"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6nk2l"]
+script = ExtResource("2_qc5xd")
+speaker = ExtResource("4_405l2")
+text = "That's a bit sad... Still, it's kind of a nice drawing. Wish I knew who the artist is."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("5_lhvfo")
+chat_messages = Array[ExtResource("2_qc5xd")]([SubResource("Resource_73pw0"), SubResource("Resource_pb4lp"), SubResource("Resource_sixcj"), SubResource("Resource_6nk2l")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_o3ecl"]
+script = ExtResource("9_1dhlb")
+consequence_type = 2
+value = "5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_qc5xd"]
+script = ExtResource("11_lhvfo")
+notif_title = "Always Give Credit!"
+desc = "The offender apologizes and promises give credit properly next time. (+5 Atmosphere)"
+consq_effects = Array[ExtResource("9_1dhlb")]([SubResource("Resource_o3ecl")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("12_2v72p")
+case_id = "uncredited_art"
+case_display_name = "Uncredited Art"
+case_owner = ExtResource("1_hrqnq")
+case_description = "As an artist, it would be nice if people credited the artist whenever someone posts an artwork..."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("10_583l5")
+warning_consequences = SubResource("Resource_qc5xd")
+kick_consequences = ExtResource("13_qc5xd")
+false_report_consequences = ExtResource("9_qc5xd")
+is_false_report = true
+conditionals = Array[ExtResource("6_02wwf")]([ExtResource("7_mhqy2"), ExtResource("8_73acv")])
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

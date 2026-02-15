@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ModConsequence" format=3 uid="uid://b215evoa0ahfw"]
+
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="1_k4pi0"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="2_0d3f4"]
+
+[sub_resource type="Resource" id="Resource_1enwd"]
+script = ExtResource("1_k4pi0")
+consequence_type = 2
+value = "5"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[resource]
+script = ExtResource("2_0d3f4")
+notif_title = "Mutual Understanding"
+desc = "You inform your friend that this is technically not against the rules. She relents and backs down. (+5 Atmosphere)"
+consq_effects = Array[ExtResource("1_k4pi0")]([SubResource("Resource_1enwd")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"

@@ -16,14 +16,18 @@
 [ext_resource type="PackedScene" uid="uid://6ejftweogj25" path="res://scenes/game_menu/evidence_panel.tscn" id="6_ei1oh"]
 [ext_resource type="Texture2D" uid="uid://bnv7rvpmdb3ug" path="res://sprites/bg/tab_setting_hover.png" id="6_ougo8"]
 [ext_resource type="PackedScene" uid="uid://1s0yrla6qat7" path="res://scenes/button/texture_close_button.tscn" id="9_tau56"]
+[ext_resource type="AudioStream" uid="uid://5dfsc4sl1iav" path="res://audio/BadBase.wav" id="9_yvk4a"]
 [ext_resource type="PackedScene" uid="uid://b5rhwodrijy1n" path="res://scenes/game_menu/notifier_panel.tscn" id="10_edfq3"]
-[ext_resource type="AudioStream" uid="uid://d1qoqt46q7qks" path="res://audio/Dark.wav" id="12_c7117"]
-[ext_resource type="AudioStream" uid="uid://db8rk0ul4ykgn" path="res://audio/Good.wav" id="13_6576e"]
+[ext_resource type="AudioStream" uid="uid://cr6j8hw6dvdd5" path="res://audio/BadLayer2.wav" id="10_l327x"]
+[ext_resource type="AudioStream" uid="uid://dpscvujratgdo" path="res://audio/GoodBase.wav" id="11_st3ia"]
+[ext_resource type="AudioStream" uid="uid://87p6h4a6muju" path="res://audio/GoodLayer2.wav" id="12_4x60m"]
 [ext_resource type="PackedScene" uid="uid://bifp1x0uwhai8" path="res://scenes/game_menu/profile_viewer_panel.tscn" id="13_if733"]
+[ext_resource type="AudioStream" uid="uid://cf15278001x08" path="res://audio/VinylCrack.wav" id="13_unssc"]
 [ext_resource type="Script" uid="uid://daiivfnplv1ao" path="res://scenes/game_menu/notifier_panel.gd" id="18_ml11q"]
 [ext_resource type="Script" uid="uid://gtvk383r3apg" path="res://scenes/main_menu/disable_warning.gd" id="18_q5vik"]
 [ext_resource type="Script" uid="uid://d1wy4fidee1hv" path="res://scenes/main_menu/fullscreen_picker.gd" id="19_7y3jv"]
 [ext_resource type="Script" uid="uid://cocnmh0kjtsti" path="res://scenes/main_menu/res_picker.gd" id="20_ml11q"]
+[ext_resource type="AudioStream" uid="uid://ckjmvh3mxpv6x" path="res://audio/click.wav" id="28_l327x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7117"]
 
@@ -35,6 +39,29 @@ canvas_order = [NodePath("ReadReportsCanvas"), NodePath("ReadRulesCanvas"), Node
 good_end_bg = ExtResource("3_3l7g5")
 normal_end_bg = ExtResource("4_xr17b")
 bad_end_bg = ExtResource("5_lnnie")
+
+[node name="BadBase" type="AudioStreamPlayer" parent="." unique_id=1210478595]
+stream = ExtResource("9_yvk4a")
+volume_db = -80.0
+autoplay = true
+
+[node name="BadLayer2" type="AudioStreamPlayer" parent="." unique_id=73657556]
+stream = ExtResource("10_l327x")
+volume_db = -80.0
+autoplay = true
+
+[node name="GoodBase" type="AudioStreamPlayer" parent="." unique_id=483441881]
+stream = ExtResource("11_st3ia")
+autoplay = true
+
+[node name="GoodLayer2" type="AudioStreamPlayer" parent="." unique_id=1722221059]
+stream = ExtResource("12_4x60m")
+volume_db = -80.0
+autoplay = true
+
+[node name="VinylCrack" type="AudioStreamPlayer" parent="." unique_id=1606508312]
+stream = ExtResource("13_unssc")
+autoplay = true
 
 [node name="TestGameBg" parent="." unique_id=2043862830 instance=ExtResource("1_817fn")]
 z_as_relative = false
@@ -463,6 +490,23 @@ theme = ExtResource("3_nv67f")
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer" unique_id=1137712069]
 layout_mode = 2
 
+[node name="HBoxContainer6" type="PanelContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1824803655]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer6" unique_id=1212953594]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 52
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer6" unique_id=738472431 instance=ExtResource("9_tau56")]
+layout_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1938983594]
 layout_mode = 2
 theme_override_constants/separation = 50
@@ -475,6 +519,24 @@ size_flags_stretch_ratio = 0.5
 text = "BGM"
 
 [node name="BGMVolBar" type="HSlider" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer" unique_id=849009916]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+max_value = 1.0
+step = 0.1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer" unique_id=1555243022]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer5" unique_id=665652473]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.5
+text = "SFX"
+
+[node name="SFXVolBar" type="HSlider" parent="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer5" unique_id=1548017498]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -556,18 +618,13 @@ size_flags_vertical = 10
 text = "Quit to Main Menu
 (You will lose all progress!)"
 
-[node name="Dark" type="AudioStreamPlayer" parent="." unique_id=17311543]
-stream = ExtResource("12_c7117")
-autoplay = true
-
-[node name="Good" type="AudioStreamPlayer" parent="." unique_id=1738682589]
-stream = ExtResource("13_6576e")
-autoplay = true
-
 [node name="MCSpriteLayer" type="CanvasLayer" parent="." unique_id=423344778]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MCSpriteLayer" unique_id=1265169855]
 sprite_frames = SubResource("SpriteFrames_c7117")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1284617383]
+stream = ExtResource("28_l327x")
 
 [connection signal="request_change_panel" from="TestGameBg" to="." method="_on_test_game_bg_request_change_panel"]
 [connection signal="event_option_chosen" from="ReadReportsCanvas/MessageViewer" to="." method="_on_message_viewer_event_option_chosen"]
@@ -590,7 +647,9 @@ sprite_frames = SubResource("SpriteFrames_c7117")
 [connection signal="pressed" from="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/HBoxContainer/TextureButton" to="NotificationCanvas/BackgroundBlocker/GameOverPanel" method="_on_close_button_pressed"]
 [connection signal="pressed" from="NotificationCanvas/BackgroundBlocker/GameOverPanel/VBoxContainer/CloseButton" to="NotificationCanvas/BackgroundBlocker/GameOverPanel" method="_on_close_button_pressed"]
 [connection signal="trigger_close" from="NotificationCanvas/BackgroundBlocker/ConclusionStatsPanel" to="." method="_on_conclusion_stats_panel_trigger_close"]
+[connection signal="pressed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer6/TextureButton" to="." method="_on_option_close_button_pressed"]
 [connection signal="value_changed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer/BGMVolBar" to="." method="_on_bgm_vol_bar_value_changed"]
+[connection signal="value_changed" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer5/SFXVolBar" to="." method="_on_sfx_vol_bar_value_changed"]
 [connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/DisableWarning" to="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer2/DisableWarning" method="_on_item_selected"]
 [connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer4/FullscreenPicker" to="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer4/FullscreenPicker" method="_on_item_selected"]
 [connection signal="item_selected" from="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3/ResPicker" to="OptionsCanvas/BackgroundBlocker/PanelContainer/VBoxContainer/HBoxContainer3/ResPicker" method="_on_item_selected"]
