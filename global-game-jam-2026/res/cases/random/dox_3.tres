@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://brk571i04bi3r"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_e3c7g"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_50x6p"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_50x6p"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="3_nl34c"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="4_4tf3e"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="5_ydqgx"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="6_l1yyi"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="8_h5jtt"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="8_nl34c"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="9_4tf3e"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="9_rpjf0"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_e3c7g")
+speaker = ExtResource("2_50x6p")
+text = "Hello [NAME REDACTED]
+You live at [ADDRESS REDACTED]
+You go to school at [ADDRESS REDACTED]
+Your IP address is [IP ADDRESS REDACTED]"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_8e8i8"]
+script = ExtResource("1_e3c7g")
+speaker = ExtResource("3_50x6p")
+text = "huh???
+what the fuck do you mean
+how did you get this"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_edpvu"]
+script = ExtResource("1_e3c7g")
+speaker = ExtResource("2_50x6p")
+text = "Better watch your tone, kid.
+I can ruin your life with just a snap of the finger.
+Don't do anything stupid."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_50x6p"]
+script = ExtResource("1_e3c7g")
+speaker = ExtResource("2_50x6p")
+text = "Do as you're told, and nobody gets hurt."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("3_nl34c")
+chat_messages = Array[ExtResource("1_e3c7g")]([SubResource("Resource_73pw0"), SubResource("Resource_8e8i8"), SubResource("Resource_edpvu"), SubResource("Resource_50x6p")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_fsd8s"]
+script = ExtResource("8_nl34c")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_0xc8g"]
+script = ExtResource("8_nl34c")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_ydqgx"]
+script = ExtResource("9_4tf3e")
+notif_title = "OPSec Fail"
+desc = "This member has caused enough problems to be kicked from the server, and everyone agrees! The atmosphere improves. You also suggest the member change their passwords everywhere. ( +10 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("8_nl34c")]([SubResource("Resource_fsd8s"), SubResource("Resource_0xc8g")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("8_h5jtt")
+case_id = "dox_3"
+case_display_name = "Leaked Information"
+case_description = "I feel threatened
+When did my info get leaked???"
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("6_l1yyi")
+warning_consequences = ExtResource("9_rpjf0")
+kick_consequences = SubResource("Resource_ydqgx")
+false_report_consequences = ExtResource("5_ydqgx")
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0, 0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

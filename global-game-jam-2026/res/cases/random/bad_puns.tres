@@ -1,0 +1,117 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://dq81qd12fuuud"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_ecmjr"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_sy5sl"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_so10v"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_w1ldl"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="5_35er8"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="6_syhfu"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="7_ecmjr"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="8_sy5sl"]
+[ext_resource type="Resource" uid="uid://canl5igybc628" path="res://res/consequences/ignore_light_penalty.tres" id="9_so10v"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="10_x8u4y"]
+
+[sub_resource type="Resource" id="Resource_distk"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("2_sy5sl")
+text = "Hello everypony"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6gv03"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("3_so10v")
+text = "hi"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_ecmjr"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("2_sy5sl")
+text = "Did you know about the pony with a sore throat
+He's just a little hoarse"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_sy5sl"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("4_w1ldl")
+text = "man, this again?
+you make these puns whenever you log in!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_so10v"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("2_sy5sl")
+text = "Don't be such a neigh-sayer~
+I'm just horsing around"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_35er8"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("2_sy5sl")
+text = "no need to whinny about it, is just what i do"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_w1ldl"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("4_w1ldl")
+text = "well i don't like them"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_syhfu"]
+script = ExtResource("1_ecmjr")
+speaker = ExtResource("2_sy5sl")
+text = "I get it, I get it, I'll behoove myself
+Wink~"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_stl51"]
+script = ExtResource("5_35er8")
+chat_messages = Array[ExtResource("1_ecmjr")]([SubResource("Resource_distk"), SubResource("Resource_6gv03"), SubResource("Resource_ecmjr"), SubResource("Resource_sy5sl"), SubResource("Resource_so10v"), SubResource("Resource_35er8"), SubResource("Resource_w1ldl"), SubResource("Resource_syhfu")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_uf730"]
+script = ExtResource("8_sy5sl")
+notif_title = "A Little Horsing Around"
+desc = "There's no rule against \"horsing around\" or making bad puns about horses, or bad puns about making any topics altogether. You inform the reporter as much."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_sscyt"]
+script = ExtResource("7_ecmjr")
+consequence_type = 1
+value = "-20"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bfadc"]
+script = ExtResource("7_ecmjr")
+consequence_type = 2
+value = "-10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_rapbt"]
+script = ExtResource("8_sy5sl")
+notif_title = "Punacceptable"
+desc = "The member was just making harmless puns, but they've been unfairly kicked. The atmosphere worsens, and members are leaving in protest! (-10 Atmosphere, -20 Member)"
+consq_effects = Array[ExtResource("7_ecmjr")]([SubResource("Resource_sscyt"), SubResource("Resource_bfadc")])
+is_negative = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_ve7ea"]
+script = ExtResource("8_sy5sl")
+notif_title = "Punderstandable"
+desc = "The offender feels a bit off due to puns not being against the rules, but accepts your ruling anyways."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("10_x8u4y")
+case_id = "bad_puns"
+case_display_name = "Bad Horsey Puns"
+case_description = "They won't stop making puns about the horses!"
+chatlog = SubResource("Resource_stl51")
+ignore_consequences = ExtResource("9_so10v")
+warning_consequences = SubResource("Resource_ve7ea")
+kick_consequences = SubResource("Resource_rapbt")
+false_report_consequences = SubResource("Resource_uf730")
+is_false_report = true
+is_unique = true
+require_witness_count = 1
+require_witness_pattern = PackedInt32Array(0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

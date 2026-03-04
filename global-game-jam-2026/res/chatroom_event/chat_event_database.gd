@@ -40,11 +40,34 @@ static func initialize_events():
 			if '.tres.remap' in file_name:
 				file_name = file_name.trim_suffix('.remap')
 	print("load random events: ", len(rand_event))
-			
+
+static var events_today : PackedStringArray = []
+static var events_yesterday : PackedStringArray = []
+
+static func reset_today_seen_events(startup: bool = false):
+	
+	if startup:
+		events_today = []
+	
+	events_yesterday = []
+	events_yesterday.append_array(events_today)
+	events_today = []
+
+static func get_events_banlist():
+	var banlist : PackedStringArray = []
+	
+	banlist.append_array(events_yesterday)
+	banlist.append_array(events_today)
+	
+	return banlist
+
 static func get_random_event():
 	
 	var filtered_list = rand_event.filter(func(x : ChatroomEvent):
-		return x.can_spawn()
+		return x.can_spawn() and x.internal_id not in get_events_banlist()
 		)
 	
-	return filtered_list[randi() % len(filtered_list)] as ChatroomEvent
+	var chosen_event : ChatroomEvent = filtered_list[randi() % len(filtered_list)] as ChatroomEvent
+	events_today.append(chosen_event.internal_id)
+	
+	return chosen_event

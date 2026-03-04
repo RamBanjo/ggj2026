@@ -42,10 +42,26 @@ static func initialize_cases():
 	print("load random cases: ", len(random_cases))
 
 static var cases_seen_today : PackedStringArray = []
+static var cases_seen_yesterday : PackedStringArray = []
 static var unique_cases_seen_this_run : PackedStringArray = []
 
-static func reset_today_seen_cases():
+static func reset_today_seen_cases(startup : bool = false):
+	
+	if startup:
+		cases_seen_today = []
+	
+	cases_seen_yesterday = []
+	cases_seen_yesterday.append_array(cases_seen_today)
 	cases_seen_today = []
+
+static func get_cases_banlist():
+	var banlist : PackedStringArray
+	
+	banlist.append_array(cases_seen_yesterday)
+	banlist.append_array(cases_seen_today)
+	banlist.append_array(unique_cases_seen_this_run)
+	
+	return banlist
 	
 static func reset_unique_cases_seen_this_run():
 	unique_cases_seen_this_run = []
@@ -53,7 +69,7 @@ static func reset_unique_cases_seen_this_run():
 static func make_list_of_unseen_cases():
 	return random_cases.filter(func(x : ModeratorCase):
 		
-		return x.case_id not in cases_seen_today and x.case_id not in unique_cases_seen_this_run and x.can_spawn()
+		return x.case_id not in get_cases_banlist() and x.can_spawn()
 		)
 
 static func default_nonexttreme_filter(x: ModeratorCase):

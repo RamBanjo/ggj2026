@@ -11,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_w5782"]
 script = ExtResource("2_t3xsb")
-internal_id = "dark_deal"
+call_id = "dark_deal"
 event_type = 8
 metadata/_custom_type_script = "uid://7bux4kauw2hy"
 

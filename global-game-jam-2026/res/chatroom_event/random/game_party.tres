@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="ChatroomEvent" format=3 uid="uid://c482mbp2orijk"]
+
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="1_aownd"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="2_xohq2"]
+[ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="3_oxqad"]
+[ext_resource type="Resource" uid="uid://ydb86yo3ps6j" path="res://res/chatmembers/story_important_members/head_moderator.tres" id="4_aownd"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_6wnxn"]
+
+[sub_resource type="Resource" id="Resource_8djpg"]
+script = ExtResource("2_xohq2")
+consequence_type = 5
+value = "1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_aownd"]
+script = ExtResource("2_xohq2")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_g6jna"]
+script = ExtResource("1_aownd")
+notif_title = "A Mongoose"
+desc = "You played the Mongoose Game with server members. They enjoyed the game party! (+10 Atmosphere, +1 Member Income)"
+consq_effects = Array[ExtResource("2_xohq2")]([SubResource("Resource_8djpg"), SubResource("Resource_aownd")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[sub_resource type="Resource" id="Resource_iy12d"]
+script = ExtResource("1_aownd")
+notif_title = "Maybe Later"
+desc = "You decide to not host the game night in the voice chat."
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("3_oxqad")
+internal_id = "game_party"
+title = "Game Party"
+sender = ExtResource("4_aownd")
+desc = "Heya, I'm free today. Do you wanna hop in voice chat and play some games together?"
+options = PackedStringArray("Sounds Fun! (-1)", "Sorry, Too Busy")
+option_cost = Array[int]([1, 0])
+default_ignore = 2
+consequences = Array[ExtResource("1_aownd")]([SubResource("Resource_g6jna"), SubResource("Resource_iy12d")])
+metadata/_custom_type_script = "uid://c8wp3x1baaiex"

@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://cs0r8bp5wo6ox"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_6c4g4"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="2_ctnuk"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="3_2xnhu"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="4_6s16x"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="5_xvhq6"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="5_ywu51"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="6_6c4g4"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="6_l1c25"]
+[ext_resource type="Resource" uid="uid://6pwont0jr313" path="res://res/consequences/warn_consequence_good.tres" id="9_2xnhu"]
+[ext_resource type="Resource" uid="uid://cs1d8blvnjww7" path="res://res/consequences/kick_consq_awkward.tres" id="9_ctnuk"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="10_d1uhe"]
+
+[sub_resource type="Resource" id="Resource_distk"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("4_6s16x")
+text = "sorry i can't join the mongoose game session tonight
+my uncle just passed and im going to the funeral"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6c4g4"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("3_2xnhu")
+text = "sorry to hear that! i hope your family does well"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_ctnuk"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("4_6s16x")
+text = "thanks bro"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_2xnhu"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("3_2xnhu")
+text = "you have my condolences. losing a family member is never easy."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_6s16x"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("4_6s16x")
+text = "thank you. it's not the same without him around."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_xvhq6"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("2_ctnuk")
+text = "dude your uncle picked the worst time to kick the bucket
+there's an event in the mongoose game right now"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_l1c25"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("3_2xnhu")
+text = "dude. uncool."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_7k4fq"]
+script = ExtResource("1_6c4g4")
+speaker = ExtResource("3_2xnhu")
+text = "i think there are more pressing matters for our friend here than limited-time cosmetics for the Mongoose game right now!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_stl51"]
+script = ExtResource("5_xvhq6")
+chat_messages = Array[ExtResource("1_6c4g4")]([SubResource("Resource_distk"), SubResource("Resource_6c4g4"), SubResource("Resource_ctnuk"), SubResource("Resource_2xnhu"), SubResource("Resource_6s16x"), SubResource("Resource_xvhq6"), SubResource("Resource_l1c25"), SubResource("Resource_7k4fq")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("10_d1uhe")
+case_id = "offcolor_joke"
+case_display_name = "Insensitive Joke"
+case_description = "dude this sucks i just lost a family member and they're joking about it"
+chatlog = SubResource("Resource_stl51")
+ignore_consequences = ExtResource("6_6c4g4")
+warning_consequences = ExtResource("9_2xnhu")
+kick_consequences = ExtResource("9_ctnuk")
+false_report_consequences = ExtResource("5_ywu51")
+require_witness_count = 2
+require_witness_pattern = PackedInt32Array(0, 1, 1, 0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

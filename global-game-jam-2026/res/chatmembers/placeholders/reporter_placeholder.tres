@@ -5,5 +5,4 @@
 [resource]
 script = ExtResource("1_4qn35")
 internal_id = "reporter"
-profile_desc = "do_not_show"
 metadata/_custom_type_script = "uid://ddexf3embsiw5"

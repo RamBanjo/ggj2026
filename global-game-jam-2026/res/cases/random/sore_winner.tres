@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://bn46l5wl8p6ng"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_gh0un"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="2_j60dg"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_2r8bq"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_e1hf5"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_a1gal"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_dg2o5"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="7_c7w32"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="8_nu0ll"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_sx0a8"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="10_u7f4k"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_gh0un")
+speaker = ExtResource("2_j60dg")
+text = "well, you won again looks like"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_nq4hx"]
+script = ExtResource("1_gh0un")
+speaker = ExtResource("3_2r8bq")
+text = "gg ez
+git gud scrub"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_vgw7q"]
+script = ExtResource("1_gh0un")
+speaker = ExtResource("3_2r8bq")
+text = "woud've been a cleaner sweep if my teammates weren't useless"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tdm8u"]
+script = ExtResource("1_gh0un")
+speaker = ExtResource("3_2r8bq")
+text = "that said, how are you still in gold rank with that trash team of yours, lol."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_tiwjr"]
+script = ExtResource("1_gh0un")
+speaker = ExtResource("2_j60dg")
+text = "yeah, now i'm beginning to see why your friendlist is kinda empty"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_e1hf5")
+chat_messages = Array[ExtResource("1_gh0un")]([SubResource("Resource_73pw0"), SubResource("Resource_nq4hx"), SubResource("Resource_vgw7q"), SubResource("Resource_tdm8u"), SubResource("Resource_tiwjr")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_sx0a8")
+case_id = "sore_winner"
+case_display_name = "Sore Winner"
+case_description = "Gamers can really be toxic.
+This one keeps gloating about how everyone else sucks."
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_c7w32")
+warning_consequences = ExtResource("10_u7f4k")
+kick_consequences = ExtResource("8_nu0ll")
+false_report_consequences = ExtResource("6_dg2o5")
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

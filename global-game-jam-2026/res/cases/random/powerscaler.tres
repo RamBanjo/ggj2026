@@ -1,0 +1,95 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://wujy4mh4ovra"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_lwn0p"]
+[ext_resource type="Resource" uid="uid://cegbblrun8k08" path="res://res/chatmembers/placeholders/witness_placeholder.tres" id="2_84lup"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="3_sgf5p"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="4_bd4q1"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="5_g41ar"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="6_k5h3w"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="7_d0sil"]
+[ext_resource type="Resource" uid="uid://dx0vcfck7r1vp" path="res://res/consequences/kick_consq_good.tres" id="8_yf6lh"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="9_tkvhd"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="10_ubsdw"]
+
+[sub_resource type="Resource" id="Resource_73pw0"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("2_84lup")
+text = "no way man lol
+pastamancer is b tier at best
+no way she can win against sashimancer"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_nq4hx"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("3_sgf5p")
+text = "you shut your face, pastamancer would lowdiff sashimancer
+sashimancer can summon big fish but that's mid at best
+and if sashimancer doesn't have her salmon staff, it's over for her"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_k25cl"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("2_84lup")
+text = "yea but what does pastamancer does with her noodly arms tho
+if summon big fish is mid then that's not even mid bruhhhh"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_t0ada"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("3_sgf5p")
+text = "what the hell did you just say
+you dare disrespect these noodle arms???
+it's practically her best ability"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_gnoh6"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("3_sgf5p")
+text = "you're a tasteless jackass if you think otherwise"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_lwn0p"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("2_84lup")
+text = "this is the internet in 2026 y'all
+you can't respectfully disagree anymore
+you have to call the other person a moron or something
+/s"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_84lup"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("3_sgf5p")
+text = "...got a bit heated. sorry. i'll log off for now."
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_sgf5p"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("2_84lup")
+text = "no matter who the stronger one is i think that they kiss and hold hands"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_bd4q1"]
+script = ExtResource("1_lwn0p")
+speaker = ExtResource("2_84lup")
+text = "ok wait definitely yeah"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_qpltm"]
+script = ExtResource("4_bd4q1")
+chat_messages = Array[ExtResource("1_lwn0p")]([SubResource("Resource_73pw0"), SubResource("Resource_nq4hx"), SubResource("Resource_k25cl"), SubResource("Resource_t0ada"), SubResource("Resource_gnoh6"), SubResource("Resource_lwn0p"), SubResource("Resource_84lup"), SubResource("Resource_sgf5p"), SubResource("Resource_bd4q1")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[resource]
+script = ExtResource("9_tkvhd")
+case_id = "powerscaler"
+case_display_name = "Powerscalers are Scary"
+case_description = "this is why i don't get into powerscaling and just watch the anime like a normal person, lmao"
+chatlog = SubResource("Resource_qpltm")
+ignore_consequences = ExtResource("7_d0sil")
+warning_consequences = ExtResource("10_ubsdw")
+kick_consequences = ExtResource("8_yf6lh")
+false_report_consequences = ExtResource("6_k5h3w")
+require_witness_count = 3
+require_witness_pattern = PackedInt32Array(0, 0, 1, 2, 0)
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

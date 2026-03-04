@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://8e7uko0hdi6m" path="res://res/conditionals/friend_added.tres" id="8_73acv"]
 [ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="9_1dhlb"]
 [ext_resource type="Resource" uid="uid://b215evoa0ahfw" path="res://res/consequences/false_report_friend_good.tres" id="9_qc5xd"]
-[ext_resource type="Resource" uid="uid://duip11av1yxw6" path="res://res/consequences/ignore_friend_bad.tres" id="10_583l5"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="10_qc5xd"]
 [ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="11_lhvfo"]
 [ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="12_2v72p"]
 [ext_resource type="Resource" uid="uid://cs1d8blvnjww7" path="res://res/consequences/kick_consq_awkward.tres" id="13_qc5xd"]
@@ -68,7 +68,7 @@ case_display_name = "Uncredited Art"
 case_owner = ExtResource("1_hrqnq")
 case_description = "As an artist, it would be nice if people credited the artist whenever someone posts an artwork..."
 chatlog = SubResource("Resource_qpltm")
-ignore_consequences = ExtResource("10_583l5")
+ignore_consequences = ExtResource("10_qc5xd")
 warning_consequences = SubResource("Resource_qc5xd")
 kick_consequences = ExtResource("13_qc5xd")
 false_report_consequences = ExtResource("9_qc5xd")

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="3_mvnc1"]
 [ext_resource type="Script" uid="uid://bhsexpqo18x0r" path="res://res/consequences/conditional_consequence/conditional_consequence.gd" id="4_5ejgf"]
 [ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="5_kx4ta"]
+[ext_resource type="Resource" uid="uid://1fe6do6ng8pl" path="res://res/consequences/vtuber_skip.tres" id="5_qtv3o"]
 [ext_resource type="Resource" uid="uid://daejpevi4c822" path="res://res/chatmembers/story_important_members/vtfan02.tres" id="6_euvid"]
 [ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="7_0b3op"]
 [ext_resource type="Resource" uid="uid://s60l5pgp4inh" path="res://res/conditionals/vtfan02_not_kicked.tres" id="8_1on1q"]
@@ -53,5 +54,5 @@ desc = "hey, you're here just in time. that anna arbalest nerd (pH_fl0wing) is a
 options = PackedStringArray("Play Mahjong (-1)", "Sorry, Too Busy")
 option_cost = Array[int]([1, 0])
 spawn_conditions = Array[ExtResource("2_qtv3o")]([ExtResource("7_0b3op"), ExtResource("8_1on1q")])
-consequences = Array[ExtResource("1_n8oke")]([SubResource("Resource_4ti5c")])
+consequences = Array[ExtResource("1_n8oke")]([SubResource("Resource_4ti5c"), ExtResource("5_qtv3o")])
 metadata/_custom_type_script = "uid://c8wp3x1baaiex"

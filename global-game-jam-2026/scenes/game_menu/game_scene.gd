@@ -63,7 +63,8 @@ var current_event_chatlog : Chatlog
 func _ready() -> void:
 	
 	CaseDatabase.reset_unique_cases_seen_this_run()
-	CaseDatabase.reset_today_seen_cases()
+	CaseDatabase.reset_today_seen_cases(true)
+	ChatEventDatabase.reset_today_seen_events(true)
 	MembersDatabase.reset_seen_members()
 	
 	is_notifying = false
@@ -101,10 +102,8 @@ func set_current_bgm():
 		vinyl_crack.volume_linear = lerpf(0, 1, current_ratio) * GameOptions.bgm_volume
 		evil_bgm.volume_linear = lerpf(1, 0, current_ratio) * GameOptions.bgm_volume
 		good_bgm.volume_linear = lerpf(0, 1, current_ratio) * GameOptions.bgm_volume
-		evil_bgm_layer2.volume_linear = lerpf(1, 0, current_ratio) * GameOptions.bgm_volume * day_progress_ratio		
-		good_bgm_layer2.volume_linear = lerpf(0, 1, current_ratio) * GameOptions.bgm_volume * day_progress_ratio		
-
-		evil_bgm_layer2.volume
+		evil_bgm_layer2.volume_linear = lerpf(1, 0, current_ratio) * GameOptions.bgm_volume * day_progress_ratio
+		good_bgm_layer2.volume_linear = lerpf(0, 1, current_ratio) * GameOptions.bgm_volume * day_progress_ratio
 
 func update_label():
 	daylabel.text = LABEL_BASE_TEXT.format({
@@ -140,6 +139,7 @@ func check_ending():
 
 func end_day():
 	CaseDatabase.reset_today_seen_cases()
+	ChatEventDatabase.reset_today_seen_events()
 	MembersDatabase.reset_seen_members()
 	
 	current_event_button = null

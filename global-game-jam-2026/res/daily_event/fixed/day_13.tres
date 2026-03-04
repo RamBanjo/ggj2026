@@ -11,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_16owc"]
 script = ExtResource("2_y2w4j")
-call_id = "vtuber_finale"
+call_id = "vtuber_finale_event"
 event_type = 8
 conditionals = Array[ExtResource("5_27p17")]([ExtResource("4_gsfe5"), ExtResource("5_hwfi1")])
 metadata/_custom_type_script = "uid://7bux4kauw2hy"

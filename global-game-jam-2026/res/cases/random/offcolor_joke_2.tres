@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="ModeratorCase" format=3 uid="uid://laqfsjeeysrg"]
+
+[ext_resource type="Script" uid="uid://6fb3ae7y7ow2" path="res://res/chatlogs/chat_message/chat_message.gd" id="1_aqfqm"]
+[ext_resource type="Resource" uid="uid://ccmuyydtl7me1" path="res://res/chatmembers/placeholders/reporter_placeholder.tres" id="2_5ovil"]
+[ext_resource type="Resource" uid="uid://c5q81aqhuyl1" path="res://res/chatmembers/placeholders/offender_placeholder.tres" id="4_007dj"]
+[ext_resource type="Script" uid="uid://dxv8l3b6tr46y" path="res://res/chatlogs/chatlog.gd" id="5_bmvwk"]
+[ext_resource type="Script" uid="uid://cq0nqidyse0ng" path="res://res/conditionals/conditionals.gd" id="6_rhk0c"]
+[ext_resource type="Resource" uid="uid://bw2gync3h110y" path="res://res/consequences/false_report_innocent.tres" id="7_qf1sk"]
+[ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="8_aqfqm"]
+[ext_resource type="Resource" uid="uid://coyi720ht4uld" path="res://res/consequences/ignore_atmos_penalty.tres" id="8_ksdgq"]
+[ext_resource type="Script" uid="uid://sus7no6fg7t7" path="res://res/consequences/mod_consequence.gd" id="9_5ovil"]
+[ext_resource type="Script" uid="uid://cjbcj8s1270lj" path="res://res/cases/moderator_case.gd" id="10_6enaw"]
+[ext_resource type="Resource" uid="uid://bdgqmthac3mo2" path="res://res/consequences/warn_consequence_bad.tres" id="11_3de4a"]
+
+[sub_resource type="Resource" id="Resource_distk"]
+script = ExtResource("1_aqfqm")
+speaker = ExtResource("2_5ovil")
+text = "[IMAGE REDACTED]
+I made a fanart for the movie My Cats and the Bread!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_62vkf"]
+script = ExtResource("1_aqfqm")
+speaker = ExtResource("4_007dj")
+text = "that looks ugly, my dog could draw better"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_aqfqm"]
+script = ExtResource("1_aqfqm")
+speaker = ExtResource("2_5ovil")
+text = "dude what the fuck
+what'd you say that for"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_5ovil"]
+script = ExtResource("1_aqfqm")
+speaker = ExtResource("4_007dj")
+text = "relax! it's just a joke!
+i can't tell jokes any more???"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_3de4a"]
+script = ExtResource("1_aqfqm")
+speaker = ExtResource("2_5ovil")
+text = "not funny, didn't laugh"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_007dj"]
+script = ExtResource("1_aqfqm")
+speaker = ExtResource("4_007dj")
+text = "you need to stop getting so offended about everything!"
+metadata/_custom_type_script = "uid://6fb3ae7y7ow2"
+
+[sub_resource type="Resource" id="Resource_stl51"]
+script = ExtResource("5_bmvwk")
+chat_messages = Array[ExtResource("1_aqfqm")]([SubResource("Resource_distk"), SubResource("Resource_62vkf"), SubResource("Resource_aqfqm"), SubResource("Resource_5ovil"), SubResource("Resource_3de4a"), SubResource("Resource_007dj")])
+metadata/_custom_type_script = "uid://dxv8l3b6tr46y"
+
+[sub_resource type="Resource" id="Resource_fsd8s"]
+script = ExtResource("8_aqfqm")
+consequence_type = 2
+value = "10"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_0xc8g"]
+script = ExtResource("8_aqfqm")
+consequence_type = 1
+value = "-1"
+metadata/_custom_type_script = "uid://rujpk18qh7wl"
+
+[sub_resource type="Resource" id="Resource_bmvwk"]
+script = ExtResource("9_5ovil")
+notif_title = "Not Funny Didn't Laugh"
+desc = "There are some people who say mean remarks and claims they're joking to avoid being punished. This is one of them, and you dealt with them in the most appropriate way. The atmosphere improves. ( +10 Atmosphere, -1 Member)"
+consq_effects = Array[ExtResource("8_aqfqm")]([SubResource("Resource_fsd8s"), SubResource("Resource_0xc8g")])
+is_positive = true
+metadata/_custom_type_script = "uid://sus7no6fg7t7"
+
+[resource]
+script = ExtResource("10_6enaw")
+case_id = "offcolor_joke_2"
+case_display_name = "it's not even funny"
+case_description = "insulted my drawing and said it was a joke.
+where's the funny???"
+chatlog = SubResource("Resource_stl51")
+ignore_consequences = ExtResource("8_ksdgq")
+warning_consequences = ExtResource("11_3de4a")
+kick_consequences = SubResource("Resource_bmvwk")
+false_report_consequences = ExtResource("7_qf1sk")
+metadata/_custom_type_script = "uid://cjbcj8s1270lj"

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://rujpk18qh7wl" path="res://res/consequences/consequence_effect.gd" id="3_uxjsl"]
 [ext_resource type="Script" uid="uid://bhsexpqo18x0r" path="res://res/consequences/conditional_consequence/conditional_consequence.gd" id="4_e4kya"]
 [ext_resource type="Script" uid="uid://c8wp3x1baaiex" path="res://res/chatroom_event/chatroom_event.gd" id="5_4h8jl"]
+[ext_resource type="Resource" uid="uid://1fe6do6ng8pl" path="res://res/consequences/vtuber_skip.tres" id="5_ulop0"]
 [ext_resource type="Resource" uid="uid://bdiocsjjyo02n" path="res://res/chatmembers/story_important_members/vtfan01.tres" id="6_py0nc"]
 [ext_resource type="Resource" uid="uid://dq5ns6ckwhoik" path="res://res/conditionals/vtfan01_not_kicked.tres" id="7_cepxv"]
 [ext_resource type="Resource" uid="uid://s60l5pgp4inh" path="res://res/conditionals/vtfan02_not_kicked.tres" id="8_3itl2"]
@@ -53,5 +54,5 @@ desc = "...look. i'll be real here. with the bella bellcurve graduation news i w
 options = PackedStringArray("Play A Mongoose Game (-1)", "Sorry, Too Busy")
 option_cost = Array[int]([1, 0])
 spawn_conditions = Array[ExtResource("2_ulop0")]([ExtResource("7_cepxv"), ExtResource("8_3itl2")])
-consequences = Array[ExtResource("1_py0nc")]([SubResource("Resource_4ti5c")])
+consequences = Array[ExtResource("1_py0nc")]([SubResource("Resource_4ti5c"), ExtResource("5_ulop0")])
 metadata/_custom_type_script = "uid://c8wp3x1baaiex"
